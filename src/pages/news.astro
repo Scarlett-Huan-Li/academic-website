@@ -1,0 +1,162 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import FormattedDate from '../components/FormattedDate.astro';
+
+const news = [
+	{
+		date: new Date('2024-02-15'),
+		title: 'New Publication in Nature',
+		category: 'Publication',
+		content: 'Our latest research on [topic] has been published in Nature...',
+	},
+	{
+		date: new Date('2024-02-01'),
+		title: 'Keynote Speaker at International Conference',
+		category: 'Speaking',
+		content: 'Delivered keynote address at the International Conference on...',
+	},
+	{
+		date: new Date('2024-01-15'),
+		title: 'Research Grant Awarded',
+		category: 'Grant',
+		content: 'Received $XXX,XXX grant from [funding agency] for research on...',
+	},
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`News & Updates | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>News & Updates</h1>
+
+			<div class="news-filters">
+				<button class="filter-btn active">All</button>
+				<button class="filter-btn">Publications</button>
+				<button class="filter-btn">Speaking</button>
+				<button class="filter-btn">Grants</button>
+				<button class="filter-btn">Awards</button>
+			</div>
+
+			<div class="news-timeline">
+				{news.map((item) => (
+					<div class="news-card">
+						<div class="news-meta">
+							<FormattedDate date={item.date} />
+							<span class="category">{item.category}</span>
+						</div>
+						<h2>{item.title}</h2>
+						<p>{item.content}</p>
+						<a href="#" class="read-more">Read More</a>
+					</div>
+				))}
+			</div>
+
+			<div class="pagination">
+				<a href="#" class="page-link">← Previous</a>
+				<span class="page-number">Page 1 of 1</span>
+				<a href="#" class="page-link">Next →</a>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.news-filters {
+		margin: 2em 0;
+		display: flex;
+		gap: 1em;
+		flex-wrap: wrap;
+	}
+
+	.filter-btn {
+		padding: 0.5em 1em;
+		background-color: rgb(var(--gray-light));
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: background-color 0.2s;
+		font-size: 0.9em;
+	}
+
+	.filter-btn.active {
+		background-color: var(--accent);
+		color: white;
+	}
+
+	.filter-btn:hover {
+		background-color: rgb(var(--gray));
+		color: white;
+	}
+
+	.news-timeline {
+		display: grid;
+		gap: 2em;
+		margin: 2em 0;
+	}
+
+	.news-card {
+		padding: 1.5em;
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: var(--box-shadow);
+	}
+
+	.news-meta {
+		display: flex;
+		gap: 1em;
+		align-items: center;
+		margin-bottom: 1em;
+	}
+
+	.category {
+		padding: 0.2em 0.5em;
+		background-color: rgb(var(--gray-light));
+		border-radius: 4px;
+		font-size: 0.9em;
+		color: rgb(var(--gray-dark));
+	}
+
+	.read-more {
+		display: inline-block;
+		margin-top: 1em;
+		color: var(--accent);
+		text-decoration: none;
+		font-weight: bold;
+	}
+
+	.read-more:hover {
+		text-decoration: underline;
+	}
+
+	.pagination {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 2em;
+		padding-top: 1em;
+		border-top: 1px solid rgb(var(--gray-light));
+	}
+
+	.page-link {
+		color: var(--accent);
+		text-decoration: none;
+	}
+
+	.page-link:hover {
+		text-decoration: underline;
+	}
+
+	.page-number {
+		color: rgb(var(--gray));
+		font-size: 0.9em;
+	}
+</style>

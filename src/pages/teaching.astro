@@ -1,0 +1,211 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Teaching | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Teaching</h1>
+
+			<section class="teaching-philosophy">
+				<h2>Teaching Philosophy</h2>
+				<p>Brief description of your approach to teaching and pedagogical methods.</p>
+				<div class="philosophy-points">
+					<div class="point-card">
+						<h3>Student-Centered Learning</h3>
+						<p>Description of how you implement student-centered learning approaches.</p>
+					</div>
+					<div class="point-card">
+						<h3>Research Integration</h3>
+						<p>How you integrate research into your teaching practice.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="courses">
+				<h2>Courses Taught</h2>
+				<div class="course-list">
+					{Array(3).fill(null).map((_, i) => (
+						<div class="course-card">
+							<h3>Course Title {i + 1}</h3>
+							<p class="course-code">DEPT 101</p>
+							<p class="course-term">Fall 2024</p>
+							<p>Brief description of the course content and objectives.</p>
+							<div class="course-links">
+								<a href="#" class="course-link">Syllabus</a>
+								<a href="#" class="course-link">Materials</a>
+							</div>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<section class="mentoring">
+				<h2>Student Supervision</h2>
+				<div class="supervision-categories">
+					<div class="supervision-card">
+						<h3>PhD Students</h3>
+						<ul>
+							<li>Student Name (2022-present) - Research Topic</li>
+							<li>Student Name (2021-present) - Research Topic</li>
+						</ul>
+					</div>
+					<div class="supervision-card">
+						<h3>Master's Students</h3>
+						<ul>
+							<li>Student Name (2023) - Thesis Title</li>
+							<li>Student Name (2022) - Thesis Title</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section class="teaching-resources">
+				<h2>Teaching Resources</h2>
+				<div class="resources-grid">
+					<div class="resource-card">
+						<h3>Resource Title 1</h3>
+						<p>Description of teaching resource or material.</p>
+						<a href="#" class="resource-link">Download</a>
+					</div>
+					<div class="resource-card">
+						<h3>Resource Title 2</h3>
+						<p>Description of teaching resource or material.</p>
+						<a href="#" class="resource-link">Download</a>
+					</div>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	section {
+		margin: 2em 0;
+		padding: 1em 0;
+		border-top: 1px solid rgb(var(--gray-light));
+	}
+
+	.philosophy-points {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5em;
+		margin-top: 1em;
+	}
+
+	.point-card {
+		padding: 1.5em;
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: var(--box-shadow);
+	}
+
+	.course-list {
+		display: grid;
+		gap: 1.5em;
+		margin-top: 1em;
+	}
+
+	.course-card {
+		padding: 1.5em;
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: var(--box-shadow);
+	}
+
+	.course-code {
+		color: var(--accent);
+		font-weight: bold;
+		margin: 0.5em 0;
+	}
+
+	.course-term {
+		color: rgb(var(--gray));
+		font-size: 0.9em;
+		margin: 0.5em 0;
+	}
+
+	.course-links {
+		margin-top: 1em;
+		display: flex;
+		gap: 1em;
+	}
+
+	.course-link {
+		padding: 0.3em 0.8em;
+		background-color: rgb(var(--gray-light));
+		border-radius: 4px;
+		text-decoration: none;
+		color: rgb(var(--gray-dark));
+		font-size: 0.9em;
+		transition: background-color 0.2s;
+	}
+
+	.course-link:hover {
+		background-color: rgb(var(--gray));
+		color: white;
+	}
+
+	.supervision-categories {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1.5em;
+		margin-top: 1em;
+	}
+
+	.supervision-card {
+		padding: 1.5em;
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: var(--box-shadow);
+	}
+
+	.supervision-card ul {
+		list-style-type: none;
+		padding: 0;
+	}
+
+	.supervision-card li {
+		margin: 1em 0;
+		padding-left: 1em;
+		border-left: 3px solid var(--accent);
+	}
+
+	.resources-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5em;
+		margin-top: 1em;
+	}
+
+	.resource-card {
+		padding: 1.5em;
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: var(--box-shadow);
+	}
+
+	.resource-link {
+		display: inline-block;
+		margin-top: 1em;
+		padding: 0.5em 1em;
+		background-color: var(--accent);
+		color: white;
+		border-radius: 4px;
+		text-decoration: none;
+		transition: background-color 0.2s;
+	}
+
+	.resource-link:hover {
+		background-color: var(--accent-dark);
+	}
+</style>

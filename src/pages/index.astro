@@ -1,0 +1,157 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION, SOCIAL_LINKS } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="profile-section">
+				<img 
+					src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" 
+					alt="Professional headshot"
+					class="profile-image"
+				/>
+				<div class="profile-content">
+					<h1>{SITE_TITLE}</h1>
+					<p class="title">Associate Professor of [Field]<br>Department of [Department]<br>[University Name]</p>
+					
+					<div class="social-badges">
+						<a href={SOCIAL_LINKS.googleScholar} target="_blank" rel="noopener noreferrer">Google Scholar</a>
+						<a href={SOCIAL_LINKS.orcid} target="_blank" rel="noopener noreferrer">ORCID</a>
+						<a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+					</div>
+				</div>
+			</div>
+
+			<section class="research-focus">
+				<h2>Research Focus</h2>
+				<p>Brief description of your primary research interests and current projects. This should be 2-3 sentences that clearly communicate your academic focus.</p>
+			</section>
+
+			<section class="recent-highlights">
+				<h2>Recent Highlights</h2>
+				<ul>
+					<li>
+						<strong>Latest Publication:</strong> Title of your most recent paper (Journal Name, 2024)
+					</li>
+					<li>
+						<strong>Recent Award:</strong> Name of award or grant received
+					</li>
+					<li>
+						<strong>Upcoming Talk:</strong> Title of upcoming conference presentation
+					</li>
+				</ul>
+			</section>
+
+			<section class="current-projects">
+				<h2>Current Projects</h2>
+				<div class="project-grid">
+					<div class="project-card">
+						<h3>Project Title 1</h3>
+						<p>Brief description of the research project, its goals, and potential impact.</p>
+					</div>
+					<div class="project-card">
+						<h3>Project Title 2</h3>
+						<p>Brief description of another ongoing research initiative.</p>
+					</div>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.profile-section {
+		display: flex;
+		gap: 2em;
+		align-items: start;
+		margin-bottom: 3em;
+	}
+
+	.profile-image {
+		width: 200px;
+		height: 200px;
+		object-fit: cover;
+		border-radius: 4px;
+	}
+
+	.profile-content {
+		flex: 1;
+	}
+
+	.title {
+		font-size: 1.2em;
+		color: rgb(var(--gray));
+		margin: 0.5em 0;
+	}
+
+	.social-badges {
+		display: flex;
+		gap: 1em;
+		margin-top: 1em;
+	}
+
+	.social-badges a {
+		padding: 0.5em 1em;
+		background-color: rgb(var(--gray-light));
+		border-radius: 4px;
+		text-decoration: none;
+		color: rgb(var(--gray-dark));
+		font-size: 0.9em;
+		transition: background-color 0.2s;
+	}
+
+	.social-badges a:hover {
+		background-color: rgb(var(--gray));
+		color: white;
+	}
+
+	section {
+		margin: 2em 0;
+		padding: 1em 0;
+		border-top: 1px solid rgb(var(--gray-light));
+	}
+
+	.project-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5em;
+		margin-top: 1em;
+	}
+
+	.project-card {
+		padding: 1.5em;
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: var(--box-shadow);
+	}
+
+	.project-card h3 {
+		margin: 0 0 0.5em 0;
+		font-size: 1.2em;
+	}
+
+	@media (max-width: 720px) {
+		.profile-section {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.profile-image {
+			margin: 0 auto;
+		}
+
+		.social-badges {
+			justify-content: center;
+		}
+	}
+</style>

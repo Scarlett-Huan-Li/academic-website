@@ -1,0 +1,219 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`CV | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="cv-header">
+				<h1>Curriculum Vitae</h1>
+				<a href="#" class="download-cv">Download PDF Version</a>
+			</div>
+
+			<section class="education">
+				<h2>Education</h2>
+				<div class="timeline">
+					<div class="entry">
+						<div class="year">20XX</div>
+						<div class="content">
+							<h3>Ph.D. in [Field]</h3>
+							<p>University Name</p>
+							<p class="details">Thesis: "Title of Your Dissertation"</p>
+							<p class="details">Advisor: Professor Name</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">20XX</div>
+						<div class="content">
+							<h3>M.S. in [Field]</h3>
+							<p>University Name</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="appointments">
+				<h2>Academic Appointments</h2>
+				<div class="timeline">
+					<div class="entry">
+						<div class="year">20XX-Present</div>
+						<div class="content">
+							<h3>Associate Professor</h3>
+							<p>Department, University</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">20XX-20XX</div>
+						<div class="content">
+							<h3>Assistant Professor</h3>
+							<p>Department, University</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="grants">
+				<h2>Grants and Funding</h2>
+				<div class="timeline">
+					{Array(3).fill(null).map((_, i) => (
+						<div class="entry">
+							<div class="year">20XX-20XX</div>
+							<div class="content">
+								<h3>Grant Title {i + 1}</h3>
+								<p>Funding Agency</p>
+								<p class="details">Amount: $XXX,XXX</p>
+								<p class="details">Role: Principal Investigator</p>
+							</div>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<section class="awards">
+				<h2>Honors and Awards</h2>
+				<div class="timeline">
+					{Array(3).fill(null).map((_, i) => (
+						<div class="entry">
+							<div class="year">20XX</div>
+							<div class="content">
+								<h3>Award Title {i + 1}</h3>
+								<p>Awarding Institution/Organization</p>
+							</div>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<section class="service">
+				<h2>Professional Service</h2>
+				<div class="service-categories">
+					<div class="service-card">
+						<h3>Editorial Roles</h3>
+						<ul>
+							<li>Journal Name - Editorial Board Member (20XX-present)</li>
+							<li>Journal Name - Associate Editor (20XX-20XX)</li>
+						</ul>
+					</div>
+					<div class="service-card">
+						<h3>Committee Work</h3>
+						<ul>
+							<li>Committee Name - Role (20XX-present)</li>
+							<li>Committee Name - Role (20XX-20XX)</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.cv-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 2em;
+	}
+
+	.download-cv {
+		padding: 0.5em 1em;
+		background-color: var(--accent);
+		color: white;
+		border-radius: 4px;
+		text-decoration: none;
+		transition: background-color 0.2s;
+	}
+
+	.download-cv:hover {
+		background-color: var(--accent-dark);
+	}
+
+	section {
+		margin: 2em 0;
+		padding: 1em 0;
+		border-top: 1px solid rgb(var(--gray-light));
+	}
+
+	.timeline {
+		margin-top: 1em;
+	}
+
+	.entry {
+		display: grid;
+		grid-template-columns: 150px 1fr;
+		gap: 1.5em;
+		margin-bottom: 1.5em;
+	}
+
+	.year {
+		color: var(--accent);
+		font-weight: bold;
+	}
+
+	.content {
+		padding: 0 0 1em 1.5em;
+		border-left: 3px solid rgb(var(--gray-light));
+	}
+
+	.content h3 {
+		margin: 0;
+		color: rgb(var(--gray-dark));
+	}
+
+	.details {
+		color: rgb(var(--gray));
+		font-size: 0.9em;
+		margin: 0.3em 0;
+	}
+
+	.service-categories {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1.5em;
+		margin-top: 1em;
+	}
+
+	.service-card {
+		padding: 1.5em;
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: var(--box-shadow);
+	}
+
+	.service-card ul {
+		list-style-type: none;
+		padding: 0;
+	}
+
+	.service-card li {
+		margin: 0.5em 0;
+		padding-left: 1em;
+		border-left: 3px solid var(--accent);
+	}
+
+	@media (max-width: 720px) {
+		.entry {
+			grid-template-columns: 1fr;
+			gap: 0.5em;
+		}
+
+		.content {
+			padding-left: 1em;
+		}
+
+		.cv-header {
+			flex-direction: column;
+			gap: 1em;
+			text-align: center;
+		}
+	}
+</style>

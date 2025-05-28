@@ -1,0 +1,67 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<header>
+	<nav>
+		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<div class="internal-links">
+			<HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href="/research">Research</HeaderLink>
+			<HeaderLink href="/publications">Publications</HeaderLink>
+			<HeaderLink href="/teaching">Teaching</HeaderLink>
+			<HeaderLink href="/cv">CV</HeaderLink>
+			<HeaderLink href="/resources">Resources</HeaderLink>
+			<HeaderLink href="/news">News</HeaderLink>
+			<HeaderLink href="/contact">Contact</HeaderLink>
+		</div>
+	</nav>
+</header>
+<style>
+	header {
+		margin: 0;
+		padding: 0 1em;
+		background: white;
+		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+	}
+	h2 {
+		margin: 0;
+		font-size: 1.4em;
+	}
+
+	h2 a,
+	h2 a.active {
+		text-decoration: none;
+	}
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 1em 0;
+	}
+	nav a {
+		padding: 0.5em 0.5em;
+		color: var(--black);
+		border-bottom: 4px solid transparent;
+		text-decoration: none;
+	}
+	nav a.active {
+		text-decoration: none;
+		border-bottom-color: var(--accent);
+	}
+	.internal-links {
+		display: flex;
+		gap: 0.5em;
+		flex-wrap: wrap;
+	}
+	@media (max-width: 720px) {
+		.internal-links {
+			gap: 0.3em;
+		}
+		nav a {
+			padding: 0.3em 0.3em;
+			font-size: 0.9em;
+		}
+	}
+</style>

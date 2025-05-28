@@ -1,0 +1,172 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Publications | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Publications</h1>
+			
+			<div class="metrics">
+				<div class="metric-card">
+					<span class="metric-number">25</span>
+					<span class="metric-label">Publications</span>
+				</div>
+				<div class="metric-card">
+					<span class="metric-number">500+</span>
+					<span class="metric-label">Citations</span>
+				</div>
+				<div class="metric-card">
+					<span class="metric-number">15</span>
+					<span class="metric-label">h-index</span>
+				</div>
+			</div>
+
+			<section>
+				<h2>Peer-Reviewed Articles</h2>
+				<div class="publication-list">
+					{Array(3).fill(null).map((_, i) => (
+						<div class="publication-card">
+							<h3>Publication Title {i + 1}</h3>
+							<p class="authors">Author 1, Author 2, et al.</p>
+							<p class="journal">Journal Name (Year)</p>
+							<div class="publication-links">
+								<a href="#" class="pub-link">PDF</a>
+								<a href="#" class="pub-link">DOI</a>
+								<a href="#" class="pub-link">BibTeX</a>
+							</div>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<section>
+				<h2>Book Chapters</h2>
+				<div class="publication-list">
+					{Array(2).fill(null).map((_, i) => (
+						<div class="publication-card">
+							<h3>Chapter Title {i + 1}</h3>
+							<p class="authors">Author 1, Author 2</p>
+							<p class="journal">Book Title (Year)</p>
+							<div class="publication-links">
+								<a href="#" class="pub-link">Publisher</a>
+								<a href="#" class="pub-link">BibTeX</a>
+							</div>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<section>
+				<h2>Conference Proceedings</h2>
+				<div class="publication-list">
+					{Array(2).fill(null).map((_, i) => (
+						<div class="publication-card">
+							<h3>Conference Paper Title {i + 1}</h3>
+							<p class="authors">Author 1, Author 2</p>
+							<p class="journal">Conference Name (Year)</p>
+							<div class="publication-links">
+								<a href="#" class="pub-link">PDF</a>
+								<a href="#" class="pub-link">Slides</a>
+							</div>
+						</div>
+					))}
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.metrics {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		gap: 1em;
+		margin: 2em 0;
+	}
+
+	.metric-card {
+		padding: 1em;
+		text-align: center;
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: var(--box-shadow);
+	}
+
+	.metric-number {
+		display: block;
+		font-size: 2em;
+		font-weight: bold;
+		color: var(--accent);
+	}
+
+	.metric-label {
+		color: rgb(var(--gray));
+		font-size: 0.9em;
+	}
+
+	.publication-list {
+		display: grid;
+		gap: 1.5em;
+		margin-top: 1em;
+	}
+
+	.publication-card {
+		padding: 1.5em;
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: var(--box-shadow);
+	}
+
+	.publication-card h3 {
+		margin: 0;
+		color: var(--accent-dark);
+	}
+
+	.authors {
+		color: rgb(var(--gray-dark));
+		margin: 0.5em 0;
+	}
+
+	.journal {
+		color: rgb(var(--gray));
+		font-style: italic;
+		margin: 0.5em 0;
+	}
+
+	.publication-links {
+		margin-top: 1em;
+		display: flex;
+		gap: 1em;
+	}
+
+	.pub-link {
+		padding: 0.3em 0.8em;
+		background-color: rgb(var(--gray-light));
+		border-radius: 4px;
+		text-decoration: none;
+		color: rgb(var(--gray-dark));
+		font-size: 0.9em;
+		transition: background-color 0.2s;
+	}
+
+	.pub-link:hover {
+		background-color: rgb(var(--gray));
+		color: white;
+	}
+
+	section {
+		margin: 2em 0;
+		padding: 1em 0;
+		border-top: 1px solid rgb(var(--gray-light));
+	}
+</style>
