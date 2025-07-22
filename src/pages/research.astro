@@ -13,59 +13,174 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>Research</h1>
+			<div class="page-header">
+				<h1>Research</h1>
+				<p class="page-subtitle">Geospatial Data Science: the science that investigates the 'where' and 'why' of various human and natural phenomena!</p>
+			</div>
 			
-			<section class="research-interests">
-				<h2>Research Interests</h2>
-				<ul>
-					<li>Research Area 1: Brief description of this research focus</li>
-					<li>Research Area 2: Brief description of another research interest</li>
-					<li>Research Area 3: Description of additional research focus</li>
-				</ul>
+			<section class="research-overview">
+				<h2>Research Overview</h2>
+				<p>My research focuses on spatio-temporal data analysis, remote sensing, and environmental monitoring. I combine advanced geospatial technologies, remote sensing techniques, and environmental modeling to understand complex hydrological processes and their responses to climate variability. With over 25 peer-reviewed publications and experience at prestigious institutions including Peking University and Tsinghua University, I have developed expertise in cryosphere studies, global water cycle analysis, and inland water monitoring.</p>
 			</section>
 
-			<section class="methodology">
-				<h2>Research Methodology</h2>
-				<p>Description of your research approach, methodologies, and theoretical frameworks.</p>
-				<div class="methodology-grid">
-					<div class="method-card">
-						<h3>Method 1</h3>
-						<p>Description of specific research method or approach.</p>
+			<section class="research-areas">
+				<h2>Research Areas</h2>
+				<div class="areas-grid">
+					<div class="area-card">
+						<div class="area-icon">🛰️</div>
+						<h3>Remote Sensing & GIS</h3>
+						<p>Processing, analyzing, and visualizing large-scale geospatial datasets using satellite imagery and geographic information systems.</p>
+						<ul>
+							<li>Satellite data processing and analysis</li>
+							<li>Geospatial big data analytics</li>
+							<li>Cloud-based platforms (Google Earth Engine)</li>
+						</ul>
 					</div>
-					<div class="method-card">
-						<h3>Method 2</h3>
-						<p>Description of another research methodology.</p>
+					<div class="area-card">
+						<div class="area-icon">🧊</div>
+						<h3>Cryosphere Studies</h3>
+						<p>Sea ice thickness and volume retrieval, snow cover analysis, and Antarctic/Arctic climate change using satellite altimetry and remote sensing.</p>
+						<ul>
+							<li>Sea ice thickness retrieval algorithms</li>
+							<li>Snow cover phenology and dynamics</li>
+							<li>Antarctic and Arctic climate change</li>
+							<li>ICESat satellite data analysis</li>
+						</ul>
+					</div>
+					<div class="area-card">
+						<div class="area-icon">🌊</div>
+						<h3>Global Water Cycle</h3>
+						<p>Surface water mapping, hydrological data analysis, and water budget closure studies.</p>
+						<ul>
+							<li>Surface water dynamics</li>
+							<li>Hydrological modeling</li>
+							<li>Water temperature monitoring</li>
+						</ul>
+					</div>
+					<div class="area-card">
+						<div class="area-icon">🌿</div>
+						<h3>Ecological Environment</h3>
+						<p>Lake and river temperature, water quality, and aquatic ecosystem monitoring.</p>
+						<ul>
+							<li>Aquatic ecosystem health</li>
+							<li>Water quality assessment</li>
+							<li>Environmental impact analysis</li>
+						</ul>
+					</div>
+					<div class="area-card">
+						<div class="area-icon">📊</div>
+						<h3>Geospatial Big Data</h3>
+						<p>Cloud-based analysis and high-performance computing for Earth science applications.</p>
+						<ul>
+							<li>Big data processing</li>
+							<li>High-performance computing</li>
+							<li>Machine learning applications</li>
+						</ul>
+					</div>
+					<div class="area-card">
+						<div class="area-icon">🏙️</div>
+						<h3>Socioeconomic Applications</h3>
+						<p>Remote sensing for economic analysis, urbanization, and environmental impact assessment.</p>
+						<ul>
+							<li>Urban development monitoring</li>
+							<li>Economic impact assessment</li>
+							<li>Sustainable development</li>
+						</ul>
 					</div>
 				</div>
 			</section>
 
-			<section class="ongoing-studies">
-				<h2>Ongoing Studies</h2>
-				{Array(3).fill(null).map((_, i) => (
-					<div class="study-card">
-						<h3>Study Title {i + 1}</h3>
-						<p class="study-meta">Timeline: 2023-2025 | Funding: Source</p>
-						<p>Description of the research study, its objectives, and expected outcomes.</p>
-						<div class="study-tags">
-							<span class="tag">Methodology</span>
-							<span class="tag">Field</span>
-							<span class="tag">Topic</span>
+			<section class="current-projects">
+				<h2>Current Projects</h2>
+				<div class="projects-grid">
+					<div class="project-card">
+						<div class="project-header">
+							<h3>Mining spatio-temporal patterns of 40-year surface water temperature for lakes and rivers in the Pannonian ecoregion</h3>
+							<div class="project-meta">
+								<span class="timeline">2023–2024</span>
+								<span class="funding">European Space Agency Network of Resources (NoR)</span>
+							</div>
+						</div>
+						<p>Analysis of long-term water temperature trends and heatwaves in Central European lakes and rivers using remote sensing and big data analytics. This project aims to understand the impacts of climate change on aquatic ecosystems in the Pannonian region.</p>
+						<div class="project-tags">
+							<span class="tag">Remote Sensing</span>
+							<span class="tag">Water Temperature</span>
+							<span class="tag">Big Data</span>
+							<span class="tag">Climate Change</span>
 						</div>
 					</div>
-				))}
+					
+					<div class="project-card">
+						<div class="project-header">
+							<h3>Retrieving key parameters of circum-Antarctic sea ice with altimeter satellites and their spatio-temporal changes</h3>
+							<div class="project-meta">
+								<span class="timeline">2020–2022</span>
+								<span class="funding">National Natural Science Foundation of China</span>
+							</div>
+						</div>
+						<p>Development of algorithms for satellite altimetry to retrieve sea ice thickness and volume, and analysis of spatiotemporal variability in the Antarctic. This research contributes to understanding polar climate dynamics.</p>
+						<div class="project-tags">
+							<span class="tag">Cryosphere</span>
+							<span class="tag">Satellite Altimetry</span>
+							<span class="tag">Sea Ice</span>
+							<span class="tag">Antarctic</span>
+						</div>
+					</div>
+					
+					<div class="project-card">
+						<div class="project-header">
+							<h3>Retrieving Antarctic sea-ice thickness and volume from ICESat and spatio-temporal variability analysis</h3>
+							<div class="project-meta">
+								<span class="timeline">2019–2021</span>
+								<span class="funding">China Post-doc Foundation</span>
+							</div>
+						</div>
+						<p>Spatiotemporal analysis of Antarctic sea-ice thickness and volume using ICESat satellite data and innovative retrieval algorithms. This work provides critical insights into polar climate change.</p>
+						<div class="project-tags">
+							<span class="tag">Antarctic</span>
+							<span class="tag">ICESat</span>
+							<span class="tag">Sea Ice Thickness</span>
+							<span class="tag">Climate Change</span>
+						</div>
+					</div>
+				</div>
 			</section>
 
-			<section class="lab-facilities">
-				<h2>Research Facilities</h2>
-				<p>Description of your lab facilities, equipment, or research resources.</p>
+			<section class="methodology">
+				<h2>Research Methodology</h2>
+				<p>My research integrates advanced remote sensing techniques, geospatial big data analytics, and cloud-based platforms such as Google Earth Engine. I develop and apply innovative algorithms for satellite data processing, high-performance computing for large-scale environmental datasets, and interdisciplinary collaboration across Earth science, hydrology, ecology, and socioeconomics.</p>
+				
+				<div class="methodology-grid">
+					<div class="method-card">
+						<h3>Remote Sensing & Satellite Data Processing</h3>
+						<p>Development of algorithms for satellite altimetry, multispectral and radar data analysis, and retrieval of environmental parameters (e.g., sea ice thickness, water temperature, snow cover).</p>
+					</div>
+					<div class="method-card">
+						<h3>Geospatial Big Data & Cloud Computing</h3>
+						<p>Utilization of Google Earth Engine and high-performance computing for processing, analyzing, and visualizing large-scale geospatial datasets.</p>
+					</div>
+					<div class="method-card">
+						<h3>Interdisciplinary Collaboration</h3>
+						<p>Combining expertise from remote sensing, hydrology, ecology, and economics to address complex environmental and climate change questions.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="facilities">
+				<h2>Research Facilities & Tools</h2>
+				<p>My research leverages advanced computational and data resources, including:</p>
 				<div class="facilities-grid">
 					<div class="facility-card">
-						<h3>Facility/Equipment 1</h3>
-						<p>Description of specific research facility or equipment.</p>
+						<h3>Google Earth Engine</h3>
+						<p>Cloud-based geospatial analysis platform for processing and visualizing large-scale remote sensing and environmental datasets.</p>
 					</div>
 					<div class="facility-card">
-						<h3>Facility/Equipment 2</h3>
-						<p>Description of another research facility or equipment.</p>
+						<h3>High-Performance Computing Clusters</h3>
+						<p>For large-scale data processing, algorithm development, and simulation of environmental and climate datasets.</p>
+					</div>
+					<div class="facility-card">
+						<h3>Custom Software Tools</h3>
+						<p>Development and deployment of interoperable software for satellite data analysis, water temperature monitoring, and geospatial visualization.</p>
 					</div>
 				</div>
 			</section>
@@ -75,62 +190,204 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 </html>
 
 <style>
+	.page-header {
+		text-align: center;
+		margin-bottom: 4em;
+		padding: 2em 0;
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+
+	.page-header h1 {
+		margin-bottom: 0.5em;
+		color: rgb(var(--black));
+	}
+
+	.page-subtitle {
+		font-size: 1.2em;
+		color: rgb(var(--gray));
+		margin: 0;
+		font-style: italic;
+	}
+
 	section {
-		margin: 2em 0;
-		padding: 1em 0;
-		border-top: 1px solid rgb(var(--gray-light));
+		margin: 4em 0;
+		padding: 2em 0;
+	}
+
+	section:first-of-type {
+		margin-top: 0;
+	}
+
+	.research-overview {
+		text-align: center;
+		max-width: 800px;
+		margin: 0 auto 4em auto;
+	}
+
+	.research-overview p {
+		font-size: 1.1em;
+		line-height: 1.8;
+		color: rgb(var(--gray));
+	}
+
+	.areas-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2em;
+		margin-top: 2em;
+	}
+
+	.area-card {
+		padding: 2em;
+		background: white;
+		border-radius: 12px;
+		box-shadow: var(--box-shadow);
+		transition: transform 0.2s;
+	}
+
+	.area-card:hover {
+		transform: translateY(-5px);
+	}
+
+	.area-icon {
+		font-size: 2.5em;
+		margin-bottom: 1em;
+		text-align: center;
+	}
+
+	.area-card h3 {
+		margin-bottom: 1em;
+		color: rgb(var(--black));
+		font-size: 1.3em;
+		text-align: center;
+	}
+
+	.area-card p {
+		margin-bottom: 1.5em;
+		color: rgb(var(--gray));
+		line-height: 1.6;
+	}
+
+	.area-card ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.area-card li {
+		padding: 0.5em 0;
+		border-left: 3px solid var(--accent);
+		padding-left: 1em;
+		margin: 0.5em 0;
+		color: rgb(var(--gray-dark));
+	}
+
+	.projects-grid {
+		display: grid;
+		gap: 2em;
+		margin-top: 2em;
+	}
+
+	.project-card {
+		padding: 2em;
+		background: white;
+		border-radius: 12px;
+		box-shadow: var(--box-shadow);
+		border-left: 4px solid var(--accent);
+	}
+
+	.project-header h3 {
+		margin-bottom: 0.5em;
+		color: rgb(var(--black));
+		font-size: 1.2em;
+		line-height: 1.4;
+	}
+
+	.project-meta {
+		display: flex;
+		gap: 1em;
+		margin-bottom: 1em;
+		flex-wrap: wrap;
+	}
+
+	.timeline, .funding {
+		background: rgb(var(--gray-light));
+		padding: 0.3em 0.8em;
+		border-radius: 15px;
+		font-size: 0.85em;
+		color: rgb(var(--gray-dark));
+		font-weight: 500;
+	}
+
+	.project-card p {
+		margin-bottom: 1.5em;
+		color: rgb(var(--gray));
+		line-height: 1.6;
+	}
+
+	.project-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5em;
+	}
+
+	.tag {
+		background: var(--accent);
+		color: white;
+		padding: 0.3em 0.8em;
+		border-radius: 15px;
+		font-size: 0.8em;
+		font-weight: 500;
 	}
 
 	.methodology-grid, .facilities-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 1.5em;
-		margin-top: 1em;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2em;
+		margin-top: 2em;
 	}
 
 	.method-card, .facility-card {
-		padding: 1.5em;
-		background-color: white;
-		border-radius: 8px;
+		padding: 2em;
+		background: white;
+		border-radius: 12px;
 		box-shadow: var(--box-shadow);
+		text-align: center;
 	}
 
-	.study-card {
-		margin: 1.5em 0;
-		padding: 1.5em;
-		background-color: white;
-		border-radius: 8px;
-		box-shadow: var(--box-shadow);
+	.method-card h3, .facility-card h3 {
+		margin-bottom: 1em;
+		color: rgb(var(--black));
+		font-size: 1.2em;
 	}
 
-	.study-meta {
+	.method-card p, .facility-card p {
 		color: rgb(var(--gray));
-		font-size: 0.9em;
-		margin: 0.5em 0;
+		line-height: 1.6;
 	}
 
-	.study-tags {
-		margin-top: 1em;
-	}
+	@media (max-width: 768px) {
+		.areas-grid {
+			grid-template-columns: 1fr;
+		}
 
-	.tag {
-		display: inline-block;
-		padding: 0.3em 0.8em;
-		margin: 0.2em;
-		background-color: rgb(var(--gray-light));
-		border-radius: 15px;
-		font-size: 0.8em;
-		color: rgb(var(--gray-dark));
-	}
+		.methodology-grid, .facilities-grid {
+			grid-template-columns: 1fr;
+		}
 
-	ul {
-		list-style-type: none;
-		padding: 0;
-	}
+		.project-meta {
+			flex-direction: column;
+			gap: 0.5em;
+		}
 
-	li {
-		margin: 1em 0;
-		padding-left: 1em;
-		border-left: 3px solid var(--accent);
+		.page-header {
+			padding: 1em 0;
+			margin-bottom: 2em;
+		}
+
+		section {
+			margin: 2em 0;
+			padding: 1em 0;
+		}
 	}
 </style>

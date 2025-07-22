@@ -31,20 +31,38 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			</section>
 
 			<section class="courses">
-				<h2>Courses Taught</h2>
+				<h2>Courses Taught & Invited Lectures</h2>
 				<div class="course-list">
-					{Array(3).fill(null).map((_, i) => (
-						<div class="course-card">
-							<h3>Course Title {i + 1}</h3>
-							<p class="course-code">DEPT 101</p>
-							<p class="course-term">Fall 2024</p>
-							<p>Brief description of the course content and objectives.</p>
-							<div class="course-links">
-								<a href="#" class="course-link">Syllabus</a>
-								<a href="#" class="course-link">Materials</a>
-							</div>
-						</div>
-					))}
+					<div class="course-card">
+						<h3>Image Classification using Machine Learning with Google Earth Engine</h3>
+						<p class="course-code">Invited Lecture</p>
+						<p class="course-term">UiT the Arctic University of Norway, 2022</p>
+						<p>Graduate-level lecture on machine learning techniques for remote sensing image classification using Google Earth Engine.</p>
+					</div>
+					<div class="course-card">
+						<h3>Remote Sensing of Cryosphere</h3>
+						<p class="course-code">Invited Lecture</p>
+						<p class="course-term">Peking University, 2022</p>
+						<p>Graduate-level lecture on remote sensing methods for studying snow cover, glaciers, polar ice sheets, and sea ice.</p>
+					</div>
+					<div class="course-card">
+						<h3>Cryosphere: Snow Cover, Glacier, Polar Ice Sheet, and Sea Ice</h3>
+						<p class="course-code">Invited Lecture</p>
+						<p class="course-term">Peking University, 2021</p>
+						<p>Graduate-level lecture on cryospheric science and remote sensing applications.</p>
+					</div>
+					<div class="course-card">
+						<h3>Cryosphere</h3>
+						<p class="course-code">Invited Lecture</p>
+						<p class="course-term">Peking University, 2020</p>
+						<p>Graduate-level lecture on cryosphere science and environmental monitoring.</p>
+					</div>
+					<div class="course-card">
+						<h3>Sea Ice Thickness and Volume Retrieval for Antarctic and Glacier Extent Delineation on Tibetan Plateau</h3>
+						<p class="course-code">Invited Lecture</p>
+						<p class="course-term">Peking University, 2019</p>
+						<p>Graduate-level lecture on satellite remote sensing for sea ice and glacier studies.</p>
+					</div>
 				</div>
 			</section>
 
@@ -52,17 +70,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				<h2>Student Supervision</h2>
 				<div class="supervision-categories">
 					<div class="supervision-card">
-						<h3>PhD Students</h3>
+						<h3>Undergraduate & PhD Students</h3>
 						<ul>
-							<li>Student Name (2022-present) - Research Topic</li>
-							<li>Student Name (2021-present) - Research Topic</li>
+							<li>Yue Xu (Peking University, 2019–2022): Published in GRL, won Excellent Award of “Undergraduate Scientific Research Training of Peking University”, Best Presenter at 2021 International Graduate Workshop on Geoinformatics, obtained software copyright, admitted as doctoral candidate with full scholarship.</li>
 						</ul>
 					</div>
 					<div class="supervision-card">
 						<h3>Master's Students</h3>
 						<ul>
-							<li>Student Name (2023) - Thesis Title</li>
-							<li>Student Name (2022) - Thesis Title</li>
+							<li>Luyao Wang, Dan Guo, and Yankun Wang (Wuhan University, 2012–2016): Supervised on C/C++/C#/MATLAB coding for taxi data processing, geolocating, web crawling, and statistical analysis; guided journal papers and dissertations on indoor positioning, web mining, and marketing data visualization.</li>
 						</ul>
 					</div>
 				</div>
@@ -72,14 +88,20 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				<h2>Teaching Resources</h2>
 				<div class="resources-grid">
 					<div class="resource-card">
-						<h3>Resource Title 1</h3>
-						<p>Description of teaching resource or material.</p>
-						<a href="#" class="resource-link">Download</a>
+						<h3>Chlorophyll-a Inspection Software for Lake Balaton</h3>
+						<p>Online tool for inspecting the concentration of Chlorophyll-a in Lake Balaton from 1984 to present.</p>
+						<a href="https://lihuan.projects.earthengine.app/view/chla4balaton" class="resource-link" target="_blank">View Resource</a>
 					</div>
 					<div class="resource-card">
-						<h3>Resource Title 2</h3>
-						<p>Description of teaching resource or material.</p>
-						<a href="#" class="resource-link">Download</a>
+						<h3>Google Earth Engine Open Code for Lake Balaton Water Temperature</h3>
+						<p>Open code and online software for water temperature of Lake Balaton in the 21st century, Hungary.</p>
+						<a href="https://code.earthengine.google.com/?accept_repo=users/lihuan/Share_LakeBalaton" class="resource-link" target="_blank">View Code</a>
+						<a href="https://lihuan.users.earthengine.app/view/balaton" class="resource-link" target="_blank">Online Tool</a>
+					</div>
+					<div class="resource-card">
+						<h3>Global High-Quality Landsat Mosaic Generator</h3>
+						<p>Code and online software for generating global high-quality user-ready Landsat mosaics.</p>
+						<a href="https://gist.github.com/scarlettlee/eda18ca801213429636e7a0764b5b59f" class="resource-link" target="_blank">View Code</a>
 					</div>
 				</div>
 			</section>

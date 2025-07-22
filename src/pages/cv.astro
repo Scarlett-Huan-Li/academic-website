@@ -22,19 +22,34 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				<h2>Education</h2>
 				<div class="timeline">
 					<div class="entry">
-						<div class="year">20XX</div>
+						<div class="year">2012–2016</div>
 						<div class="content">
-							<h3>Ph.D. in [Field]</h3>
-							<p>University Name</p>
-							<p class="details">Thesis: "Title of Your Dissertation"</p>
-							<p class="details">Advisor: Professor Name</p>
+							<h3>Ph.D., Cartography and Geographic Information Engineering</h3>
+							<p>Wuhan University, State Key Laboratory of Information Engineering in Surveying, Mapping and Remote Sensing, China</p>
+							<p class="details">Thesis: Active On-demand Real-time Provision for the High Frequency and Low Volume Sensor Web Data</p>
+							<p class="details">Supervisor: Prof. Hong Fan</p>
 						</div>
 					</div>
 					<div class="entry">
-						<div class="year">20XX</div>
+						<div class="year">2010–2012</div>
 						<div class="content">
-							<h3>M.S. in [Field]</h3>
-							<p>University Name</p>
+							<h3>M.S., Surveying Engineering</h3>
+							<p>Wuhan University, State Key Laboratory of Information Engineering in Surveying, Mapping and Remote Sensing, China</p>
+							<p class="details">Supervisor: Prof. Hong Fan</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2006–2010</div>
+						<div class="content">
+							<h3>B.S., Geographic Information System</h3>
+							<p>Wuhan University, School of Remote Sensing and Information Engineering, China</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2008–2010</div>
+						<div class="content">
+							<h3>B.S., Japanese</h3>
+							<p>Huazhong University of Science and Technology, School of Foreign Languages, China</p>
 						</div>
 					</div>
 				</div>
@@ -44,17 +59,27 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				<h2>Academic Appointments</h2>
 				<div class="timeline">
 					<div class="entry">
-						<div class="year">20XX-Present</div>
+						<div class="year">2022–Present</div>
 						<div class="content">
-							<h3>Associate Professor</h3>
-							<p>Department, University</p>
+							<h3>Research Fellow</h3>
+							<p>Balaton Limnological Research Institute, Hungary</p>
+							<p class="details">Remote Sensing-based environment research under climate change</p>
 						</div>
 					</div>
 					<div class="entry">
-						<div class="year">20XX-20XX</div>
+						<div class="year">2018–2022</div>
 						<div class="content">
-							<h3>Assistant Professor</h3>
-							<p>Department, University</p>
+							<h3>Post-doctoral Researcher</h3>
+							<p>Peking University, School of Earth and Space Sciences, China</p>
+							<p class="details">Cryosphere and big data mining</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2016–2018</div>
+						<div class="content">
+							<h3>Post-doctoral Researcher</h3>
+							<p>Tsinghua University, State Key Laboratory of HydroScience and Engineering, China</p>
+							<p class="details">Remote sensing hydrology and economic application</p>
 						</div>
 					</div>
 				</div>
@@ -63,32 +88,97 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			<section class="grants">
 				<h2>Grants and Funding</h2>
 				<div class="timeline">
-					{Array(3).fill(null).map((_, i) => (
-						<div class="entry">
-							<div class="year">20XX-20XX</div>
-							<div class="content">
-								<h3>Grant Title {i + 1}</h3>
-								<p>Funding Agency</p>
-								<p class="details">Amount: $XXX,XXX</p>
-								<p class="details">Role: Principal Investigator</p>
-							</div>
+					<div class="entry">
+						<div class="year">2023–2024</div>
+						<div class="content">
+							<h3>Mining spatio-temporal patterns of 40-year surface water temperature for lakes and rivers in the Pannonian ecoregion</h3>
+							<p>European Space Agency Network of Resources (NoR) Sponsorship</p>
+							<p class="details">Amount: €4,215</p>
+							<p class="details">Role: Principal Investigator</p>
 						</div>
-					))}
+					</div>
+					<div class="entry">
+						<div class="year">2020–2022</div>
+						<div class="content">
+							<h3>Retrieving key parameters of circum-Antarctic sea ice with altimeter satellites and their spatio-temporal changes</h3>
+							<p>Youth Found of National Natural Science Foundation of China</p>
+							<p class="details">Amount: ¥300,000</p>
+							<p class="details">Role: Principal Investigator</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2019–2021</div>
+						<div class="content">
+							<h3>Retrieving Antarctic sea-ice thickness and volume from ICESat and spatio-temporal variability analysis</h3>
+							<p>China Post-doc Foundation</p>
+							<p class="details">Amount: ¥80,000</p>
+							<p class="details">Role: Principal Investigator</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2014–2015</div>
+						<div class="content">
+							<h3>Ph.D. Studentship</h3>
+							<p>Collaborative Innovation Center of Geospatial Technology, Wuhan University, China</p>
+							<p class="details">Amount: ¥5,000</p>
+							<p class="details">Role: Ph.D. Student</p>
+						</div>
+					</div>
 				</div>
 			</section>
 
 			<section class="awards">
 				<h2>Honors and Awards</h2>
 				<div class="timeline">
-					{Array(3).fill(null).map((_, i) => (
-						<div class="entry">
-							<div class="year">20XX</div>
-							<div class="content">
-								<h3>Award Title {i + 1}</h3>
-								<p>Awarding Institution/Organization</p>
-							</div>
+					<div class="entry">
+						<div class="year">2021</div>
+						<div class="content">
+							<h3>Annual Best Paper</h3>
+							<p>Institute of Remote Sensing and Geographic Information System (IRGIS), Peking University, China</p>
 						</div>
-					))}
+					</div>
+					<div class="entry">
+						<div class="year">2019</div>
+						<div class="content">
+							<h3>First Prize, The First Youth Forum of IRGIS</h3>
+							<p>Peking University, China</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2018</div>
+						<div class="content">
+							<h3>Annual Best Paper</h3>
+							<p>IRGIS, Peking University, China</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2017</div>
+						<div class="content">
+							<h3>Second Prize, The Seventh Teaching Contest of Young Teachers</h3>
+							<p>School of Civil Engineering, Tsinghua University, China</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2015</div>
+						<div class="content">
+							<h3>Excellent Paper Award, The Fourth Graduate Student Forum of National Remote Sensing and Geographic Information Science</h3>
+							<p>Nanking University, China</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2013</div>
+						<div class="content">
+							<h3>Third Prize, The Third Graduate Student Forum of National Remote Sensing and Geographic Information Science</h3>
+							<p>Wuhan University, China</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2011</div>
+						<div class="content">
+							<h3>Excellent Paper Award, The Second Graduate Student Forum of National Remote Sensing and Geographic Information Science</h3>
+							<p>Chinese Academy of Sciences, China</p>
+						</div>
+					</div>
 				</div>
 			</section>
 
@@ -96,17 +186,34 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				<h2>Professional Service</h2>
 				<div class="service-categories">
 					<div class="service-card">
-						<h3>Editorial Roles</h3>
+						<h3>Editorial and Reviewer Roles</h3>
 						<ul>
-							<li>Journal Name - Editorial Board Member (20XX-present)</li>
-							<li>Journal Name - Associate Editor (20XX-20XX)</li>
+							<li>Remote Sensing of Environment – Reviewer</li>
+							<li>Water Research – Reviewer</li>
+							<li>The Cryosphere – Reviewer</li>
+							<li>Earth System Science Data – Reviewer</li>
+							<li>Journal of Hydrology – Reviewer</li>
+							<li>Hydrological Sciences Journal – Reviewer</li>
+							<li>Remote Sensing – Reviewer</li>
+							<li>Sustainability – Reviewer</li>
+							<li>Frontiers in Earth Science – Reviewer</li>
+							<li>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing – Reviewer</li>
+							<li>IEEE Transactions on Neural Networks and Learning Systems – Reviewer</li>
+							<li>IEEE Geoscience and Remote Sensing Letters – Reviewer</li>
+							<li>Environmental Modelling and Software – Reviewer</li>
+							<li>International Journal of Applied Earth Observation and Geoinformation – Reviewer</li>
+							<li>International Journal of Digital Earth – Reviewer</li>
+							<li>Journal of Hydrology: Regional Studies – Reviewer</li>
+							<li>Terrestrial, Atmospheric and Oceanic Sciences – Reviewer</li>
 						</ul>
 					</div>
 					<div class="service-card">
-						<h3>Committee Work</h3>
+						<h3>Mentoring and Committee Work</h3>
 						<ul>
-							<li>Committee Name - Role (20XX-present)</li>
-							<li>Committee Name - Role (20XX-20XX)</li>
+							<li>Supervised undergraduate, master, and doctoral students at Peking University and Wuhan University</li>
+							<li>Session Chair, Fresh Blood for Freshwater 2025, HUN-REN Institute of Aquatic Ecology, Hungary</li>
+							<li>Technical consulting for ESGreenChina LLC. and DataSea Inc.</li>
+							<li>Life Member, European Geosciences Union (since 2021)</li>
 						</ul>
 					</div>
 				</div>

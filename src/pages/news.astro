@@ -7,23 +7,95 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 const news = [
 	{
-		date: new Date('2024-02-15'),
-		title: 'New Publication in Nature',
+		date: new Date('2025-01-15'),
+		title: 'New Publication in Scientific Data: Monthly Snow Depth Dataset from CMIP6 Models',
 		category: 'Publication',
-		content: 'Our latest research on [topic] has been published in Nature...',
+		content: 'Our latest research on "Monthly 0.05° winter months snow depth dataset for the Northern Hemisphere from 21 CMIP6 models" has been published in Scientific Data. This work provides a comprehensive dataset for climate modeling and snow cover analysis across the Northern Hemisphere.',
 	},
 	{
-		date: new Date('2024-02-01'),
-		title: 'Keynote Speaker at International Conference',
-		category: 'Speaking',
-		content: 'Delivered keynote address at the International Conference on...',
+		date: new Date('2025-01-10'),
+		title: 'New Publication in Catena: Century-Long Streamflow Reconstruction',
+		category: 'Publication',
+		content: 'Our research on "A century-long streamflow reconstruction reveals significant streamflow increases in the upper Yangtze River basin" has been published in Catena. This study provides critical insights into long-term hydrological changes in one of China\'s most important river systems.',
 	},
 	{
-		date: new Date('2024-01-15'),
-		title: 'Research Grant Awarded',
+		date: new Date('2024-12-20'),
+		title: 'Session Chair at Fresh Blood for Freshwater 2025 Conference',
+		category: 'Service',
+		content: 'Serving as Session Chair at the Fresh Blood for Freshwater 2025 conference organized by HUN-REN Institute of Aquatic Ecology, Hungary. This conference brings together young researchers working on freshwater ecosystems and climate change impacts.',
+	},
+	{
+		date: new Date('2024-11-15'),
+		title: 'New Publication: 150-Year Water Temperature Analysis in Pannonian Region',
+		category: 'Publication',
+		content: 'Our comprehensive study on "150-year daily data (1870–2021) in lakes and rivers reveals intensifying surface water warming and heatwaves in the Pannonian Ecoregion (Hungary)" has been published in Journal of Hydrology: Regional Studies. This work reveals significant warming trends in Central European water bodies.',
+	},
+	{
+		date: new Date('2024-10-01'),
+		title: 'European Space Agency Network of Resources Grant Awarded',
 		category: 'Grant',
-		content: 'Received $XXX,XXX grant from [funding agency] for research on...',
+		content: 'Received €4,215 grant from European Space Agency Network of Resources (NoR) for the project "Mining spatio-temporal patterns of 40-year surface water temperature for lakes and rivers in the Pannonian ecoregion". This project will analyze long-term water temperature trends using remote sensing data.',
 	},
+	{
+		date: new Date('2024-09-20'),
+		title: 'New Publication: Lake Balaton Water Temperature Study',
+		category: 'Publication',
+		content: 'Our research on "Exploring spatiotemporal features of surface water temperature for Lake Balaton in the 21st century based on Google Earth Engine" has been published in Journal of Hydrology. This study demonstrates the power of cloud computing for environmental monitoring.',
+	},
+	{
+		date: new Date('2024-08-15'),
+		title: 'New Publication: Global Bathymetric Analysis of Inland Waters',
+		category: 'Publication',
+		content: 'Our collaborative work on "Exploring the topographical pattern beneath the water surface: Global Bathymetric Volume-Area-Height curves (BVAH) of inland surface water bodies" has been published in Geodesy and Geodynamics. This provides a global perspective on inland water body characteristics.',
+	},
+	{
+		date: new Date('2024-05-20'),
+		title: 'New Publication: Remote Sensing Monitoring in China',
+		category: 'Publication',
+		content: 'Our review paper on "Inspects and prospects of satellite remote sensing monitoring ability for land surface water in China" has been published in National Remote Sensing Bulletin. This work assesses the current state and future directions of water monitoring in China.',
+	},
+	{
+		date: new Date('2022-01-01'),
+		title: 'Senior Research Fellow Position at HUN-REN Balaton Limnological Research Institute',
+		category: 'Appointment',
+		content: 'Started new position as Senior Research Fellow at HUN-REN Balaton Limnological Research Institute, Hungary. Focusing on remote sensing-based environmental research under climate change, particularly studying the impacts on aquatic ecosystems in the Pannonian region.',
+	},
+	{
+		date: new Date('2021-02-13'),
+		title: 'Life Member of European Geosciences Union',
+		category: 'Membership',
+		content: 'Became a Life Member of the European Geosciences Union (EGU), joining a prestigious community of geoscientists working on Earth and planetary sciences. This membership provides access to international conferences and collaboration opportunities.',
+	},
+	{
+		date: new Date('2021-01-01'),
+		title: 'Annual Best Paper Award at Peking University',
+		category: 'Award',
+		content: 'Received the Annual Best Paper award from the Institute of Remote Sensing and Geographic Information System (IRGIS) at Peking University, China, recognizing outstanding research contributions in remote sensing and geospatial analysis.',
+	},
+	{
+		date: new Date('2020-01-01'),
+		title: 'Youth Foundation Grant from National Natural Science Foundation of China',
+		category: 'Grant',
+		content: 'Awarded ¥300,000 grant from Youth Foundation of National Natural Science Foundation of China for the project "Retrieving key parameters of circum-Antarctic sea ice with altimeter satellites and their spatio-temporal changes".',
+	},
+	{
+		date: new Date('2019-01-01'),
+		title: 'First Prize at The First Youth Forum of IRGIS',
+		category: 'Award',
+		content: 'Won First Prize at The First Youth Forum of IRGIS at Peking University, China, for outstanding research presentation and contributions to remote sensing and geographic information science.',
+	},
+	{
+		date: new Date('2019-01-01'),
+		title: 'China Post-doc Foundation Grant Awarded',
+		category: 'Grant',
+		content: 'Received ¥80,000 grant from China Post-doc Foundation for the project "Retrieving Antarctic sea-ice thickness and volume from ICESat and spatio-temporal variability analysis".',
+	},
+	{
+		date: new Date('2018-01-01'),
+		title: 'Annual Best Paper Award at Peking University',
+		category: 'Award',
+		content: 'Received the Annual Best Paper award from IRGIS at Peking University, China, for exceptional research contributions in remote sensing and geographic information systems.',
+	}
 ];
 ---
 
@@ -35,34 +107,61 @@ const news = [
 	<body>
 		<Header />
 		<main>
-			<h1>News & Updates</h1>
+			<div class="page-header">
+				<h1>News & Updates</h1>
+				<p class="page-subtitle">Latest publications, grants, awards, and professional activities</p>
+			</div>
 
 			<div class="news-filters">
-				<button class="filter-btn active">All</button>
-				<button class="filter-btn">Publications</button>
-				<button class="filter-btn">Speaking</button>
-				<button class="filter-btn">Grants</button>
-				<button class="filter-btn">Awards</button>
+				<button class="filter-btn active" data-category="all">All</button>
+				<button class="filter-btn" data-category="Publication">Publications</button>
+				<button class="filter-btn" data-category="Grant">Grants</button>
+				<button class="filter-btn" data-category="Award">Awards</button>
+				<button class="filter-btn" data-category="Service">Service</button>
+				<button class="filter-btn" data-category="Appointment">Appointments</button>
+				<button class="filter-btn" data-category="Membership">Memberships</button>
 			</div>
 
 			<div class="news-timeline">
 				{news.map((item) => (
-					<div class="news-card">
+					<div class="news-card" data-category={item.category.toLowerCase()}>
 						<div class="news-meta">
 							<FormattedDate date={item.date} />
 							<span class="category">{item.category}</span>
 						</div>
 						<h2>{item.title}</h2>
 						<p>{item.content}</p>
-						<a href="#" class="read-more">Read More</a>
+						<div class="news-actions">
+							<a href="/publications" class="read-more">View Publications →</a>
+						</div>
 					</div>
 				))}
 			</div>
 
-			<div class="pagination">
-				<a href="#" class="page-link">← Previous</a>
-				<span class="page-number">Page 1 of 1</span>
-				<a href="#" class="page-link">Next →</a>
+			<div class="news-summary">
+				<h2>Recent Highlights</h2>
+				<div class="summary-grid">
+					<div class="summary-card">
+						<h3>Publications</h3>
+						<p class="summary-number">25+</p>
+						<p class="summary-text">Peer-reviewed articles in top journals</p>
+					</div>
+					<div class="summary-card">
+						<h3>Grants</h3>
+						<p class="summary-number">4</p>
+						<p class="summary-text">Research grants as Principal Investigator</p>
+					</div>
+					<div class="summary-card">
+						<h3>Awards</h3>
+						<p class="summary-number">7</p>
+						<p class="summary-text">Academic honors and recognitions</p>
+					</div>
+					<div class="summary-card">
+						<h3>Service</h3>
+						<p class="summary-number">18+</p>
+						<p class="summary-text">Journal reviewer positions</p>
+					</div>
+				</div>
 			</div>
 		</main>
 		<Footer />
@@ -70,44 +169,73 @@ const news = [
 </html>
 
 <style>
+	.page-header {
+		text-align: center;
+		margin-bottom: 3em;
+		padding: 2em 0;
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+
+	.page-header h1 {
+		margin-bottom: 0.5em;
+		color: rgb(var(--black));
+	}
+
+	.page-subtitle {
+		font-size: 1.2em;
+		color: rgb(var(--gray));
+		margin: 0;
+		font-style: italic;
+	}
+
 	.news-filters {
 		margin: 2em 0;
 		display: flex;
-		gap: 1em;
+		gap: 0.8em;
 		flex-wrap: wrap;
+		justify-content: center;
 	}
 
 	.filter-btn {
-		padding: 0.5em 1em;
-		background-color: rgb(var(--gray-light));
+		padding: 0.6em 1.2em;
+		background: rgb(var(--gray-light));
 		border: none;
-		border-radius: 4px;
+		border-radius: 20px;
 		cursor: pointer;
-		transition: background-color 0.2s;
+		transition: all 0.2s;
 		font-size: 0.9em;
+		font-weight: 500;
+		color: rgb(var(--gray-dark));
 	}
 
 	.filter-btn.active {
-		background-color: var(--accent);
+		background: var(--accent);
 		color: white;
 	}
 
 	.filter-btn:hover {
-		background-color: rgb(var(--gray));
+		background: var(--accent);
 		color: white;
+		transform: translateY(-2px);
 	}
 
 	.news-timeline {
 		display: grid;
 		gap: 2em;
-		margin: 2em 0;
+		margin: 3em 0;
 	}
 
 	.news-card {
-		padding: 1.5em;
-		background-color: white;
-		border-radius: 8px;
+		padding: 2em;
+		background: white;
+		border-radius: 12px;
 		box-shadow: var(--box-shadow);
+		border-left: 4px solid var(--accent);
+		transition: transform 0.2s;
+	}
+
+	.news-card:hover {
+		transform: translateY(-3px);
 	}
 
 	.news-meta {
@@ -118,45 +246,163 @@ const news = [
 	}
 
 	.category {
-		padding: 0.2em 0.5em;
-		background-color: rgb(var(--gray-light));
-		border-radius: 4px;
-		font-size: 0.9em;
-		color: rgb(var(--gray-dark));
+		padding: 0.3em 0.8em;
+		background: var(--accent);
+		color: white;
+		border-radius: 15px;
+		font-size: 0.8em;
+		font-weight: 600;
+	}
+
+	.news-card h2 {
+		margin-bottom: 1em;
+		color: rgb(var(--black));
+		font-size: 1.3em;
+		line-height: 1.4;
+	}
+
+	.news-card p {
+		color: rgb(var(--gray));
+		line-height: 1.6;
+		margin-bottom: 1.5em;
+	}
+
+	.news-actions {
+		margin-top: 1em;
 	}
 
 	.read-more {
 		display: inline-block;
-		margin-top: 1em;
 		color: var(--accent);
 		text-decoration: none;
-		font-weight: bold;
+		font-weight: 600;
+		transition: color 0.2s;
 	}
 
 	.read-more:hover {
+		color: var(--accent-dark);
 		text-decoration: underline;
 	}
 
-	.pagination {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-top: 2em;
-		padding-top: 1em;
+	.news-summary {
+		margin: 4em 0;
+		padding: 2em 0;
 		border-top: 1px solid rgb(var(--gray-light));
 	}
 
-	.page-link {
+	.news-summary h2 {
+		text-align: center;
+		margin-bottom: 2em;
+		color: rgb(var(--black));
+	}
+
+	.summary-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 2em;
+	}
+
+	.summary-card {
+		text-align: center;
+		padding: 2em;
+		background: white;
+		border-radius: 12px;
+		box-shadow: var(--box-shadow);
+		transition: transform 0.2s;
+	}
+
+	.summary-card:hover {
+		transform: translateY(-5px);
+	}
+
+	.summary-card h3 {
+		margin-bottom: 1em;
+		color: rgb(var(--black));
+		font-size: 1.2em;
+	}
+
+	.summary-number {
+		font-size: 2.5em;
+		font-weight: 700;
 		color: var(--accent);
-		text-decoration: none;
+		margin: 0.5em 0;
 	}
 
-	.page-link:hover {
-		text-decoration: underline;
-	}
-
-	.page-number {
+	.summary-text {
 		color: rgb(var(--gray));
 		font-size: 0.9em;
+		margin: 0;
+	}
+
+	@media (max-width: 768px) {
+		.news-filters {
+			gap: 0.5em;
+		}
+
+		.filter-btn {
+			padding: 0.5em 1em;
+			font-size: 0.8em;
+		}
+
+		.news-card {
+			padding: 1.5em;
+		}
+
+		.news-card h2 {
+			font-size: 1.2em;
+		}
+
+		.summary-grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1em;
+		}
+
+		.summary-card {
+			padding: 1.5em;
+		}
+
+		.summary-number {
+			font-size: 2em;
+		}
+
+		.page-header {
+			padding: 1em 0;
+			margin-bottom: 2em;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.summary-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>
+
+<script>
+	// Filter functionality
+	document.addEventListener('DOMContentLoaded', function() {
+		const filterButtons = document.querySelectorAll('.filter-btn');
+		const newsCards = document.querySelectorAll('.news-card');
+
+		filterButtons.forEach(button => {
+			button.addEventListener('click', function(this: HTMLElement) {
+				const category = this.getAttribute('data-category');
+				
+				// Update active button
+				filterButtons.forEach(btn => btn.classList.remove('active'));
+				this.classList.add('active');
+
+				// Filter news cards
+				newsCards.forEach(card => {
+					const cardCategory = card.getAttribute('data-category');
+					const cardElement = card as HTMLElement;
+					if (category === 'all' || cardCategory === category?.toLowerCase()) {
+						cardElement.style.display = 'block';
+					} else {
+						cardElement.style.display = 'none';
+					}
+				});
+			});
+		});
+	});
+</script>

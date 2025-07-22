@@ -18,58 +18,109 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			<section class="research-tools">
 				<h2>Research Tools</h2>
 				<div class="tools-grid">
-					{Array(4).fill(null).map((_, i) => (
-						<div class="tool-card">
-							<h3>Tool Name {i + 1}</h3>
-							<p>Description of the research tool and its applications.</p>
-							<div class="tool-links">
-								<a href="#" class="tool-link">Documentation</a>
-								<a href="#" class="tool-link">Download</a>
-							</div>
+					<div class="tool-card">
+						<h3>Chlorophyll-a Inspection Software for Lake Balaton</h3>
+						<p>Online tool for inspecting the concentration of Chlorophyll-a in Lake Balaton from 1984 to present.</p>
+						<div class="tool-links">
+							<a href="https://lihuan.projects.earthengine.app/view/chla4balaton" class="tool-link" target="_blank">View Tool</a>
 						</div>
-					))}
+					</div>
+					<div class="tool-card">
+						<h3>Lake Balaton Water Temperature Explorer</h3>
+						<p>Online software for exploring water temperature of Lake Balaton in the 21st century, Hungary.</p>
+						<div class="tool-links">
+							<a href="https://lihuan.users.earthengine.app/view/balaton" class="tool-link" target="_blank">View Tool</a>
+						</div>
+					</div>
+					<div class="tool-card">
+						<h3>Lake Chad Area Change Inspector</h3>
+						<p>Online interoperable software for inspecting 40-year area change of Lake Chad, Africa.</p>
+						<div class="tool-links">
+							<a href="https://lihuan.users.earthengine.app/view/lakechad" class="tool-link" target="_blank">View Tool</a>
+						</div>
+					</div>
+					<div class="tool-card">
+						<h3>Global Landsat Mosaic Generator</h3>
+						<p>Software for generating global high-quality user-ready Landsat mosaics.</p>
+						<div class="tool-links">
+							<a href="https://gist.github.com/scarlettlee/eda18ca801213429636e7a0764b5b59f" class="tool-link" target="_blank">View Code</a>
+						</div>
+					</div>
 				</div>
 			</section>
 
 			<section class="datasets">
 				<h2>Datasets</h2>
 				<div class="dataset-list">
-					{Array(3).fill(null).map((_, i) => (
-						<div class="dataset-card">
-							<h3>Dataset Title {i + 1}</h3>
-							<p>Description of the dataset and its potential applications.</p>
-							<div class="dataset-meta">
-								<span>Size: XX MB</span>
-								<span>Format: CSV</span>
-								<span>Last Updated: 2024</span>
-							</div>
-							<div class="dataset-links">
-								<a href="#" class="dataset-link">Download</a>
-								<a href="#" class="dataset-link">Documentation</a>
-								<a href="#" class="dataset-link">Citation</a>
-							</div>
+					<div class="dataset-card">
+						<h3>150-year Daily Water Temperature Record (1870–2021) for Lakes and Rivers in Central Europe</h3>
+						<p>Comprehensive dataset for water temperature analysis in the Pannonian Ecoregion.</p>
+						<div class="dataset-meta">
+							<span>Format: Various</span>
+							<span>Last Updated: 2024</span>
 						</div>
-					))}
+						<div class="dataset-links">
+							<a href="https://doi.org/10.6084/m9.figshare.25549561.v1" class="dataset-link" target="_blank">View Dataset</a>
+						</div>
+					</div>
+					<div class="dataset-card">
+						<h3>Global Water Budget with Correction Algorithm</h3>
+						<p>Code and dataset for the global water budget with an innovative correction algorithm.</p>
+						<div class="dataset-meta">
+							<span>Format: Various</span>
+							<span>Last Updated: 2023</span>
+						</div>
+						<div class="dataset-links">
+							<a href="https://doi.org/10.6084/m9.figshare.20208026" class="dataset-link" target="_blank">View Dataset</a>
+						</div>
+					</div>
+					<div class="dataset-card">
+						<h3>Seasonal and Monthly Circum-Antarctic Sea Ice Thickness (10 km grid) based on ICESat/ICESat-2</h3>
+						<p>Dataset for sea ice thickness and volume in the Antarctic region.</p>
+						<div class="dataset-meta">
+							<span>Format: Various</span>
+							<span>Last Updated: 2021</span>
+						</div>
+						<div class="dataset-links">
+							<a href="https://doi.org/10.6084/m9.figshare.12910121" class="dataset-link" target="_blank">View Dataset</a>
+						</div>
+					</div>
 				</div>
 			</section>
 
 			<section class="code">
 				<h2>Code Repositories</h2>
 				<div class="code-grid">
-					{Array(3).fill(null).map((_, i) => (
-						<div class="code-card">
-							<h3>Repository Name {i + 1}</h3>
-							<p>Description of the code repository and its purpose.</p>
-							<div class="code-meta">
-								<span>Language: Python</span>
-								<span>License: MIT</span>
-							</div>
-							<div class="code-links">
-								<a href="#" class="code-link">GitHub</a>
-								<a href="#" class="code-link">Documentation</a>
-							</div>
+					<div class="code-card">
+						<h3>Google Earth Engine Open Code for Lake Balaton</h3>
+						<p>Open code repository for water temperature analysis of Lake Balaton in the 21st century.</p>
+						<div class="code-meta">
+							<span>Language: JavaScript</span>
+							<span>Platform: Google Earth Engine</span>
 						</div>
-					))}
+						<div class="code-links">
+							<a href="https://code.earthengine.google.com/?accept_repo=users/lihuan/Share_LakeBalaton" class="code-link" target="_blank">View Code</a>
+						</div>
+					</div>
+					<div class="code-card">
+						<h3>Polar Sea Ice Key Parameter Retrieval Algorithm Software V1.0</h3>
+						<p>Software for retrieving key parameters of polar sea ice (Chinese software copyright ID: 2023SR1391226).</p>
+						<div class="code-meta">
+							<span>Language: Various</span>
+							<span>License: Software Copyright</span>
+						</div>
+					</div>
+					<div class="code-card">
+						<h3>Global High-Quality Landsat Mosaic Generator</h3>
+						<p>Code for generating global high-quality user-ready Landsat mosaics.</p>
+						<div class="code-meta">
+							<span>Language: JavaScript</span>
+							<span>Platform: Google Earth Engine</span>
+						</div>
+						<div class="code-links">
+							<a href="https://gist.github.com/scarlettlee/eda18ca801213429636e7a0764b5b59f" class="code-link" target="_blank">View Code</a>
+						</div>
+					</div>
 				</div>
 			</section>
 

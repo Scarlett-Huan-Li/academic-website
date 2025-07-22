@@ -13,72 +13,252 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>Publications</h1>
+			<div class="page-header">
+				<h1>Publications</h1>
+				<p class="page-subtitle">Peer-reviewed articles, book chapters, and conference proceedings</p>
+			</div>
 			
 			<div class="metrics">
 				<div class="metric-card">
-					<span class="metric-number">25</span>
+					<span class="metric-number">25+</span>
 					<span class="metric-label">Publications</span>
 				</div>
 				<div class="metric-card">
-					<span class="metric-number">500+</span>
+					<span class="metric-number">730+</span>
 					<span class="metric-label">Citations</span>
 				</div>
 				<div class="metric-card">
 					<span class="metric-number">15</span>
 					<span class="metric-label">h-index</span>
 				</div>
+				<div class="metric-card">
+					<span class="metric-number">17</span>
+					<span class="metric-label">i10-index</span>
+				</div>
 			</div>
 
-			<section>
+			<section class="publications-section">
 				<h2>Peer-Reviewed Articles</h2>
 				<div class="publication-list">
-					{Array(3).fill(null).map((_, i) => (
-						<div class="publication-card">
-							<h3>Publication Title {i + 1}</h3>
-							<p class="authors">Author 1, Author 2, et al.</p>
-							<p class="journal">Journal Name (Year)</p>
-							<div class="publication-links">
-								<a href="#" class="pub-link">PDF</a>
-								<a href="#" class="pub-link">DOI</a>
-								<a href="#" class="pub-link">BibTeX</a>
-							</div>
+					<div class="publication-card">
+						<div class="pub-header">
+							<h3>Monthly 0.05° winter months snow depth dataset for the Northern Hemisphere from 21 CMIP6 models</h3>
+							<span class="pub-year">2025</span>
 						</div>
-					))}
+						<p class="authors">Lin, S., Chen, X., Liang, S., Liu, Y., Li, Y. and <strong>Li, H.</strong></p>
+						<p class="journal">Scientific Data 12(1), 603 (D1)</p>
+						<div class="pub-tags">
+							<span class="tag">Climate Modeling</span>
+							<span class="tag">Snow Depth</span>
+							<span class="tag">CMIP6</span>
+						</div>
+					</div>
+					
+					<div class="publication-card">
+						<div class="pub-header">
+							<h3>A century-long streamflow reconstruction reveals significant streamflow increases in the upper Yangtze River basin</h3>
+							<span class="pub-year">2025</span>
+						</div>
+						<p class="authors">Hu, J., Luo, Z., Gao, Y., Wang, L., Huang, H., Chen, X., and <strong>Li, H.</strong></p>
+						<p class="journal">Catena 250, 108774 (D1)</p>
+						<div class="pub-tags">
+							<span class="tag">Hydrology</span>
+							<span class="tag">Streamflow</span>
+							<span class="tag">Yangtze River</span>
+						</div>
+					</div>
+					
+					<div class="publication-card">
+						<div class="pub-header">
+							<h3>150-year daily data (1870–2021) in lakes and rivers reveals intensifying surface water warming and heatwaves in the Pannonian Ecoregion (Hungary)</h3>
+							<span class="pub-year">2024</span>
+						</div>
+						<p class="authors"><strong>Li, H.</strong>, Sun, J., Zhou, Q., Sojka, M., Ptak, M., Luo, Y., Wu, S., Zhu, S. and Tóth, V.R.</p>
+						<p class="journal">Journal of Hydrology: Regional Studies 56, 101985 (Q1)</p>
+						<div class="pub-tags">
+							<span class="tag">Water Temperature</span>
+							<span class="tag">Climate Change</span>
+							<span class="tag">Pannonian Region</span>
+						</div>
+					</div>
+					
+					<div class="publication-card">
+						<div class="pub-header">
+							<h3>Exploring spatiotemporal features of surface water temperature for Lake Balaton in the 21st century based on Google Earth Engine</h3>
+							<span class="pub-year">2024</span>
+						</div>
+						<p class="authors"><strong>Li, H.</strong>, et al.</p>
+						<p class="journal">Journal of Hydrology 640, 131672 (D1)</p>
+						<div class="pub-tags">
+							<span class="tag">Remote Sensing</span>
+							<span class="tag">Google Earth Engine</span>
+							<span class="tag">Lake Balaton</span>
+						</div>
+					</div>
+					
+					<div class="publication-card">
+						<div class="pub-header">
+							<h3>Exploring the topographical pattern beneath the water surface: Global Bathymetric Volume-Area-Height curves (BVAH) of inland surface water bodies</h3>
+							<span class="pub-year">2024</span>
+						</div>
+						<p class="authors">Zhu, S., Wan, W.*, Zhang, G., …, and <strong>Li, H*.</strong></p>
+						<p class="journal">Geodesy and Geodynamics (Q2)</p>
+						<div class="pub-tags">
+							<span class="tag">Bathymetry</span>
+							<span class="tag">Inland Waters</span>
+							<span class="tag">Global Analysis</span>
+						</div>
+					</div>
+					
+					<div class="publication-card">
+						<div class="pub-header">
+							<h3>Inspects and prospects of satellite remote sensing monitoring ability for land surface water in China</h3>
+							<span class="pub-year">2023</span>
+						</div>
+						<p class="authors"><strong>Li, H.</strong>, et al.</p>
+						<p class="journal">National Remote Sensing Bulletin: 27</p>
+						<div class="pub-tags">
+							<span class="tag">Remote Sensing</span>
+							<span class="tag">Surface Water</span>
+							<span class="tag">China</span>
+						</div>
+					</div>
+					
+					<div class="publication-card">
+						<div class="pub-header">
+							<h3>A remote sensing-based area dataset for approximately 40 years that reveals the hydrological asynchrony of Lake Chad based on Google Earth Engine</h3>
+							<span class="pub-year">2021</span>
+						</div>
+						<p class="authors"><strong>Li, H.</strong>, et al.</p>
+						<p class="journal">Journal of Hydrology 603:126934 (D1)</p>
+						<div class="pub-tags">
+							<span class="tag">Lake Chad</span>
+							<span class="tag">Hydrology</span>
+							<span class="tag">Google Earth Engine</span>
+						</div>
+					</div>
+					
+					<div class="publication-card">
+						<div class="pub-header">
+							<h3>Improving the Evapotranspiration Estimation under Cloudy Condition by Extending the Ts-VI Triangle Model</h3>
+							<span class="pub-year">2021</span>
+						</div>
+						<p class="authors">Li, B., Y. Cui, X. Geng and <strong>Li, H.</strong></p>
+						<p class="journal">Remote Sensing 13(1516): 1516 (Q1)</p>
+						<div class="pub-tags">
+							<span class="tag">Evapotranspiration</span>
+							<span class="tag">Remote Sensing</span>
+							<span class="tag">Modeling</span>
+						</div>
+					</div>
+					
+					<div class="publication-card">
+						<div class="pub-header">
+							<h3>Distribution and Attribution of Terrestrial Snow Cover Phenology Changes over the Northern Hemisphere during 2001–2020</h3>
+							<span class="pub-year">2021</span>
+						</div>
+						<p class="authors">Chen, X., Y. Yang, Y. Ma and <strong>Li, H.</strong></p>
+						<p class="journal">Remote Sensing 13(9): 1843 (Q1)</p>
+						<div class="pub-tags">
+							<span class="tag">Snow Cover</span>
+							<span class="tag">Phenology</span>
+							<span class="tag">Climate Change</span>
+						</div>
+					</div>
+					
+					<div class="publication-card">
+						<div class="pub-header">
+							<h3>Decadal variations of sea ice thickness in the Amundsen-Bellingshausen and Weddell Seas retrieved from ICESat and IceBridge laser altimetry, 2003-2017</h3>
+							<span class="pub-year">2020</span>
+						</div>
+						<p class="authors">Wang, X., W. Jiang, H. Xie, S. Ackley and <strong>Li, H.</strong></p>
+						<p class="journal">Journal of Geophysical Research: Oceans: e2020JC016077 (D1)</p>
+						<div class="pub-tags">
+							<span class="tag">Sea Ice</span>
+							<span class="tag">ICESat</span>
+							<span class="tag">Antarctic</span>
+						</div>
+					</div>
 				</div>
 			</section>
 
-			<section>
+			<section class="publications-section">
 				<h2>Book Chapters</h2>
 				<div class="publication-list">
-					{Array(2).fill(null).map((_, i) => (
-						<div class="publication-card">
-							<h3>Chapter Title {i + 1}</h3>
-							<p class="authors">Author 1, Author 2</p>
-							<p class="journal">Book Title (Year)</p>
-							<div class="publication-links">
-								<a href="#" class="pub-link">Publisher</a>
-								<a href="#" class="pub-link">BibTeX</a>
-							</div>
+					<div class="publication-card">
+						<div class="pub-header">
+							<h3>Dynamic correlation analysis of the stock markets of China and United States based on big financial system data</h3>
+							<span class="pub-year">2017</span>
 						</div>
-					))}
+						<p class="authors">Shi, W., <strong>Li, H.</strong>, Hong Y.</p>
+						<p class="journal">In "Practical Case Study of Big Data in Financial Industry," Editor Liu, S. Economic Science Press: 145-164 (In Chinese)</p>
+						<div class="pub-tags">
+							<span class="tag">Big Data</span>
+							<span class="tag">Financial Analysis</span>
+							<span class="tag">Stock Markets</span>
+						</div>
+					</div>
 				</div>
 			</section>
 
-			<section>
+			<section class="publications-section">
 				<h2>Conference Proceedings</h2>
 				<div class="publication-list">
-					{Array(2).fill(null).map((_, i) => (
-						<div class="publication-card">
-							<h3>Conference Paper Title {i + 1}</h3>
-							<p class="authors">Author 1, Author 2</p>
-							<p class="journal">Conference Name (Year)</p>
-							<div class="publication-links">
-								<a href="#" class="pub-link">PDF</a>
-								<a href="#" class="pub-link">Slides</a>
-							</div>
+					<div class="publication-card">
+						<div class="pub-header">
+							<h3>Retrieving chlorophyll-a concentration for lake Balaton with Landsat based on Google Earth Engine</h3>
+							<span class="pub-year">2023</span>
 						</div>
-					))}
+						<p class="authors"><strong>Li, H.</strong>, Blix, K., Somogyi, B., Tóth V., et al.</p>
+						<p class="journal">IEEE Geoscience and Remote Sensing Symposium</p>
+						<div class="pub-tags">
+							<span class="tag">Chlorophyll-a</span>
+							<span class="tag">Landsat</span>
+							<span class="tag">Lake Balaton</span>
+						</div>
+					</div>
+					
+					<div class="publication-card">
+						<div class="pub-header">
+							<h3>Ship Navigation Route Planning Using Topology of Sea Ice Channels Extracted from High Resolution Satellite Images</h3>
+							<span class="pub-year">2020</span>
+						</div>
+						<p class="authors">Chen, X., Sheti, W., <strong>Li, H.</strong>, et al.</p>
+						<p class="journal">IEEE Geoscience and Remote Sensing Symposium</p>
+						<div class="pub-tags">
+							<span class="tag">Sea Ice</span>
+							<span class="tag">Navigation</span>
+							<span class="tag">Satellite Images</span>
+						</div>
+					</div>
+					
+					<div class="publication-card">
+						<div class="pub-header">
+							<h3>A Remote Sensing-based Vacancy Area Index for Estimating Housing Vacancy and Ghost Cities in China</h3>
+							<span class="pub-year">2019</span>
+						</div>
+						<p class="authors"><strong>Li, H.</strong>, Zeng, C., Wan, W., Hong, Y., et al.</p>
+						<p class="journal">IGARSS 2019-2019 IEEE International Geoscience and Remote Sensing Symposium</p>
+						<div class="pub-tags">
+							<span class="tag">Urban Analysis</span>
+							<span class="tag">Housing Vacancy</span>
+							<span class="tag">China</span>
+						</div>
+					</div>
+					
+					<div class="publication-card">
+						<div class="pub-header">
+							<h3>Can Crowdsourcing Support Remote Sensing Image Classification?</h3>
+							<span class="pub-year">2018</span>
+						</div>
+						<p class="authors"><strong>Li, H.</strong>, et al.</p>
+						<p class="journal">The 26th International Conference on GeoInformatics</p>
+						<div class="pub-tags">
+							<span class="tag">Crowdsourcing</span>
+							<span class="tag">Image Classification</span>
+							<span class="tag">Remote Sensing</span>
+						</div>
+					</div>
 				</div>
 			</section>
 		</main>
@@ -87,86 +267,188 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 </html>
 
 <style>
+	.page-header {
+		text-align: center;
+		margin-bottom: 3em;
+		padding: 2em 0;
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+
+	.page-header h1 {
+		margin-bottom: 0.5em;
+		color: rgb(var(--black));
+	}
+
+	.page-subtitle {
+		font-size: 1.2em;
+		color: rgb(var(--gray));
+		margin: 0;
+		font-style: italic;
+	}
+
 	.metrics {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-		gap: 1em;
-		margin: 2em 0;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1.5em;
+		margin: 3em 0;
 	}
 
 	.metric-card {
-		padding: 1em;
+		padding: 2em;
 		text-align: center;
-		background-color: white;
-		border-radius: 8px;
+		background: white;
+		border-radius: 12px;
 		box-shadow: var(--box-shadow);
+		transition: transform 0.2s;
+	}
+
+	.metric-card:hover {
+		transform: translateY(-5px);
 	}
 
 	.metric-number {
 		display: block;
-		font-size: 2em;
-		font-weight: bold;
+		font-size: 2.5em;
+		font-weight: 700;
 		color: var(--accent);
+		margin-bottom: 0.5em;
 	}
 
 	.metric-label {
 		color: rgb(var(--gray));
-		font-size: 0.9em;
+		font-size: 1em;
+		font-weight: 500;
+	}
+
+	.publications-section {
+		margin: 4em 0;
+		padding: 2em 0;
+	}
+
+	.publications-section:first-of-type {
+		margin-top: 0;
+	}
+
+	.publications-section h2 {
+		margin-bottom: 2em;
+		color: rgb(var(--black));
+		font-size: 1.8em;
 	}
 
 	.publication-list {
 		display: grid;
-		gap: 1.5em;
-		margin-top: 1em;
+		gap: 2em;
 	}
 
 	.publication-card {
-		padding: 1.5em;
-		background-color: white;
-		border-radius: 8px;
+		padding: 2em;
+		background: white;
+		border-radius: 12px;
 		box-shadow: var(--box-shadow);
+		border-left: 4px solid var(--accent);
+		transition: transform 0.2s;
 	}
 
-	.publication-card h3 {
+	.publication-card:hover {
+		transform: translateY(-3px);
+	}
+
+	.pub-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 1em;
+		gap: 1em;
+	}
+
+	.pub-header h3 {
 		margin: 0;
-		color: var(--accent-dark);
+		color: rgb(var(--black));
+		font-size: 1.2em;
+		line-height: 1.4;
+		flex: 1;
+	}
+
+	.pub-year {
+		background: var(--accent);
+		color: white;
+		padding: 0.3em 0.8em;
+		border-radius: 15px;
+		font-size: 0.85em;
+		font-weight: 600;
+		white-space: nowrap;
 	}
 
 	.authors {
 		color: rgb(var(--gray-dark));
 		margin: 0.5em 0;
+		font-weight: 500;
 	}
 
 	.journal {
 		color: rgb(var(--gray));
 		font-style: italic;
 		margin: 0.5em 0;
+		font-size: 0.95em;
 	}
 
-	.publication-links {
-		margin-top: 1em;
+	.pub-tags {
 		display: flex;
-		gap: 1em;
+		flex-wrap: wrap;
+		gap: 0.5em;
+		margin-top: 1em;
 	}
 
-	.pub-link {
-		padding: 0.3em 0.8em;
-		background-color: rgb(var(--gray-light));
-		border-radius: 4px;
-		text-decoration: none;
+	.tag {
+		background: rgb(var(--gray-light));
 		color: rgb(var(--gray-dark));
-		font-size: 0.9em;
-		transition: background-color 0.2s;
+		padding: 0.3em 0.8em;
+		border-radius: 15px;
+		font-size: 0.8em;
+		font-weight: 500;
 	}
 
-	.pub-link:hover {
-		background-color: rgb(var(--gray));
-		color: white;
+	@media (max-width: 768px) {
+		.metrics {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1em;
+		}
+
+		.metric-card {
+			padding: 1.5em;
+		}
+
+		.metric-number {
+			font-size: 2em;
+		}
+
+		.pub-header {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.pub-year {
+			align-self: flex-start;
+		}
+
+		.publication-card {
+			padding: 1.5em;
+		}
+
+		.page-header {
+			padding: 1em 0;
+			margin-bottom: 2em;
+		}
+
+		.publications-section {
+			margin: 2em 0;
+			padding: 1em 0;
+		}
 	}
 
-	section {
-		margin: 2em 0;
-		padding: 1em 0;
-		border-top: 1px solid rgb(var(--gray-light));
+	@media (max-width: 480px) {
+		.metrics {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

@@ -5,7 +5,10 @@ import { SITE_TITLE } from '../consts';
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<div class="nav-brand">
+			<h2><a href="/">Huan Li</a></h2>
+			<p class="nav-subtitle">Senior Research Fellow, Environmental Science</p>
+		</div>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/research">Research</HeaderLink>
@@ -18,50 +21,111 @@ import { SITE_TITLE } from '../consts';
 		</div>
 	</nav>
 </header>
+
 <style>
 	header {
 		margin: 0;
-		padding: 0 1em;
+		padding: 0 2em;
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.4em;
+		border-bottom: 1px solid rgb(var(--gray-light));
 	}
 
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
 	nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: 1em 0;
+		padding: 1.5em 0;
+		max-width: 1200px;
+		margin: 0 auto;
 	}
-	nav a {
-		padding: 0.5em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
+
+	.nav-brand h2 {
+		margin: 0;
+		font-size: 1.6em;
+		font-weight: 700;
+	}
+
+	.nav-brand h2 a {
 		text-decoration: none;
+		color: rgb(var(--black));
 	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
+
+	.nav-subtitle {
+		margin: 0.2em 0 0 0;
+		font-size: 0.9em;
+		color: rgb(var(--gray));
+		font-weight: 400;
 	}
+
 	.internal-links {
 		display: flex;
-		gap: 0.5em;
+		gap: 1.5em;
 		flex-wrap: wrap;
+		align-items: center;
 	}
-	@media (max-width: 720px) {
-		.internal-links {
-			gap: 0.3em;
+
+	.internal-links a {
+		padding: 0.5em 0;
+		color: rgb(var(--gray-dark));
+		text-decoration: none;
+		font-weight: 500;
+		font-size: 0.95em;
+		border-bottom: 2px solid transparent;
+		transition: all 0.2s;
+		position: relative;
+	}
+
+	.internal-links a:hover {
+		color: var(--accent);
+		border-bottom-color: var(--accent);
+	}
+
+	.internal-links a.active {
+		color: var(--accent);
+		border-bottom-color: var(--accent);
+	}
+
+	@media (max-width: 900px) {
+		header {
+			padding: 0 1em;
 		}
-		nav a {
-			padding: 0.3em 0.3em;
+
+		nav {
+			flex-direction: column;
+			gap: 1em;
+			align-items: flex-start;
+		}
+
+		.internal-links {
+			gap: 1em;
+			justify-content: flex-start;
+			width: 100%;
+			overflow-x: auto;
+			padding-bottom: 0.5em;
+		}
+
+		.internal-links a {
 			font-size: 0.9em;
+			white-space: nowrap;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.nav-brand h2 {
+			font-size: 1.4em;
+		}
+
+		.nav-subtitle {
+			font-size: 0.8em;
+		}
+
+		.internal-links {
+			gap: 0.8em;
+		}
+
+		.internal-links a {
+			font-size: 0.85em;
 		}
 	}
 </style>
