@@ -4,7 +4,7 @@ This is the personal academic website of **Huan Li**.
 
 ## Huan Li
 
-**Research Fellow**
+**Senior Research Fellow**
 
 Aquatic Botany and Microbial Ecology Research Group
 
