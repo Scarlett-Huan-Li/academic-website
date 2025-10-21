@@ -40,17 +40,34 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			<section class="publications-section">
 				<h2>Peer-Reviewed Articles</h2>
 				<div class="publication-list">
-					<div class="publication-card">
-						<div class="pub-header">
-							<h3>Monthly 0.05° winter months snow depth dataset for the Northern Hemisphere from 21 CMIP6 models</h3>
-							<span class="pub-year">2025</span>
+					<div class="publication-card featured">
+						<div class="pub-content">
+							<div class="pub-header">
+								<h3>Monthly 0.05° winter months snow depth dataset for the Northern Hemisphere from 21 CMIP6 models</h3>
+								<span class="pub-year">2025</span>
+							</div>
+							<p class="authors">Lin, S., Chen, X., Liang, S., Liu, Y., Li, Y. and <strong>Li, H.</strong></p>
+							<p class="journal">Scientific Data 12(1), 603</p>
+							<div class="pub-tags">
+								<span class="tag">Climate Modeling</span>
+								<span class="tag">Snow Depth</span>
+								<span class="tag">CMIP6</span>
+							</div>
 						</div>
-						<p class="authors">Lin, S., Chen, X., Liang, S., Liu, Y., Li, Y. and <strong>Li, H.</strong></p>
-						<p class="journal">Scientific Data 12(1), 603</p>
-						<div class="pub-tags">
-							<span class="tag">Climate Modeling</span>
-							<span class="tag">Snow Depth</span>
-							<span class="tag">CMIP6</span>
+						<!-- Publication Figure -->
+						<div class="pub-figure">
+							<img
+								src="/images/publications/snow-depth-cmip6.jpg"
+								alt="Snow depth analysis from CMIP6 models"
+								class="publication-image"
+							/>
+							<p class="figure-caption">Figure 1: Monthly snow depth patterns across Northern Hemisphere</p>
+							<!--
+							TO ADD FIGURE:
+							1. Save your figure as 'snow-depth-cmip6.jpg'
+							2. Place it in: public/images/publications/
+							3. Adjust the filename above to match your image
+							-->
 						</div>
 					</div>
 					
@@ -353,6 +370,38 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		transform: translateY(-3px);
 	}
 
+	.publication-card.featured {
+		display: grid;
+		grid-template-columns: 1fr 300px;
+		gap: 2em;
+		align-items: start;
+	}
+
+	.pub-content {
+		flex: 1;
+	}
+
+	.pub-figure {
+		flex-shrink: 0;
+	}
+
+	.publication-image {
+		width: 100%;
+		height: auto;
+		border-radius: 8px;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		margin-bottom: 0.5em;
+		background: rgb(var(--gray-light));
+	}
+
+	.figure-caption {
+		font-size: 0.85em;
+		color: rgb(var(--gray));
+		font-style: italic;
+		margin: 0;
+		text-align: center;
+	}
+
 	.pub-header {
 		display: flex;
 		justify-content: space-between;
@@ -433,6 +482,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 		.publication-card {
 			padding: 1.5em;
+		}
+
+		.publication-card.featured {
+			grid-template-columns: 1fr;
+		}
+
+		.pub-figure {
+			order: -1;
+		}
+
+		.publication-image {
+			max-width: 100%;
 		}
 
 		.page-header {

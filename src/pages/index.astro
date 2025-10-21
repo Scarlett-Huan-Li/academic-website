@@ -15,23 +15,41 @@ import { SITE_TITLE, SITE_DESCRIPTION, SOCIAL_LINKS } from '../consts';
 		<main>
 			<!-- Hero Section -->
 			<section class="hero">
-				<div class="hero-content">
-					<h1>Huan Li</h1>
-					<p class="subtitle">Senior Research Fellow</p>
-					<p class="institution">HUN-REN Balaton Limnological Research Institute</p>
-					
-					<div class="research-tags">
-						<span class="tag">Spatio-temporal Data Analysis</span>
-						<span class="tag">Remote Sensing</span>
-						<span class="tag">GIS</span>
-						<span class="tag">Environmental Science</span>
-						<span class="tag">Inland Water Monitoring</span>
-						<span class="tag">Climate Change</span>
+				<div class="hero-container">
+					<!-- Profile Photo -->
+					<div class="hero-photo">
+						<img
+							src="/images/profile/profile.jpg"
+							alt="Huan Li - Senior Research Fellow"
+							class="profile-image"
+						/>
+						<!--
+						TO ADD YOUR PHOTO:
+						1. Save your photo as 'profile.jpg'
+						2. Place it in: public/images/profile/
+						3. Rebuild: npm run build
+						-->
 					</div>
-					
-					<div class="cta-buttons">
-						<a href="/research" class="btn btn-primary">Tell Me More</a>
-						<a href="/publications" class="btn btn-secondary">Publications</a>
+
+					<!-- Hero Content -->
+					<div class="hero-content">
+						<h1>Huan Li</h1>
+						<p class="subtitle">Senior Research Fellow</p>
+						<p class="institution">HUN-REN Balaton Limnological Research Institute</p>
+
+						<div class="research-tags">
+							<span class="tag">Spatio-temporal Data Analysis</span>
+							<span class="tag">Remote Sensing</span>
+							<span class="tag">GIS</span>
+							<span class="tag">Environmental Science</span>
+							<span class="tag">Inland Water Monitoring</span>
+							<span class="tag">Climate Change</span>
+						</div>
+
+						<div class="cta-buttons">
+							<a href="/research" class="btn btn-primary">Tell Me More</a>
+							<a href="/publications" class="btn btn-secondary">Publications</a>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -131,9 +149,35 @@ import { SITE_TITLE, SITE_DESCRIPTION, SOCIAL_LINKS } from '../consts';
 
 <style>
 	.hero {
-		text-align: center;
 		padding: 4em 0;
 		margin-bottom: 3em;
+	}
+
+	.hero-container {
+		display: flex;
+		align-items: center;
+		gap: 4em;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.hero-photo {
+		flex-shrink: 0;
+	}
+
+	.profile-image {
+		width: 300px;
+		height: 300px;
+		border-radius: 50%;
+		object-fit: cover;
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+		border: 4px solid white;
+		background: rgb(var(--gray-light));
+	}
+
+	.hero-content {
+		flex: 1;
+		text-align: center;
 	}
 
 	.hero h1 {
@@ -352,6 +396,16 @@ import { SITE_TITLE, SITE_DESCRIPTION, SOCIAL_LINKS } from '../consts';
 	}
 
 	@media (max-width: 720px) {
+		.hero-container {
+			flex-direction: column;
+			gap: 2em;
+		}
+
+		.profile-image {
+			width: 200px;
+			height: 200px;
+		}
+
 		.hero h1 {
 			font-size: 2.5em;
 		}
