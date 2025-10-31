@@ -15,7 +15,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<main>
 			<div class="cv-header">
 				<h1>Curriculum Vitae</h1>
-				<a href="#" class="download-cv">Download PDF Version</a>
+				<a href="/CV-2025.pdf" class="download-cv" download>Download PDF Version</a>
 			</div>
 
 			<section class="education">
@@ -290,8 +290,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	}
 
 	.service-categories {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		display: flex;
+		flex-direction: column;
 		gap: 1.5em;
 		margin-top: 1em;
 	}
@@ -303,6 +303,23 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		box-shadow: var(--box-shadow);
 	}
 
+	.service-card:first-child ul {
+		columns: 3;
+		column-gap: 2em;
+	}
+
+	@media (min-width: 1200px) {
+		.service-card:first-child ul {
+			columns: 4;
+		}
+	}
+
+	@media (max-width: 900px) {
+		.service-card:first-child ul {
+			columns: 2;
+		}
+	}
+
 	.service-card ul {
 		list-style-type: none;
 		padding: 0;
@@ -312,6 +329,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		margin: 0.5em 0;
 		padding-left: 1em;
 		border-left: 3px solid var(--accent);
+		break-inside: avoid;
+	}
+
+	@media (max-width: 900px) {
+		.service-card:first-child ul {
+			columns: 1;
+		}
 	}
 
 	@media (max-width: 720px) {
@@ -328,6 +352,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			flex-direction: column;
 			gap: 1em;
 			text-align: center;
+		}
+
+		.service-card:first-child ul {
+			columns: 1;
 		}
 	}
 </style>

@@ -35,19 +35,9 @@ import { SITE_TITLE, SITE_DESCRIPTION, SOCIAL_LINKS } from '../consts';
 								<h3>Office Hours</h3>
 								<p>Monday - Friday: 9:00 AM - 5:00 PM<br>Or by appointment</p>
 							</div>
-						</div>
-					</section>
-
-					<section class="affiliations">
-						<h2>Research Group & Institute</h2>
-						<div class="affiliation-card">
-							<div class="affiliation">
+							<div class="info-item">
 								<h3>Research Group</h3>
-								<p>Aquatic Botany and Microbial Ecology Research Group<br>HUN-REN Balaton Limnological Research Institute</p>
-							</div>
-							<div class="affiliation">
-								<h3>Institute</h3>
-								<p>HUN-REN Balaton Limnological Research Institute<br>8237 Tihany, Klebelsberg Kuno utca 3.<br>Hungary</p>
+								<p>Aquatic Botany and Microbial Ecology Research Group</p>
 							</div>
 						</div>
 					</section>
@@ -134,8 +124,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, SOCIAL_LINKS } from '../consts';
 <style>
 	.page-header {
 		text-align: center;
-		margin-bottom: 3em;
-		padding: 2em 0;
+		margin-bottom: 1.5em;
+		padding: 1em 0;
 		border-bottom: 1px solid rgb(var(--gray-light));
 	}
 
@@ -154,41 +144,63 @@ import { SITE_TITLE, SITE_DESCRIPTION, SOCIAL_LINKS } from '../consts';
 	.contact-grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 3em;
-		margin: 2em 0;
+		gap: 2em;
+		margin: 0;
+		align-items: stretch;
+	}
+
+	.contact-info {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.contact-details {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
 	}
 
 	section {
-		margin: 3em 0;
+		margin: 2em 0;
 	}
 
-	.info-card, .affiliation-card {
+	.info-card {
 		background-color: white;
 		padding: 2em;
 		border-radius: 12px;
 		box-shadow: var(--box-shadow);
+		flex: 1;
+		display: flex;
+		flex-direction: column;
 	}
 
-	.info-item, .affiliation {
+	.contact-details h2,
+	.contact-form h2 {
+		margin-top: 0;
+		margin-bottom: 1em;
+		font-size: 1.5em;
+	}
+
+	.info-item {
 		margin-bottom: 2em;
 		padding-bottom: 1.5em;
 		border-bottom: 1px solid rgb(var(--gray-light));
 	}
 
-	.info-item:last-child, .affiliation:last-child {
+	.info-item:last-child {
 		margin-bottom: 0;
 		border-bottom: none;
 		padding-bottom: 0;
 	}
 
-	.info-item h3, .affiliation h3 {
+	.info-item h3 {
 		color: var(--accent);
 		margin-bottom: 0.8em;
 		font-size: 1.1em;
 		font-weight: 600;
 	}
 
-	.info-item p, .affiliation p {
+	.info-item p {
 		color: rgb(var(--gray-dark));
 		line-height: 1.6;
 		margin: 0;
@@ -208,6 +220,15 @@ import { SITE_TITLE, SITE_DESCRIPTION, SOCIAL_LINKS } from '../consts';
 		padding: 2em;
 		border-radius: 12px;
 		box-shadow: var(--box-shadow);
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+	
+	.contact-form {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
 	}
 
 	.form-group {
@@ -246,6 +267,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SOCIAL_LINKS } from '../consts';
 		font-weight: 600;
 		transition: all 0.2s;
 		width: 100%;
+		margin-top: auto;
 	}
 
 	.submit-btn:hover {
@@ -280,11 +302,18 @@ import { SITE_TITLE, SITE_DESCRIPTION, SOCIAL_LINKS } from '../consts';
 		margin: 0;
 	}
 
+	.location-info h2,
+	.map h2 {
+		margin-top: 0;
+		margin-bottom: 1em;
+		font-size: 1.5em;
+	}
+
 	.location-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 2em;
-		margin-top: 2em;
+		margin-top: 1em;
 	}
 
 	.location-card {
@@ -337,7 +366,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, SOCIAL_LINKS } from '../consts';
 			grid-template-columns: 1fr;
 		}
 
-		.info-card, .affiliation-card, .message-form, .location-card {
+		.info-card, .message-form, .location-card {
 			padding: 1.5em;
 		}
 
