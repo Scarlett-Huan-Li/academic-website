@@ -91,6 +91,20 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			<section class="code">
 				<h2>Code Repositories</h2>
 				<div class="code-grid">
+					<!-- NEW: Shallow Water Chlorophyll-a Analysis -->
+					<div class="code-card featured">
+						<h3>Shallow Lake Chlorophyll-a Dynamics Analysis (2025)</h3>
+						<p>Reproducible Python code and data for analyzing 40 years (1984-2024) of Landsat satellite observations of chlorophyll-a in Lake Balaton. Includes phenology analysis, spatio-temporal modeling, and publication-ready visualizations.</p>
+						<div class="code-meta">
+							<span>Language: Python</span>
+							<span>License: MIT</span>
+							<span>📄 <a href="https://doi.org/10.1016/j.watres.2025.124925" target="_blank" style="color: var(--accent);">Water Research 2025</a></span>
+						</div>
+						<div class="code-links">
+							<a href="https://github.com/Scarlett-Huan-Li/shallow-water-chla" class="code-link" target="_blank">💻 View Code & Data</a>
+						</div>
+					</div>
+
 					<div class="code-card">
 						<h3>Google Earth Engine Open Code for Lake Balaton</h3>
 						<p>Open code repository for water temperature analysis of Lake Balaton in the 21st century.</p>
@@ -164,6 +178,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		background-color: white;
 		border-radius: 8px;
 		box-shadow: var(--box-shadow);
+	}
+
+	.code-card.featured {
+		border-left: 4px solid var(--accent);
+		background: linear-gradient(to right, rgba(var(--accent-rgb), 0.03), white);
 	}
 
 	.dataset-list, .tutorials-list {

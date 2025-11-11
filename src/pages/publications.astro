@@ -40,6 +40,44 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			<section class="publications-section">
 				<h2>Peer-Reviewed Articles</h2>
 				<div class="publication-list">
+					<!-- NEW: Water Research 2025 - Chlorophyll-a Paper -->
+					<div class="publication-card featured">
+						<div class="pub-content">
+							<div class="pub-header">
+								<h3>Four Decades of Satellite Observations Reveal Climate-Driven Shifts and Spatial Heterogeneity in Shallow Lake Chlorophyll-a Dynamics</h3>
+								<span class="pub-year">2025</span>
+							</div>
+							<p class="authors"><strong>Li, H.</strong>, Somogyi, B., Chen, X., Wan, W., Duan, Z., Woolway, R.I., and Tóth, V.R.</p>
+							<p class="journal">Water Research, 124925</p>
+							<p class="pub-links">
+								<a href="https://doi.org/10.1016/j.watres.2025.124925" target="_blank" rel="noopener noreferrer" class="pub-link">📄 Paper</a>
+								<a href="https://github.com/Scarlett-Huan-Li/shallow-water-chla" target="_blank" rel="noopener noreferrer" class="pub-link">💻 Code & Data</a>
+							</p>
+							<div class="pub-tags">
+								<span class="tag">Satellite Remote Sensing</span>
+								<span class="tag">Water Quality</span>
+								<span class="tag">Lake Balaton</span>
+								<span class="tag">Chlorophyll-a</span>
+								<span class="tag">Climate Change</span>
+							</div>
+						</div>
+						<!-- Publication Figure -->
+						<div class="pub-figure">
+							<img
+								src="/images/publications/water-research-2025-graphical-abstract.jpg"
+								alt="Graphical abstract showing four decades of chlorophyll-a dynamics in Lake Balaton"
+								class="publication-image"
+							/>
+							<p class="figure-caption">Graphical Abstract: 40 years of Landsat observations reveal climate-driven shifts in shallow lake chlorophyll-a dynamics</p>
+							<!--
+							TO ADD GRAPHICAL ABSTRACT:
+							1. Download 'Graphic Abstract.jpg' from: https://github.com/Scarlett-Huan-Li/shallow-water-chla
+							2. Save as 'water-research-2025-graphical-abstract.jpg'
+							3. Place in: public/images/publications/
+							-->
+						</div>
+					</div>
+
 					<div class="publication-card featured">
 						<div class="pub-content">
 							<div class="pub-header">
@@ -439,6 +477,33 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		font-style: italic;
 		margin: 0.5em 0;
 		font-size: 0.95em;
+	}
+
+	.pub-links {
+		display: flex;
+		gap: 1em;
+		margin: 0.8em 0;
+		flex-wrap: wrap;
+	}
+
+	.pub-link {
+		color: var(--accent);
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 0.9em;
+		padding: 0.4em 0.8em;
+		border: 2px solid var(--accent);
+		border-radius: 6px;
+		transition: all 0.2s;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.3em;
+	}
+
+	.pub-link:hover {
+		background: var(--accent);
+		color: white;
+		transform: translateY(-2px);
 	}
 
 	.pub-tags {
