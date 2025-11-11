@@ -38,7 +38,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			</div>
 
 			<section class="publications-section">
-				<h2>Peer-Reviewed Articles</h2>
+				<h2>Peer-Reviewed Articles (First/Last Author)</h2>
 				<div class="publication-list">
 					<!-- NEW: Water Research 2025 - Chlorophyll-a Paper -->
 					<div class="publication-card featured">
@@ -81,12 +81,49 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 					<div class="publication-card featured">
 						<div class="pub-content">
 							<div class="pub-header">
+								<h3>Leveraging Landsat and Google Earth Engine for long-term chlorophyll-a monitoring: A case study of Lake Balaton's water quality</h3>
+								<span class="pub-year">2025</span>
+							</div>
+							<p class="authors"><strong>Li, H.</strong>, Somogyi, B., Chen, X., Luo, Z., Blix, K., Wu, S., Duan, Z., and Tóth, V.R.</p>
+							<p class="journal">Ecological Informatics 90, 103245</p>
+							<p class="pub-links">
+								<a href="https://doi.org/10.1016/j.ecoinf.2025.103245" target="_blank" rel="noopener noreferrer" class="pub-link">📄 Paper</a>
+								<a href="https://lihuan.projects.earthengine.app/view/chla-balaton" target="_blank" rel="noopener noreferrer" class="pub-link">🌐 Web App</a>
+								<a href="https://code.earthengine.google.com/?accept_repo=users/lihuan/Share_ChlaBalaton" target="_blank" rel="noopener noreferrer" class="pub-link">💻 GEE Code</a>
+								<a href="https://github.com/Scarlett-Huan-Li/LakeBalaton-Chla" target="_blank" rel="noopener noreferrer" class="pub-link">💻 Code & Data</a>
+								<a href="https://storage.googleapis.com/li-model/RF.txt" target="_blank" rel="noopener noreferrer" class="pub-link">🤖 RF Model</a>
+							</p>
+							<div class="pub-tags">
+								<span class="tag">Chlorophyll-a</span>
+								<span class="tag">Water Quality</span>
+								<span class="tag">Lake Balaton</span>
+								<span class="tag">Google Earth Engine</span>
+								<span class="tag">Landsat</span>
+							</div>
+						</div>
+						<!-- Publication Figure -->
+						<div class="pub-figure">
+							<img
+								src="/images/publications/EcoInfo-2025-Chla.jpg"
+								alt="The interactive online application generated with GEE for inspecting long-term Chl-a concentration and comparing Chl-a between two Landsat-observed timestamps"
+								class="publication-image"
+							/>
+							<p class="figure-caption">The interactive online application generated with GEE for inspecting long-term Chl-a and comparing decadal Chl-a dynamics</p>
+						</div>
+					</div>
+
+					<div class="publication-card featured">
+						<div class="pub-content">
+							<div class="pub-header">
 								<h3>Monthly 0.05° winter months snow depth dataset for the Northern Hemisphere from 21 CMIP6 models</h3>
 								<span class="pub-year">2025</span>
 							</div>
 							<p class="authors">Lin, S., Chen, X., Liang, S., Liu, Y., Li, Y. and <strong>Li, H.</strong></p>
 							<p class="journal">Scientific Data 12(1), 603</p>
-							<a href="https://doi.org/10.1038/s41597-025-04925-w" target="_blank" rel="noopener noreferrer" class="doi-link">DOI: 10.1038/s41597-025-04925-w</a>
+							<p class="pub-links">
+								<a href="https://doi.org/10.1038/s41597-025-04925-w" target="_blank" rel="noopener noreferrer" class="pub-link">📄 Paper</a>
+								<a href="https://doi.org/10.5281/zenodo.14580147" target="_blank" rel="noopener noreferrer" class="pub-link">💻 Code & Data</a>
+							</p>
 							<div class="pub-tags">
 								<span class="tag">Climate Modeling</span>
 								<span class="tag">Snow Depth</span>
@@ -96,122 +133,214 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 						<!-- Publication Figure -->
 						<div class="pub-figure">
 							<img
-								src="/images/publications/snow-depth-cmip6.jpg"
-								alt="Snow depth analysis from CMIP6 models"
+								src="/images/publications/scientific-data-2025-Fig.1.png"
+								alt="Snow depth dataset analysis from CMIP6 models"
 								class="publication-image"
 							/>
-							<p class="figure-caption">Figure 1: Monthly snow depth patterns across Northern Hemisphere</p>
-							<!--
-							TO ADD FIGURE:
-							1. Save your figure as 'snow-depth-cmip6.jpg'
-							2. Place it in: public/images/publications/
-							3. Adjust the filename above to match your image
-							-->
+							<p class="figure-caption">(a) Spatial distribution of the observations. (b) Number of records and snow depth. (c) Snow depth distribution during winter. (d) Distribution of elevation and latitude.</p>
 						</div>
 					</div>
 					
-					<div class="publication-card">
-						<div class="pub-header">
-							<h3>A novel method for correcting water budget components and reducing their uncertainties by optimally distributing the imbalance residual without full closure</h3>
-							<span class="pub-year">2025</span>
+					<div class="publication-card featured">
+						<div class="pub-content">
+							<div class="pub-header">
+								<h3>A novel method for correcting water budget components and reducing their uncertainties by optimally distributing the imbalance residual without full closure</h3>
+								<span class="pub-year">2025</span>
+							</div>
+							<p class="authors">Luo, Z., H. Fu, Q. Shao, W. Dong, X. Chen, X. Ding, L. Wang, X. Gu, R. Sarukkalige, H. Huang, and <strong>H. Li</strong></p>
+							<p class="journal">Hydrol. Earth Syst. Sci. 29 (18):4607-4635</p>
+							<p class="pub-links">
+								<a href="https://doi.org/10.5194/hess-29-4607-2025" target="_blank" rel="noopener noreferrer" class="pub-link">📄 Paper</a>
+							</p>
+							<div class="pub-tags">
+								<span class="tag">Water Budget</span>
+								<span class="tag">Hydrology</span>
+								<span class="tag">Uncertainty</span>
+							</div>
 						</div>
-						<p class="authors">Luo, Z., …, and <strong>Li, H.</strong></p>
-						<p class="journal">Hydrology and Earth System Sciences 2025, 1-59 (Accepted)</p>
-						<a href="https://doi.org/10.5194/hess-29-4607-2025" target="_blank" rel="noopener noreferrer" class="doi-link">DOI: 10.5194/hess-29-4607-2025</a>
-						<div class="pub-tags">
-							<span class="tag">Water Budget</span>
-							<span class="tag">Hydrology</span>
-							<span class="tag">Uncertainty</span>
+						<!-- Publication Figure -->
+						<div class="pub-figure">
+							<img
+								src="/images/publications/hess-2025-framework.png"
+								alt="Framework of the IWE-Res method to identify the optimal balance for redistributing the ΔRes error"
+								class="publication-image"
+							/>
+							<p class="figure-caption">Framework of the IWE-Res method to identify the optimal balance for redistributing the ΔRes error.</p>
 						</div>
 					</div>
 					
-					<div class="publication-card">
-						<div class="pub-header">
-							<h3>A century-long streamflow reconstruction reveals significant streamflow increases in the upper Yangtze River basin</h3>
-							<span class="pub-year">2025</span>
-						</div>
+					<div class="publication-card featured">
+						<div class="pub-content">
+							<div class="pub-header">
+								<h3>A century-long streamflow reconstruction reveals significant streamflow increases in the upper Yangtze River basin</h3>
+								<span class="pub-year">2025</span>
+							</div>
 							<p class="authors">Hu, J., Luo, Z., Gao, Y., Wang, L., Huang, H., Chen, X., and <strong>Li, H.</strong></p>
 							<p class="journal">Catena 250, 108774</p>
-							<a href="https://doi.org/10.1016/j.catena.2025.108774" target="_blank" rel="noopener noreferrer" class="doi-link">DOI: 10.1016/j.catena.2025.108774</a>
+							<p class="pub-links">
+								<a href="https://doi.org/10.1016/j.catena.2025.108774" target="_blank" rel="noopener noreferrer" class="pub-link">📄 Paper</a>
+							</p>
 							<div class="pub-tags">
-							<span class="tag">Hydrology</span>
-							<span class="tag">Streamflow</span>
-							<span class="tag">Yangtze River</span>
+								<span class="tag">Hydrology</span>
+								<span class="tag">Streamflow</span>
+								<span class="tag">Yangtze River</span>
+							</div>
+						</div>
+						<!-- Publication Figure -->
+						<div class="pub-figure">
+							<img
+								src="/images/publications/catena-2025-graphical-abstract.jpg"
+								alt="Reconstructing 121 years of monthly streamflow data (1901–2021) using machine learning models at 27 hydrological stations in the YRB"
+								class="publication-image"
+							/>
+							<p class="figure-caption">Reconstructing 121 years of monthly streamflow data (1901–2021)</p>
 						</div>
 					</div>
 					
-					<div class="publication-card">
-						<div class="pub-header">
-							<h3>150-year daily data (1870–2021) in lakes and rivers reveals intensifying surface water warming and heatwaves in the Pannonian Ecoregion (Hungary)</h3>
-							<span class="pub-year">2024</span>
-						</div>
+					<div class="publication-card featured">
+						<div class="pub-content">
+							<div class="pub-header">
+								<h3>150-year daily data (1870–2021) in lakes and rivers reveals intensifying surface water warming and heatwaves in the Pannonian Ecoregion (Hungary)</h3>
+								<span class="pub-year">2024</span>
+							</div>
 							<p class="authors"><strong>Li, H.</strong>, Sun, J., Zhou, Q., Sojka, M., Ptak, M., Luo, Y., Wu, S., Zhu, S. and Tóth, V.R.</p>
 							<p class="journal">Journal of Hydrology: Regional Studies 56, 101985</p>
-							<a href="https://doi.org/10.1016/j.ejrh.2024.101985" target="_blank" rel="noopener noreferrer" class="doi-link">DOI: 10.1016/j.ejrh.2024.101985</a>
+							<p class="pub-links">
+								<a href="https://doi.org/10.1016/j.ejrh.2024.101985" target="_blank" rel="noopener noreferrer" class="pub-link">📄 Paper</a>
+								<a href="https://doi.org/10.6084/m9.figshare.25549561" target="_blank" rel="noopener noreferrer" class="pub-link">💾 Data</a>
+							</p>
 							<div class="pub-tags">
-							<span class="tag">Water Temperature</span>
-							<span class="tag">Climate Change</span>
-							<span class="tag">Pannonian Region</span>
+								<span class="tag">Water Temperature</span>
+								<span class="tag">Climate Change</span>
+								<span class="tag">Pannonian Region</span>
+								<span class="tag">Heatwaves</span>
+							</div>
+						</div>
+						<!-- Publication Figure -->
+						<div class="pub-figure">
+							<img
+								src="/images/publications/JOHRS-2024-graphical-abstract.jpg"
+								alt="A significant increase in the number, duration, and intensity of heatwaves in both lakes and rivers"
+								class="publication-image"
+							/>
+							<p class="figure-caption">Waters show clear warming trend, especially in recent three to four decades</p>
 						</div>
 					</div>
 					
-					<div class="publication-card">
-						<div class="pub-header">
-							<h3>Exploring spatiotemporal features of surface water temperature for Lake Balaton in the 21st century based on Google Earth Engine</h3>
-							<span class="pub-year">2024</span>
-						</div>
-							<p class="authors"><strong>Li, H.</strong>, Sun, J., Zhou, Q., Sojka, M., Ptak, M., Luo, Y., Wu, S., Zhu, S. and Tóth, V.R.</p>
+					<div class="publication-card featured">
+						<div class="pub-content">
+							<div class="pub-header">
+								<h3>Exploring spatiotemporal features of surface water temperature for Lake Balaton in the 21st century based on Google Earth Engine</h3>
+								<span class="pub-year">2024</span>
+							</div>
+							<p class="authors"><strong>Li, H.</strong>, Somogyi, B., and Tóth, V.R.</p>
 							<p class="journal">Journal of Hydrology 640, 131672</p>
-							<a href="https://doi.org/10.1016/j.jhydrol.2024.131672" target="_blank" rel="noopener noreferrer" class="doi-link">DOI: 10.1016/j.jhydrol.2024.131672</a>
+							<p class="pub-links">
+								<a href="https://doi.org/10.1016/j.jhydrol.2024.131672" target="_blank" rel="noopener noreferrer" class="pub-link">📄 Paper</a>
+								<a href="https://code.earthengine.google.com/?accept_repo=users/lihuan/Share_LakeBalaton" target="_blank" rel="noopener noreferrer" class="pub-link">💻 Code</a>
+								<a href="https://doi.org/10.5281/zenodo.10013292" target="_blank" rel="noopener noreferrer" class="pub-link">💾 Data</a>
+							</p>
 							<div class="pub-tags">
-							<span class="tag">Remote Sensing</span>
-							<span class="tag">Google Earth Engine</span>
-							<span class="tag">Lake Balaton</span>
+								<span class="tag">Remote Sensing</span>
+								<span class="tag">Google Earth Engine</span>
+								<span class="tag">Lake Balaton</span>
+								<span class="tag">Water Temperature</span>
+							</div>
+						</div>
+						<!-- Publication Figure -->
+						<div class="pub-figure">
+							<img
+								src="/images/publications/JOH-2024-monthly-temperature-anomaly.jpg"
+								alt="The cumulated temperature anomaly from the daily mean temperature in each month"
+								class="publication-image"
+							/>
+							<p class="figure-caption">The cumulated temperature anomaly from the daily mean temperature in each month</p>
 						</div>
 					</div>
 					
-					<div class="publication-card">
-						<div class="pub-header">
-							<h3>Exploring the topographical pattern beneath the water surface: Global Bathymetric Volume-Area-Height curves (BVAH) of inland surface water bodies</h3>
-							<span class="pub-year">2024</span>
+					<div class="publication-card featured">
+						<div class="pub-content">
+							<div class="pub-header">
+								<h3>Exploring the topographical pattern beneath the water surface: Global Bathymetric Volume-Area-Height curves (BVAH) of inland surface water bodies</h3>
+								<span class="pub-year">2024</span>
+							</div>
+							<p class="authors">Zhu, S. Y., W. Wan, G. Q. Zhang, Z. Y. Yao, Y. Xu, B. J. Liu, Z. Z. Guo, Z. L. Luo, W. T. Xiong, R. Ji, Q. W. Ji, Y. He, F. Lv, W. Z. Fang, X. Tan, Q. Huang, L. Xiao, and <strong>Li, H.*</strong></p>
+							<p class="journal">Geodesy and Geodynamics 15 (6):602-615</p>
+							<p class="pub-links">
+								<a href="https://doi.org/10.1016/j.geog.2024.06.005" target="_blank" rel="noopener noreferrer" class="pub-link">📄 Paper</a>
+							</p>
+							<div class="pub-tags">
+								<span class="tag">Bathymetry</span>
+								<span class="tag">Inland Waters</span>
+								<span class="tag">Global Analysis</span>
+							</div>
 						</div>
-						<p class="authors">Zhu, S., Wan, W., Zhang, G., …, and <strong>Li, H.</strong></p>
-						<p class="journal">Geodesy and Geodynamics</p>
-						<a href="https://doi.org/10.1016/j.geog.2024.06.005" target="_blank" rel="noopener noreferrer" class="doi-link">DOI: 10.1016/j.geog.2024.06.005</a>
-						<div class="pub-tags">
-							<span class="tag">Bathymetry</span>
-							<span class="tag">Inland Waters</span>
-							<span class="tag">Global Analysis</span>
-						</div>
-					</div>
-					
-					<div class="publication-card">
-						<div class="pub-header">
-							<h3>Inspects and prospects of satellite remote sensing monitoring ability for land surface water in China</h3>
-							<span class="pub-year">2023</span>
-						</div>
-						<p class="authors"><strong>Li, H.</strong>, Wan, W., Zeng, C., Hong, Y.</p>
-						<p class="journal">National Remote Sensing Bulletin 27</p>
-						<a href="https://doi.org/10.11834/jrs.20220576" target="_blank" rel="noopener noreferrer" class="doi-link">DOI: 10.11834/jrs.20220576</a>
-						<div class="pub-tags">
-							<span class="tag">Remote Sensing</span>
-							<span class="tag">Surface Water</span>
-							<span class="tag">China</span>
+						<!-- Publication Figure -->
+						<div class="pub-figure">
+							<img
+								src="/images/publications/GeodesyNGeodynamics-2024-bathymetry.jpg"
+								alt="The procedures for generating the volumes series based on the area series and hydrological curves"
+								class="publication-image"
+							/>
+							<p class="figure-caption">The procedures for generating the volumes series based on the area series and hydrological curves</p>
 						</div>
 					</div>
 					
-					<div class="publication-card">
-						<div class="pub-header">
-							<h3>A remote sensing-based area dataset for approximately 40 years that reveals the hydrological asynchrony of Lake Chad based on Google Earth Engine</h3>
-							<span class="pub-year">2021</span>
+					<div class="publication-card featured">
+						<div class="pub-content">
+							<div class="pub-header">
+								<h3>Inspects and prospects of satellite remote sensing monitoring ability for land surface water in China</h3>
+								<span class="pub-year">2023</span>
+							</div>
+							<p class="authors"><strong>Li, H.</strong>, Wan, W., Ji, R., Li, G., Chen, X., Zhu, S., Liu, B., Xu, Y., Luo, Z., Wang, S., and Cui, Y.</p>
+							<p class="journal">National Remote Sensing Bulletin 27 (7):1554-1573</p>
+							<p class="pub-links">
+								<a href="https://doi.org/10.11834/jrs.20220576" target="_blank" rel="noopener noreferrer" class="pub-link">📄 Paper</a>
+							</p>
+							<div class="pub-tags">
+								<span class="tag">Remote Sensing</span>
+								<span class="tag">Surface Water</span>
+								<span class="tag">China</span>
+							</div>
 						</div>
-						<p class="authors"><strong>Li, H.</strong>, Wan, W., Zeng, C., Hong, Y.</p>
-						<p class="journal">Journal of Hydrology 603, 126934</p>
-						<a href="https://doi.org/10.1016/j.jhydrol.2021.126934" target="_blank" rel="noopener noreferrer" class="doi-link">DOI: 10.1016/j.jhydrol.2021.126934</a>
-						<div class="pub-tags">
-							<span class="tag">Lake Chad</span>
-							<span class="tag">Hydrology</span>
-							<span class="tag">Google Earth Engine</span>
+						<!-- Publication Figure -->
+						<div class="pub-figure">
+							<img
+								src="/images/publications/jrs-2023-table.png"
+								alt="Area datasets for long-term global surface water bodies"
+								class="publication-image"
+							/>
+							<p class="figure-caption">Area datasets for long-term global surface water bodies</p>
+						</div>
+					</div>
+					
+					<div class="publication-card featured">
+						<div class="pub-content">
+							<div class="pub-header">
+								<h3>A remote sensing-based area dataset for approximately 40 years that reveals the hydrological asynchrony of Lake Chad based on Google Earth Engine</h3>
+								<span class="pub-year">2021</span>
+							</div>
+							<p class="authors"><strong>Li, H.</strong>, Luo, Z., Xu, Y., Zhu, S., Chen, X., Geng, X., Xiao, L., Wan, W., and Cui, Y.</p>
+							<p class="journal">Journal of Hydrology 603, 126934</p>
+							<p class="pub-links">
+								<a href="https://doi.org/10.1016/j.jhydrol.2021.126934" target="_blank" rel="noopener noreferrer" class="pub-link">📄 Paper</a>
+								<a href="https://lihuan.users.earthengine.app/view/lakechad" target="_blank" rel="noopener noreferrer" class="pub-link">🌐 Interactive App</a>
+								<a href="https://figshare.com/s/cc8d70da60bfc061a07a" target="_blank" rel="noopener noreferrer" class="pub-link">💾 Data & Code</a>
+							</p>
+							<div class="pub-tags">
+								<span class="tag">Lake Chad</span>
+								<span class="tag">Hydrology</span>
+								<span class="tag">Google Earth Engine</span>
+							</div>
+						</div>
+						<!-- Publication Figure -->
+						<div class="pub-figure">
+							<img
+								src="/images/publications/JOH-2023-Chad.jpg"
+								alt="Interactive application interface for long-term and up-to-date area inspections of Lake Chad"
+								class="publication-image"
+							/>
+							<p class="figure-caption">Interactive application interface for long-term and up-to-date area inspections of Lake Chad</p>
 						</div>
 					</div>
 					
@@ -260,63 +389,117 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 						</div>
 					</div>
 					
-					<div class="publication-card">
-						<div class="pub-header">
-							<h3>A Google Earth Engine-Enabled Software for Efficiently Generating High-Quality User-Ready Landsat Mosaic Images</h3>
-							<span class="pub-year">2019</span>
+					<div class="publication-card featured">
+						<div class="pub-content">
+							<div class="pub-header">
+								<h3>A Google Earth Engine-Enabled Software for Efficiently Generating High-Quality User-Ready Landsat Mosaic Images</h3>
+								<span class="pub-year">2019</span>
+							</div>
+							<p class="authors"><strong>Li, H.</strong>, Wan, W., Fang, Y., Zhu, S., Chen, X., Liu, B., and Hong, Y.</p>
+							<p class="journal">Environmental Modelling & Software 112:16-22</p>
+							<p class="pub-links">
+								<a href="https://doi.org/10.1016/j.envsoft.2018.11.004" target="_blank" rel="noopener noreferrer" class="pub-link">📄 Paper</a>
+								<a href="https://gist.github.com/scarlettlee/eda18ca801213429636e7a0764b5b59f" target="_blank" rel="noopener noreferrer" class="pub-link">💻 GEE Code</a>
+								<a href="https://gist.github.com/scarlettlee/7beb591ba7d61bee06a5af9dd3e86cfb" target="_blank" rel="noopener noreferrer" class="pub-link">🐍 Python Code</a>
+							</p>
+							<div class="pub-tags">
+								<span class="tag">Google Earth Engine</span>
+								<span class="tag">Landsat</span>
+								<span class="tag">Software</span>
+							</div>
 						</div>
-						<p class="authors"><strong>Li, H.</strong>, Wan, W., Hong, Y., et al.</p>
-						<p class="journal">Environmental Modelling & Software 112</p>
-						<a href="https://doi.org/10.1016/j.envsoft.2018.11.004" target="_blank" rel="noopener noreferrer" class="doi-link">DOI: 10.1016/j.envsoft.2018.11.004</a>
-						<div class="pub-tags">
-							<span class="tag">Google Earth Engine</span>
-							<span class="tag">Landsat</span>
-							<span class="tag">Software</span>
-						</div>
-					</div>
-					
-					<div class="publication-card">
-						<div class="pub-header">
-							<h3>Assessment of Water Storage Change in China's Lakes and Reservoirs over the Last Three Decades</h3>
-							<span class="pub-year">2019</span>
-						</div>
-						<p class="authors">Fang, Y., <strong>Li, H.</strong>, Wan, W., Zhu, S., Wang, Z., et al. (Co-first author)</p>
-						<p class="journal">Remote Sensing 11(12), 1467</p>
-						<a href="https://doi.org/10.3390/rs11121467" target="_blank" rel="noopener noreferrer" class="doi-link">DOI: 10.3390/rs11121467</a>
-						<div class="pub-tags">
-							<span class="tag">Water Storage</span>
-							<span class="tag">Lakes</span>
-							<span class="tag">China</span>
-						</div>
-					</div>
-					
-					<div class="publication-card">
-						<div class="pub-header">
-							<h3>Spatio-temporal variability of Antarctic sea-ice thickness and volume obtained from ICESat data using an innovative algorithm</h3>
-							<span class="pub-year">2018</span>
-						</div>
-						<p class="authors"><strong>Li, H.</strong>, Xie, H., Kern, S., Wan, W., Ozsoy, B., Ackley, S., Hong, Y.</p>
-						<p class="journal">Remote Sensing of Environment 219, 44-61</p>
-						<a href="https://doi.org/10.1016/j.rse.2018.09.031" target="_blank" rel="noopener noreferrer" class="doi-link">DOI: 10.1016/j.rse.2018.09.031</a>
-						<div class="pub-tags">
-							<span class="tag">Sea Ice</span>
-							<span class="tag">ICESat</span>
-							<span class="tag">Antarctic</span>
+						<!-- Publication Figure -->
+						<div class="pub-figure">
+							<img
+								src="/images/publications/EMS-2019-interface.jpg"
+								alt="Acquiring high-quality user-defined Landsat composited mosaic images under GEE cloud environment"
+								class="publication-image"
+							/>
+							<p class="figure-caption">Acquiring high-quality user-defined Landsat composited mosaic images under GEE cloud environment</p>
 						</div>
 					</div>
 					
-					<div class="publication-card">
-						<div class="pub-header">
-							<h3>A Visualization Approach to Air Pollution Data Exploration—A Case Study of Air Quality Index (PM2.5) in Beijing, China</h3>
-							<span class="pub-year">2016</span>
+					<div class="publication-card featured">
+						<div class="pub-content">
+							<div class="pub-header">
+								<h3>Assessment of Water Storage Change in China's Lakes and Reservoirs over the Last Three Decades</h3>
+								<span class="pub-year">2019</span>
+							</div>
+							<p class="authors">Fang, Y., <strong>Li, H.</strong>, Wan, W., Zhu, S., Wang, Z., Hong, Y., and Wang, H. (Co-first author)</p>
+							<p class="journal">Remote Sensing 11(12), 1467</p>
+							<p class="pub-links">
+								<a href="https://doi.org/10.3390/rs11121467" target="_blank" rel="noopener noreferrer" class="pub-link">📄 Paper</a>
+							</p>
+							<div class="pub-tags">
+								<span class="tag">Water Storage</span>
+								<span class="tag">Lakes</span>
+								<span class="tag">China</span>
+							</div>
 						</div>
-						<p class="authors"><strong>Li, H.</strong>, Fan, H. and Mao, F.</p>
-						<p class="journal">Atmosphere 7(3), 35</p>
-						<a href="https://doi.org/10.3390/atmos7030035" target="_blank" rel="noopener noreferrer" class="doi-link">DOI: 10.3390/atmos7030035</a>
-						<div class="pub-tags">
-							<span class="tag">Air Pollution</span>
-							<span class="tag">Visualization</span>
-							<span class="tag">PM2.5</span>
+						<!-- Publication Figure -->
+						<div class="pub-figure">
+							<img
+								src="/images/publications/RS-2019-volumnChina.png"
+								alt="Spatial distribution of water storage change in lakes and reservoirs across China, 1984–2015"
+								class="publication-image"
+							/>
+							<p class="figure-caption">Spatial distribution of water storage change in lakes and reservoirs, 1984–2015</p>
+						</div>
+					</div>
+					
+					<div class="publication-card featured">
+						<div class="pub-content">
+							<div class="pub-header">
+								<h3>Spatio-temporal variability of Antarctic sea-ice thickness and volume obtained from ICESat data using an innovative algorithm</h3>
+								<span class="pub-year">2018</span>
+							</div>
+							<p class="authors"><strong>Li, H.</strong>, Xie, H., Kern, S., Wan, W., Ozsoy, B., Ackley, S., and Hong, Y.</p>
+							<p class="journal">Remote Sensing of Environment 219, 44-61</p>
+							<p class="pub-links">
+								<a href="https://doi.org/10.1016/j.rse.2018.09.031" target="_blank" rel="noopener noreferrer" class="pub-link">📄 Paper</a>
+							</p>
+							<div class="pub-tags">
+								<span class="tag">Sea Ice</span>
+								<span class="tag">ICESat</span>
+								<span class="tag">Antarctic</span>
+							</div>
+						</div>
+						<!-- Publication Figure -->
+						<div class="pub-figure">
+							<img
+								src="/images/publications/RSE-2018-seaice.jpg"
+								alt="AMSR-E ASI algorithm sea-ice concentration and ICESat OLM algorithm sea-ice thickness in spring"
+								class="publication-image"
+							/>
+							<p class="figure-caption">Sea-ice concentration and ICESat OLM algorithm sea-ice thickness in spring</p>
+						</div>
+					</div>
+					
+					<div class="publication-card featured">
+						<div class="pub-content">
+							<div class="pub-header">
+								<h3>A Visualization Approach to Air Pollution Data Exploration—A Case Study of Air Quality Index (PM2.5) in Beijing, China</h3>
+								<span class="pub-year">2016</span>
+							</div>
+							<p class="authors"><strong>Li, H.</strong>, Fan, H., and Mao, F.</p>
+							<p class="journal">Atmosphere 7(3), 35</p>
+							<p class="pub-links">
+								<a href="https://doi.org/10.3390/atmos7030035" target="_blank" rel="noopener noreferrer" class="pub-link">📄 Paper</a>
+							</p>
+							<div class="pub-tags">
+								<span class="tag">Air Pollution</span>
+								<span class="tag">Visualization</span>
+								<span class="tag">PM2.5</span>
+							</div>
+						</div>
+						<!-- Publication Figure -->
+						<div class="pub-figure">
+							<img
+								src="/images/publications/atmosphere-2016-aqi.png"
+								alt="Average AQI Heatmap of PM2.5 from November 2013 to February 2014 in Beijing"
+								class="publication-image"
+							/>
+							<p class="figure-caption">Average AQI Heatmap of PM2.5 from November 2013 to February 2014 in Beijing</p>
 						</div>
 					</div>
 					
