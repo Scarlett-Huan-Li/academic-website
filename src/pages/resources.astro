@@ -91,6 +91,73 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 					</div>
 				</div>
 			</section>
+
+			<section class="code">
+				<h2>Code Repositories</h2>
+				<div class="code-grid">
+					<!-- NEW: Shallow Water Chlorophyll-a Analysis -->
+					<div class="code-card featured">
+						<h3>Shallow Lake Chlorophyll-a Dynamics Analysis (2025)</h3>
+						<p>Reproducible Python code and data for analyzing 40 years (1984-2024) of Landsat satellite observations of chlorophyll-a in Lake Balaton. Includes phenology analysis, spatio-temporal modeling, and publication-ready visualizations.</p>
+						<div class="code-meta">
+							<span>Language: Python</span>
+							<span>License: MIT</span>
+							<span>📄 <a href="https://doi.org/10.1016/j.watres.2025.124925" target="_blank" style="color: var(--accent);">Water Research 2025</a></span>
+						</div>
+						<div class="code-links">
+							<a href="https://github.com/Scarlett-Huan-Li/shallow-water-chla" class="code-link" target="_blank">💻 View Code & Data</a>
+						</div>
+					</div>
+
+					<div class="code-card">
+						<h3>Google Earth Engine Open Code for Lake Balaton</h3>
+						<p>Open code repository for water temperature analysis of Lake Balaton in the 21st century.</p>
+						<div class="code-meta">
+							<span>Language: JavaScript</span>
+							<span>Platform: Google Earth Engine</span>
+						</div>
+						<div class="code-links">
+							<a href="https://code.earthengine.google.com/?accept_repo=users/lihuan/Share_LakeBalaton" class="code-link" target="_blank">View Code</a>
+						</div>
+					</div>
+					<div class="code-card">
+						<h3>Polar Sea Ice Key Parameter Retrieval Algorithm Software V1.0</h3>
+						<p>Software for retrieving key parameters of polar sea ice (Chinese software copyright ID: 2023SR1391226).</p>
+						<div class="code-meta">
+							<span>Language: Various</span>
+							<span>License: Software Copyright</span>
+						</div>
+					</div>
+					<div class="code-card">
+						<h3>Global High-Quality Landsat Mosaic Generator</h3>
+						<p>Code for generating global high-quality user-ready Landsat mosaics.</p>
+						<div class="code-meta">
+							<span>Language: JavaScript</span>
+							<span>Platform: Google Earth Engine</span>
+						</div>
+						<div class="code-links">
+							<a href="https://gist.github.com/scarlettlee/eda18ca801213429636e7a0764b5b59f" class="code-link" target="_blank">View Code</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="tutorials">
+				<h2>Tutorials and Guides</h2>
+				<div class="tutorials-list">
+					{Array(3).fill(null).map((_, i) => (
+						<div class="tutorial-card">
+							<h3>Tutorial Title {i + 1}</h3>
+							<p>Brief description of the tutorial content.</p>
+							<div class="tutorial-meta">
+								<span>Difficulty: Intermediate</span>
+								<span>Duration: 30 mins</span>
+							</div>
+							<a href="#" class="tutorial-link">View Tutorial</a>
+						</div>
+					))}
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>
@@ -125,7 +192,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		margin-bottom: 1em;
 	}
 
-	.dataset-list {
+	.code-card.featured {
+		border-left: 4px solid var(--accent);
+		background: linear-gradient(to right, rgba(var(--accent-rgb), 0.03), white);
+	}
+
+	.dataset-list, .tutorials-list {
 		display: grid;
 		gap: 1.5em;
 		margin-top: 1em;
@@ -176,5 +248,112 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		border-radius: 4px;
 		font-size: 0.9em;
 		color: rgb(var(--gray-dark));
+	}
+
+	.code-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5em;
+		margin-top: 1em;
+	}
+
+	.code-card {
+		padding: 1.5em;
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: var(--box-shadow);
+		display: flex;
+		flex-direction: column;
+	}
+
+	.code-card > p {
+		flex-grow: 1;
+		margin-bottom: 1em;
+	}
+
+	.code-meta {
+		margin: 0 0 1em 0;
+		display: flex;
+		gap: 1em;
+		flex-wrap: wrap;
+	}
+
+	.code-meta span {
+		padding: 0.2em 0.5em;
+		background-color: rgb(var(--gray-light));
+		border-radius: 4px;
+		font-size: 0.9em;
+		color: rgb(var(--gray-dark));
+	}
+
+	.code-links {
+		margin-top: auto;
+		display: flex;
+		gap: 1em;
+		flex-wrap: nowrap;
+	}
+
+	.code-link {
+		padding: 0.5em 1em;
+		background-color: var(--accent);
+		border-radius: 4px;
+		text-decoration: none;
+		color: white;
+		font-size: 0.9em;
+		font-weight: 500;
+		transition: background-color 0.2s, transform 0.1s;
+		display: inline-block;
+	}
+
+	.code-link:hover {
+		background-color: var(--accent-dark);
+		transform: translateY(-1px);
+	}
+
+	.tutorial-card {
+		padding: 1.5em;
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: var(--box-shadow);
+		display: flex;
+		flex-direction: column;
+	}
+
+	.tutorial-card > p {
+		flex-grow: 1;
+		margin-bottom: 1em;
+	}
+
+	.tutorial-meta {
+		margin: 0 0 1em 0;
+		display: flex;
+		gap: 1em;
+		flex-wrap: wrap;
+	}
+
+	.tutorial-meta span {
+		padding: 0.2em 0.5em;
+		background-color: rgb(var(--gray-light));
+		border-radius: 4px;
+		font-size: 0.9em;
+		color: rgb(var(--gray-dark));
+	}
+
+	.tutorial-link {
+		padding: 0.5em 1em;
+		background-color: var(--accent);
+		border-radius: 4px;
+		text-decoration: none;
+		color: white;
+		font-size: 0.9em;
+		font-weight: 500;
+		transition: background-color 0.2s, transform 0.1s;
+		display: inline-block;
+		margin-top: auto;
+	}
+
+	.tutorial-link:hover {
+		background-color: var(--accent-dark);
+		transform: translateY(-1px);
 	}
 </style>
