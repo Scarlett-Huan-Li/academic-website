@@ -15,15 +15,15 @@
     <path d="M 64 64 L 2 64 A 62 62 0 0 1 64 126 Z" fill="#8dd0ce"/>
   </g>
   
-  <!-- Wisdom dot (light source) in upper right - golden layers -->
-  <!-- 最外层：琥珀色 -->
-  <circle cx="110" cy="18" r="16" fill="#CC8400" opacity="0.4"/>
-  <!-- 外环：橙金 -->
-  <circle cx="110" cy="18" r="12" fill="#B8860B"/>
-  <!-- 中间环：深金 -->
-  <circle cx="110" cy="18" r="8" fill="#D4921B"/>
-  <!-- 中心圆：亮金 -->
-  <circle cx="110" cy="18" r="4" fill="#FFB800"/>
+  <!-- Wisdom dot (light source) in upper right - orange layers -->
+  <!-- 最外层：焦糖 -->
+  <circle cx="110" cy="18" r="14" fill="#BA4A00" opacity="0.4"/>
+  <!-- 外环：深橙 -->
+  <circle cx="110" cy="18" r="10" fill="#D35400"/>
+  <!-- 中间环：琥珀 -->
+  <circle cx="110" cy="18" r="7" fill="#E67E22"/>
+  <!-- 中心圆：明橙 -->
+  <circle cx="110" cy="18" r="3.5" fill="#FF9500"/>
   
   <style>
     @media (prefers-color-scheme: dark) {
