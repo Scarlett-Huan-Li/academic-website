@@ -148,9 +148,9 @@ import { SITE_TITLE, SITE_DESCRIPTION, SOCIAL_LINKS } from '../consts';
 		</main>
 		<Footer />
 
-		<!-- Visitor Map Globe Widget -->
-		<div class="visitor-globe">
-			<script type="text/javascript" id="clstr_globe" src="https://clustrmaps.com/globe.js?d=mqxPVyUtzNiz2DjQDTnSzPoBxM9WYqWGUa68l5PpBcc" is:inline></script>
+		<!-- Visitor Map Widget - Shows All Visits -->
+		<div class="visitor-map">
+			<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=mqxPVyUtzNiz2DjQDTnSzPoBxM9WYqWGUa68l5PpBcc&cl=ffffff&w=a" is:inline></script>
 		</div>
 	</body>
 </html>
@@ -389,18 +389,28 @@ import { SITE_TITLE, SITE_DESCRIPTION, SOCIAL_LINKS } from '../consts';
 		text-decoration: underline;
 	}
 
-	.visitor-globe {
+	.visitor-map {
 		position: fixed;
 		bottom: 20px;
 		right: 20px;
 		z-index: 9999;
-		width: 200px;
-		height: 200px;
+		max-width: 300px;
 		opacity: 0.95;
+		background: white;
+		border-radius: 8px;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+		padding: 5px;
 	}
 
-	.visitor-globe:hover {
+	.visitor-map:hover {
 		opacity: 1;
+	}
+
+	.visitor-map img {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 4px;
 	}
 
 	@media (max-width: 720px) {
@@ -440,9 +450,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, SOCIAL_LINKS } from '../consts';
 			justify-content: flex-start;
 		}
 
-		.visitor-globe {
-			width: 150px;
-			height: 150px;
+		.visitor-map {
+			max-width: 200px;
 			bottom: 10px;
 			right: 10px;
 		}
