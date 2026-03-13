@@ -1,0 +1,394 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION, SOCIAL_LINKS } from '../../consts';
+import { getTranslations } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } },
+    { params: { lang: 'hu' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const t = getTranslations(lang);
+const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
+---
+<!doctype html>
+<html lang={htmlLang}>
+	<head>
+		<BaseHead title={`${t('contact.title')} | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="page-header">
+				<h1>{t('contact.title')}</h1>
+				<p class="page-subtitle">{t('contact.subtitle')}</p>
+			</div>
+
+			<div class="contact-grid">
+				<div class="contact-info">
+					<section class="contact-details">
+						<h2>{t('contact.info.heading')}</h2>
+						<div class="info-card">
+							<div class="info-item">
+								<h3>{t('contact.info.email')}</h3>
+								<p><a href={`mailto:${SOCIAL_LINKS.email}`}>{SOCIAL_LINKS.email}</a></p>
+							</div>
+							<div class="info-item">
+								<h3>{t('contact.info.office')}</h3>
+								<p>Room 101, Main Building<br>HUN-REN Balaton Limnological Research Institute<br>8237 Tihany, Klebelsberg Kuno utca 3.<br>Hungary</p>
+							</div>
+							<div class="info-item">
+								<h3>{t('contact.info.hours')}</h3>
+								<p>{t('contact.info.hours_text')}<br>{t('contact.info.hours_appt')}</p>
+							</div>
+							<div class="info-item">
+								<h3>{t('contact.info.group')}</h3>
+								<p>Aquatic Botany and Microbial Ecology Research Group</p>
+							</div>
+						</div>
+					</section>
+				</div>
+
+				<section class="contact-form">
+					<h2>{t('contact.form.heading')}</h2>
+					<form
+						class="message-form"
+						name="contact"
+						method="POST"
+						data-netlify="true"
+						data-netlify-honeypot="bot-field"
+					>
+						<!-- Honeypot spam protection -->
+						<input type="hidden" name="form-name" value="contact" />
+						<div class="hidden">
+							<label>Don't fill this out if you're human: <input name="bot-field" /></label>
+						</div>
+
+						<div class="form-group">
+							<label for="name">{t('contact.form.name')}</label>
+							<input type="text" id="name" name="name" required>
+						</div>
+						<div class="form-group">
+							<label for="email">{t('contact.form.email')}</label>
+							<input type="email" id="email" name="email" required>
+						</div>
+						<div class="form-group">
+							<label for="subject">{t('contact.form.subject')}</label>
+							<input type="text" id="subject" name="subject" required>
+						</div>
+						<div class="form-group">
+							<label for="message">{t('contact.form.message')}</label>
+							<textarea id="message" name="message" rows="5" required></textarea>
+						</div>
+						<button type="submit" class="submit-btn">{t('contact.form.submit')}</button>
+					</form>
+
+					<div id="form-success" class="form-message success" style="display: none;">
+						<h3>{t('contact.form.success')}</h3>
+						<p>{t('contact.form.success_text')}</p>
+					</div>
+				</section>
+			</div>
+
+			<section class="location-info">
+				<h2>{t('contact.location.heading')}</h2>
+				<div class="location-grid">
+					<div class="location-card">
+						<h3>{t('contact.location.address')}</h3>
+						<p>HUN-REN Balaton Limnological Research Institute<br>8237 Tihany, Klebelsberg Kuno utca 3.<br>Hungary</p>
+					</div>
+					<div class="location-card">
+						<h3>{t('contact.location.getting_there')}</h3>
+						<p>{t('contact.location.getting_there_text')}</p>
+					</div>
+					<div class="location-card">
+						<h3>{t('contact.location.website')}</h3>
+						<p><a href="https://www.blki.hun-ren.hu/" target="_blank" rel="noopener noreferrer">www.blki.hun-ren.hu</a></p>
+					</div>
+				</div>
+			</section>
+
+			<section class="map">
+				<h2>{t('contact.map.heading')}</h2>
+				<div class="map-container">
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2728.1234567890123!2d17.8867!3d46.9136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4769b8b8b8b8b8b8%3A0x1234567890123456!2sHUN-REN+Balaton+Limnological+Research+Institute!5e0!3m2!1sen!2shu!4v1234567890123"
+						width="100%"
+						height="400"
+						style="border:0;"
+						allowfullscreen=""
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade">
+					</iframe>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.page-header {
+		text-align: center;
+		margin-bottom: 1.5em;
+		padding: 1em 0;
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+
+	.page-header h1 {
+		margin-bottom: 0.5em;
+		color: rgb(var(--black));
+	}
+
+	.page-subtitle {
+		font-size: 1.2em;
+		color: rgb(var(--gray));
+		margin: 0;
+		font-style: italic;
+	}
+
+	.contact-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2em;
+		margin: 0;
+		align-items: stretch;
+	}
+
+	.contact-info {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.contact-details {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+	}
+
+	section {
+		margin: 2em 0;
+	}
+
+	.info-card {
+		background-color: white;
+		padding: 2em;
+		border-radius: 12px;
+		box-shadow: var(--box-shadow);
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.contact-details h2,
+	.contact-form h2 {
+		margin-top: 0;
+		margin-bottom: 1em;
+		font-size: 1.5em;
+	}
+
+	.info-item {
+		margin-bottom: 2em;
+		padding-bottom: 1.5em;
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+
+	.info-item:last-child {
+		margin-bottom: 0;
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+
+	.info-item h3 {
+		color: var(--accent);
+		margin-bottom: 0.8em;
+		font-size: 1.1em;
+		font-weight: 600;
+	}
+
+	.info-item p {
+		color: rgb(var(--gray-dark));
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	.info-item a {
+		color: var(--accent);
+		text-decoration: none;
+	}
+
+	.info-item a:hover {
+		text-decoration: underline;
+	}
+
+	.message-form {
+		background-color: white;
+		padding: 2em;
+		border-radius: 12px;
+		box-shadow: var(--box-shadow);
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	.contact-form {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+	}
+
+	.form-group {
+		margin-bottom: 1.5em;
+	}
+
+	label {
+		display: block;
+		margin-bottom: 0.5em;
+		color: rgb(var(--gray-dark));
+		font-weight: 500;
+	}
+
+	input, textarea {
+		width: 100%;
+		padding: 0.8em;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 6px;
+		font-size: 1em;
+		transition: border-color 0.2s;
+	}
+
+	input:focus, textarea:focus {
+		outline: none;
+		border-color: var(--accent);
+	}
+
+	.submit-btn {
+		background-color: var(--accent);
+		color: white;
+		padding: 1em 2em;
+		border: none;
+		border-radius: 6px;
+		cursor: pointer;
+		font-size: 1em;
+		font-weight: 600;
+		transition: all 0.2s;
+		width: 100%;
+		margin-top: auto;
+	}
+
+	.submit-btn:hover {
+		background-color: var(--accent-dark);
+		transform: translateY(-2px);
+	}
+
+	.hidden {
+		display: none;
+	}
+
+	.form-message {
+		background-color: white;
+		padding: 2em;
+		border-radius: 12px;
+		box-shadow: var(--box-shadow);
+		text-align: center;
+		margin-top: 2em;
+	}
+
+	.form-message.success {
+		border-left: 4px solid #4caf50;
+	}
+
+	.form-message h3 {
+		color: #4caf50;
+		margin-bottom: 0.5em;
+	}
+
+	.form-message p {
+		color: rgb(var(--gray-dark));
+		margin: 0;
+	}
+
+	.location-info h2,
+	.map h2 {
+		margin-top: 0;
+		margin-bottom: 1em;
+		font-size: 1.5em;
+	}
+
+	.location-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2em;
+		margin-top: 1em;
+	}
+
+	.location-card {
+		background-color: white;
+		padding: 2em;
+		border-radius: 12px;
+		box-shadow: var(--box-shadow);
+		text-align: center;
+	}
+
+	.location-card h3 {
+		color: var(--accent);
+		margin-bottom: 1em;
+		font-size: 1.2em;
+	}
+
+	.location-card p {
+		color: rgb(var(--gray-dark));
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	.location-card a {
+		color: var(--accent);
+		text-decoration: none;
+		font-weight: 500;
+	}
+
+	.location-card a:hover {
+		text-decoration: underline;
+	}
+
+	.map-container {
+		border-radius: 12px;
+		overflow: hidden;
+		box-shadow: var(--box-shadow);
+	}
+
+	.map-container iframe {
+		display: block;
+	}
+
+	@media (max-width: 768px) {
+		.contact-grid {
+			grid-template-columns: 1fr;
+			gap: 2em;
+		}
+
+		.location-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.info-card, .message-form, .location-card {
+			padding: 1.5em;
+		}
+
+		.page-header {
+			padding: 1em 0;
+			margin-bottom: 2em;
+		}
+
+		section {
+			margin: 2em 0;
+		}
+	}
+</style>
