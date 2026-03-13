@@ -1,0 +1,35 @@
+# Huan Li — GeoLab
+> Geospatial Intelligence for Environmental Sustainability
+
+Dr. Huan Li is a Senior Research Fellow at HUN-REN Balaton Limnological Research Institute (Hungary), specializing in spatio-temporal data analysis, satellite remote sensing, GIS, and environmental monitoring. Research covers inland water body monitoring (Lake Balaton, Lake Chad), global water cycle dynamics, cryosphere studies (polar sea ice, glaciers), and climate change impacts on aquatic ecosystems. ~50 peer-reviewed publications. Previously affiliated with Peking University and Tsinghua University.
+
+## Key Research Areas
+
+* Inland water monitoring: chlorophyll-a, water temperature, lake area change
+* Cryosphere: polar sea ice thickness/volume, glacier extent, snow cover
+* Global water cycle and hydrological modeling
+* Spatio-temporal data analysis and machine learning for remote sensing
+
+## Pages
+
+* Homepage: https://geolab.live/
+* Research: https://geolab.live/research/
+* Publications: https://geolab.live/publications/
+* Teaching: https://geolab.live/teaching/
+* Resources (tools, datasets, code): https://geolab.live/resources/
+* CV: https://geolab.live/cv/
+* News: https://geolab.live/news/
+* Contact: https://geolab.live/contact/
+
+## Selected Tools
+
+* Chlorophyll-a Inspection Software for Lake Balaton: https://lihuan.projects.earthengine.app/view/chla-balaton
+* Lake Balaton Water Temperature Explorer: https://lihuan.users.earthengine.app/view/balaton
+* Lake Chad Area Change Inspector: https://lihuan.users.earthengine.app/view/lakechad
+
+## Contact
+
+* Email: li.huan@blki.hu
+* Google Scholar: https://scholar.google.com/citations?user=FTIcDIYAAAAJ&hl=en
+* ORCID: https://orcid.org/0000-0003-1204-8370
+* GitHub: https://github.com/Scarlett-Huan-Li

@@ -15,20 +15,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<main>
 			<h1>Teaching</h1>
 
-			<section class="teaching-philosophy">
-				<h2>Teaching Philosophy</h2>
-				<p>Brief description of your approach to teaching and pedagogical methods.</p>
-				<div class="philosophy-points">
-					<div class="point-card">
-						<h3>Student-Centered Learning</h3>
-						<p>Description of how you implement student-centered learning approaches.</p>
-					</div>
-					<div class="point-card">
-						<h3>Research Integration</h3>
-						<p>How you integrate research into your teaching practice.</p>
-					</div>
-				</div>
-			</section>
 
 			<section class="courses">
 				<h2>Courses Taught & Invited Lectures</h2>
@@ -117,21 +103,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		border-top: 1px solid rgb(var(--gray-light));
 	}
 
-	.philosophy-points {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 1.5em;
-		margin-top: 1em;
-	}
-
-	.point-card {
-		padding: 1.5em;
-		background-color: white;
-		border-radius: 8px;
-		box-shadow: var(--box-shadow);
-	}
-
-	.course-list {
+.course-list {
 		display: grid;
 		gap: 1.5em;
 		margin-top: 1em;

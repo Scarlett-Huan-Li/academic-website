@@ -1,8 +1,8 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = "GeoLab - Remote Sensing & Environmental Data Science";
-export const SITE_DESCRIPTION = "GeoLab: Remote Sensing & Environmental Data Science Lab led by Dr. Huan Li. Research focuses on spatio-temporal data analysis, satellite remote sensing, GIS, and environmental science including inland water body monitoring, global water cycle, polar sea ice, climate change, and limnology.";
+export const SITE_TITLE = "GeoLab - Geospatial Intelligence for Environmental Sustainability";
+export const SITE_DESCRIPTION = "GeoLab: Geospatial Intelligence for Environmental Sustainability, led by Dr. Huan Li, Senior Research Fellow at HUN-REN Balaton Limnological Research Institute. Research focuses on geospatial data science, satellite remote sensing, inland water monitoring (Lake Balaton, Lake Chad), global water cycle dynamics, cryosphere studies (polar sea ice, glaciers), climate change impacts on aquatic ecosystems, and sustainable development.";
 
 export const SOCIAL_LINKS = {
   googleScholar: 'https://scholar.google.com/citations?user=FTIcDIYAAAAJ&hl=en',

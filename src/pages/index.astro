@@ -9,6 +9,38 @@ import { SITE_TITLE, SITE_DESCRIPTION, SOCIAL_LINKS } from '../consts';
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Huan Li",
+			"jobTitle": "Senior Research Fellow",
+			"affiliation": {
+				"@type": "Organization",
+				"name": "HUN-REN Balaton Limnological Research Institute"
+			},
+			"url": "https://geolab.live",
+			"email": "li.huan@blki.hu",
+			"sameAs": [
+				"https://scholar.google.com/citations?user=FTIcDIYAAAAJ&hl=en",
+				"https://orcid.org/0000-0003-1204-8370",
+				"https://github.com/Scarlett-Huan-Li",
+				"https://www.linkedin.com/in/huan-li-4a84478a/",
+				"https://www.researchgate.net/profile/Huan-Li-58"
+			],
+			"knowsAbout": [
+				"Remote Sensing",
+				"GIS",
+				"Spatio-temporal Data Analysis",
+				"Inland Water Monitoring",
+				"Cryosphere Research",
+				"Climate Change",
+				"Environmental Science",
+				"Google Earth Engine"
+			],
+			"description": "Geospatial data scientist specializing in satellite remote sensing, inland water monitoring, and cryosphere research for environmental sustainability."
+		}
+		</script>
 	</head>
 	<body>
 		<Header />
