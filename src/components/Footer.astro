@@ -1,10 +1,13 @@
 ---
 const today = new Date();
 import { SOCIAL_LINKS } from '../consts';
+import { getLangFromUrl, getTranslations } from '../i18n/ui';
+const lang = getLangFromUrl(Astro.url);
+const t = getTranslations(lang);
 ---
 
 <footer>
-	&copy; {today.getFullYear()} GeoLab. All rights reserved.
+	&copy; {today.getFullYear()} GeoLab. {t('footer.rights')}
 	<div class="social-links">
 		<a href={SOCIAL_LINKS.googleScholar} target="_blank" rel="noopener noreferrer">
 			<img src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/googlescholar.svg" alt="Google Scholar" width="20" height="20">

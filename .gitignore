@@ -26,3 +26,5 @@ pnpm-debug.log*
 *.docx
 # *.pdf
 *.txt
+!llms.txt
+!robots.txt

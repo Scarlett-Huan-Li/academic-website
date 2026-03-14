@@ -1,0 +1,374 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { getTranslations } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } },
+    { params: { lang: 'hu' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const t = getTranslations(lang);
+const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
+---
+
+<!doctype html>
+<html lang={htmlLang}>
+	<head>
+		<BaseHead title={`CV | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="cv-header">
+				<h1>{t('cv.title')}</h1>
+				<a href="/CV-2026_github.pdf" class="download-cv" download>{t('cv.download')}</a>
+			</div>
+
+			<section class="education">
+				<h2>{t('cv.education.heading')}</h2>
+				<div class="timeline">
+					<div class="entry">
+						<div class="year">2012–2016</div>
+						<div class="content">
+							<h3>Ph.D., Cartography and Geographic Information Engineering</h3>
+							<p>Wuhan University, State Key Laboratory of Information Engineering in Surveying, Mapping and Remote Sensing, China</p>
+							<p class="details">Thesis: Active On-demand Real-time Provision for the High Frequency and Low Volume Sensor Web Data</p>
+							<p class="details">Supervisor: Prof. Hong Fan</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2010–2012</div>
+						<div class="content">
+							<h3>M.S., Surveying Engineering</h3>
+							<p>Wuhan University, State Key Laboratory of Information Engineering in Surveying, Mapping and Remote Sensing, China</p>
+							<p class="details">Supervisor: Prof. Hong Fan</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2006–2010</div>
+						<div class="content">
+							<h3>B.S., Geographic Information System</h3>
+							<p>Wuhan University, School of Remote Sensing and Information Engineering, China</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2008–2010</div>
+						<div class="content">
+							<h3>B.S., Japanese</h3>
+							<p>Huazhong University of Science and Technology, School of Foreign Languages, China</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="appointments">
+				<h2>{t('cv.appointments.heading')}</h2>
+				<div class="timeline">
+					<div class="entry">
+						<div class="year">2022–Present</div>
+						<div class="content">
+							<h3>Senior Research Fellow</h3>
+							<p>Balaton Limnological Research Institute, Hungary</p>
+							<p class="details">Remote Sensing-based environment monitoring</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2018–2022</div>
+						<div class="content">
+							<h3>Post-doctoral Researcher</h3>
+							<p>Peking University, School of Earth and Space Sciences, China</p>
+							<p class="details">Cryosphere and big data mining</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2016–2018</div>
+						<div class="content">
+							<h3>Post-doctoral Researcher</h3>
+							<p>Tsinghua University, State Key Laboratory of HydroScience and Engineering, China</p>
+							<p class="details">Remote sensing hydrology and economic application</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="grants">
+				<h2>{t('cv.grants.heading')}</h2>
+				<div class="timeline">
+					<div class="entry">
+						<div class="year">2025</div>
+						<div class="content">
+							<h3>Perceptual AI Framework for Integrated Satellite and Multi-Source Aquatic Environment Monitoring</h3>
+							<p>HUN-REN – NTU AI Research Cooperation Programme 2025 (NTU: Nanyang Technological University)</p>
+							<p class="details">Role: Principal Investigator</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2023–2024</div>
+						<div class="content">
+							<h3>Mining spatio-temporal patterns of 40-year surface water temperature for lakes and rivers in the Pannonian ecoregion</h3>
+							<p>European Space Agency Network of Resources (NoR) Sponsorship</p>
+							<p class="details">Role: Principal Investigator</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2020–2022</div>
+						<div class="content">
+							<h3>Retrieving key parameters of circum-Antarctic sea ice with altimeter satellites and their spatio-temporal changes</h3>
+							<p>Youth Found of National Natural Science Foundation of China</p>
+							<p class="details">Role: Principal Investigator</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2019–2021</div>
+						<div class="content">
+							<h3>Retrieving Antarctic sea-ice thickness and volume from ICESat and spatio-temporal variability analysis</h3>
+							<p>China Post-doc Foundation</p>
+							<p class="details">Role: Principal Investigator</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2014–2015</div>
+						<div class="content">
+							<h3>Ph.D. Studentship</h3>
+							<p>Collaborative Innovation Center of Geospatial Technology, Wuhan University, China</p>
+							<p class="details">Role: Ph.D. Student</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="awards">
+				<h2>{t('cv.awards.heading')}</h2>
+				<div class="timeline">
+					<div class="entry">
+						<div class="year">2021</div>
+						<div class="content">
+							<h3>Annual Best Paper</h3>
+							<p>Institute of Remote Sensing and Geographic Information System (IRGIS), Peking University, China</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2019</div>
+						<div class="content">
+							<h3>First Prize, The First Youth Forum of IRGIS</h3>
+							<p>Peking University, China</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2018</div>
+						<div class="content">
+							<h3>Annual Best Paper</h3>
+							<p>IRGIS, Peking University, China</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2017</div>
+						<div class="content">
+							<h3>Second Prize, The Seventh Teaching Contest of Young Teachers</h3>
+							<p>School of Civil Engineering, Tsinghua University, China</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2015</div>
+						<div class="content">
+							<h3>Excellent Paper Award, The Fourth Graduate Student Forum of National Remote Sensing and Geographic Information Science</h3>
+							<p>Nanking University, China</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2013</div>
+						<div class="content">
+							<h3>Third Prize, The Third Graduate Student Forum of National Remote Sensing and Geographic Information Science</h3>
+							<p>Wuhan University, China</p>
+						</div>
+					</div>
+					<div class="entry">
+						<div class="year">2011</div>
+						<div class="content">
+							<h3>Excellent Paper Award, The Second Graduate Student Forum of National Remote Sensing and Geographic Information Science</h3>
+							<p>Chinese Academy of Sciences, China</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="service">
+				<h2>{t('cv.service.heading')}</h2>
+				<div class="service-categories">
+					<div class="service-card">
+						<h3>{t('cv.service.editorial.title')}</h3>
+						<ul>
+							<li>Remote Sensing of Environment – Reviewer</li>
+							<li>Water Research – Reviewer</li>
+							<li>Earth Science Reviews – Reviewer</li>
+							<li>The Cryosphere – Reviewer</li>
+							<li>Earth System Science Data – Reviewer</li>
+							<li>Journal of Hydrology – Reviewer</li>
+							<li>Hydrological Sciences Journal – Reviewer</li>
+							<li>Results in Engineering – Reviewer</li>
+							<li>Remote Sensing – Reviewer</li>
+							<li>Sustainability – Reviewer</li>
+							<li>Frontiers in Earth Science – Reviewer</li>
+							<li>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing – Reviewer</li>
+							<li>IEEE Transactions on Neural Networks and Learning Systems – Reviewer</li>
+							<li>IEEE Geoscience and Remote Sensing Letters – Reviewer</li>
+							<li>Hydrology and Earth System Sciences – Reviewer</li>
+							<li>Environmental Modelling and Software – Reviewer</li>
+							<li>International Journal of Applied Earth Observation and Geoinformation – Reviewer</li>
+							<li>International Journal of Digital Earth – Reviewer</li>
+							<li>Journal of Hydrology: Regional Studies – Reviewer</li>
+							<li>Terrestrial, Atmospheric and Oceanic Sciences – Reviewer</li>
+						</ul>
+					</div>
+					<div class="service-card">
+						<h3>{t('cv.service.mentoring.title')}</h3>
+						<ul>
+							<li>Supervised undergraduate, master, and doctoral students at Peking University and Wuhan University</li>
+							<li>Session Chair, Fresh Blood for Freshwater 2025, HUN-REN Institute of Aquatic Ecology, Hungary</li>
+							<li>Technical consulting for ESGreenChina LLC. and DataSea Inc.</li>
+							<li>Life Member, European Geosciences Union (since 2021)</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.cv-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 2em;
+	}
+
+	.download-cv {
+		padding: 0.5em 1em;
+		background-color: var(--accent);
+		color: white;
+		border-radius: 4px;
+		text-decoration: none;
+		transition: background-color 0.2s;
+	}
+
+	.download-cv:hover {
+		background-color: var(--accent-dark);
+	}
+
+	section {
+		margin: 2em 0;
+		padding: 1em 0;
+		border-top: 1px solid rgb(var(--gray-light));
+	}
+
+	.timeline {
+		margin-top: 1em;
+	}
+
+	.entry {
+		display: grid;
+		grid-template-columns: 150px 1fr;
+		gap: 1.5em;
+		margin-bottom: 1.5em;
+	}
+
+	.year {
+		color: var(--accent);
+		font-weight: bold;
+	}
+
+	.content {
+		padding: 0 0 1em 1.5em;
+		border-left: 3px solid rgb(var(--gray-light));
+	}
+
+	.content h3 {
+		margin: 0;
+		color: rgb(var(--gray-dark));
+	}
+
+	.details {
+		color: rgb(var(--gray));
+		font-size: 0.9em;
+		margin: 0.3em 0;
+	}
+
+	.service-categories {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5em;
+		margin-top: 1em;
+	}
+
+	.service-card {
+		padding: 1.5em;
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: var(--box-shadow);
+	}
+
+	.service-card:first-child ul {
+		columns: 3;
+		column-gap: 2em;
+	}
+
+	@media (min-width: 1200px) {
+		.service-card:first-child ul {
+			columns: 4;
+		}
+	}
+
+	@media (max-width: 900px) {
+		.service-card:first-child ul {
+			columns: 2;
+		}
+	}
+
+	.service-card ul {
+		list-style-type: none;
+		padding: 0;
+	}
+
+	.service-card li {
+		margin: 0.5em 0;
+		padding-left: 1em;
+		border-left: 3px solid var(--accent);
+		break-inside: avoid;
+	}
+
+	@media (max-width: 900px) {
+		.service-card:first-child ul {
+			columns: 1;
+		}
+	}
+
+	@media (max-width: 720px) {
+		.entry {
+			grid-template-columns: 1fr;
+			gap: 0.5em;
+		}
+
+		.content {
+			padding-left: 1em;
+		}
+
+		.cv-header {
+			flex-direction: column;
+			gap: 1em;
+			text-align: center;
+		}
+
+		.service-card:first-child ul {
+			columns: 1;
+		}
+	}
+</style>

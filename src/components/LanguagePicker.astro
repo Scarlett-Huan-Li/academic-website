@@ -1,0 +1,62 @@
+---
+import { languages, getLangFromUrl } from '../i18n/ui';
+
+const currentLang = getLangFromUrl(Astro.url);
+
+// Build the equivalent path in each language
+const segments = Astro.url.pathname.split('/').filter(Boolean);
+// segments[0] is the current lang code (if present); segments[1+] is the page path
+const pagePath = segments.length > 1 ? segments.slice(1).join('/') : '';
+---
+
+<div class="lang-picker">
+  {Object.entries(languages).map(([lang, label]) => (
+    <a
+      href={`/${lang}/${pagePath}`}
+      class:list={['lang-btn', { active: lang === currentLang }]}
+      aria-label={`Switch to ${label}`}
+    >{label}</a>
+  ))}
+</div>
+
+<style>
+  .lang-picker {
+    display: flex;
+    gap: 0.3em;
+    align-items: center;
+    margin-left: 1em;
+    flex-shrink: 0;
+  }
+
+  .lang-btn {
+    padding: 0.3em 0.65em;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.82em;
+    font-weight: 500;
+    color: rgb(var(--gray-dark));
+    background: rgb(var(--gray-light));
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .lang-btn:hover {
+    background: var(--accent);
+    color: white;
+  }
+
+  .lang-btn.active {
+    background: var(--accent);
+    color: white;
+  }
+
+  @media (max-width: 480px) {
+    .lang-picker {
+      margin-left: 0;
+    }
+    .lang-btn {
+      padding: 0.25em 0.5em;
+      font-size: 0.78em;
+    }
+  }
+</style>

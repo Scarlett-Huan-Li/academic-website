@@ -1,28 +1,36 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import LanguagePicker from './LanguagePicker.astro';
+import { getLangFromUrl, getTranslations } from '../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+const t = getTranslations(lang);
+const base = `/${lang}`;
 ---
 
 <header>
 	<nav>
 		<div class="nav-brand">
-			<a href="/" class="nav-logo">
+			<a href={`${base}/`} class="nav-logo">
 				<img src="/favicon.svg" alt="GeoLab" class="logo-icon" />
 			</a>
 			<div class="nav-brand-text">
-				<h2><a href="/">GeoLab</a></h2>
-				<p class="nav-subtitle">Remote Sensing & Environmental Data Science Lab</p>
+				<h2><a href={`${base}/`}>GeoLab</a></h2>
+				<p class="nav-subtitle">{t('header.subtitle')}</p>
 			</div>
 		</div>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/research">Research</HeaderLink>
-			<HeaderLink href="/publications">Publications</HeaderLink>
-			<HeaderLink href="/teaching">Teaching</HeaderLink>
-			<HeaderLink href="/cv">CV</HeaderLink>
-			<HeaderLink href="/resources">Resources</HeaderLink>
-			<HeaderLink href="/news">News</HeaderLink>
-			<HeaderLink href="/contact">Contact</HeaderLink>
+		<div class="nav-right">
+			<div class="internal-links">
+				<HeaderLink href={`${base}/`}>{t('nav.home')}</HeaderLink>
+				<HeaderLink href={`${base}/research`}>{t('nav.research')}</HeaderLink>
+				<HeaderLink href={`${base}/publications`}>{t('nav.publications')}</HeaderLink>
+				<HeaderLink href={`${base}/teaching`}>{t('nav.teaching')}</HeaderLink>
+				<HeaderLink href={`${base}/cv`}>{t('nav.cv')}</HeaderLink>
+				<HeaderLink href={`${base}/resources`}>{t('nav.resources')}</HeaderLink>
+				<HeaderLink href={`${base}/news`}>{t('nav.news')}</HeaderLink>
+				<HeaderLink href={`${base}/contact`}>{t('nav.contact')}</HeaderLink>
+			</div>
+			<LanguagePicker />
 		</div>
 	</nav>
 </header>
@@ -47,6 +55,7 @@ import { SITE_TITLE } from '../consts';
 		display: flex;
 		align-items: center;
 		gap: 1em;
+		flex-shrink: 0;
 	}
 
 	.nav-logo {
@@ -91,6 +100,13 @@ import { SITE_TITLE } from '../consts';
 		font-size: 0.9em;
 		color: rgb(var(--gray));
 		font-weight: 400;
+		white-space: nowrap;
+	}
+
+	.nav-right {
+		display: flex;
+		align-items: center;
+		gap: 0;
 	}
 
 	.internal-links {
@@ -130,6 +146,13 @@ import { SITE_TITLE } from '../consts';
 			flex-direction: column;
 			gap: 1em;
 			align-items: flex-start;
+		}
+
+		.nav-right {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.75em;
+			width: 100%;
 		}
 
 		.internal-links {
