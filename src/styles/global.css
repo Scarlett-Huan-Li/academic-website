@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
 /*
   The CSS in this style tag is based off of Bear Blog's default CSS.
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
@@ -5,8 +7,8 @@
  */
 
 :root {
-	--accent: #2563eb;
-	--accent-dark: #1d4ed8;
+	--accent: #1a365d;
+	--accent-dark: #142849;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
@@ -33,7 +35,7 @@
 }
 
 body {
-	font-family: 'Atkinson', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	font-family: 'Inter', -apple-system, sans-serif;
 	margin: 0;
 	padding: 0;
 	text-align: left;
@@ -53,6 +55,12 @@ main {
 	padding: 2em;
 	background: white;
 	min-height: calc(100vh - 200px);
+}
+
+h1,
+h2,
+h3 {
+	font-family: 'Playfair Display', Georgia, serif;
 }
 
 h1,
