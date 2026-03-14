@@ -39,7 +39,6 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 				<h2>{t('research.areas.heading')}</h2>
 				<div class="areas-grid">
 					<div class="area-card">
-						<div class="area-icon">🛰️</div>
 						<h3>{t('research.areas.rs.title')}</h3>
 						<p>{t('research.areas.rs.desc')}</p>
 						<ul>
@@ -49,7 +48,6 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 						</ul>
 					</div>
 					<div class="area-card">
-						<div class="area-icon">🧊</div>
 						<h3>{t('research.areas.cryo.title')}</h3>
 						<p>{t('research.areas.cryo.desc')}</p>
 						<ul>
@@ -60,7 +58,6 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 						</ul>
 					</div>
 					<div class="area-card">
-						<div class="area-icon">🌊</div>
 						<h3>{t('research.areas.water.title')}</h3>
 						<p>{t('research.areas.water.desc')}</p>
 						<ul>
@@ -70,7 +67,6 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 						</ul>
 					</div>
 					<div class="area-card">
-						<div class="area-icon">🌿</div>
 						<h3>{t('research.areas.eco.title')}</h3>
 						<p>{t('research.areas.eco.desc')}</p>
 						<ul>
@@ -80,7 +76,6 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 						</ul>
 					</div>
 					<div class="area-card">
-						<div class="area-icon">📊</div>
 						<h3>{t('research.areas.big.title')}</h3>
 						<p>{t('research.areas.big.desc')}</p>
 						<ul>
@@ -90,7 +85,6 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 						</ul>
 					</div>
 					<div class="area-card">
-						<div class="area-icon">🏙️</div>
 						<h3>{t('research.areas.socio.title')}</h3>
 						<p>{t('research.areas.socio.desc')}</p>
 						<ul>
@@ -267,28 +261,22 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 	}
 
 	.area-card {
-		padding: 2em;
-		background: white;
-		border-radius: 12px;
-		box-shadow: var(--box-shadow);
-		transition: transform 0.2s;
+		padding: 1.5em 0;
+		background: transparent;
+		border-top: 2px solid var(--accent);
+		text-align: left;
+		transition: border-top-color 0.2s;
 	}
 
 	.area-card:hover {
-		transform: translateY(-5px);
-	}
-
-	.area-icon {
-		font-size: 2.5em;
-		margin-bottom: 1em;
-		text-align: center;
+		border-top-color: var(--accent-dark);
 	}
 
 	.area-card h3 {
-		margin-bottom: 1em;
+		font-size: 1.1em;
+		margin-bottom: 0.5em;
 		color: rgb(var(--black));
-		font-size: 1.3em;
-		text-align: center;
+		text-align: left;
 	}
 
 	.area-card p {
