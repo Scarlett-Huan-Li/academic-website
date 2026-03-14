@@ -100,7 +100,8 @@ const base = `/${lang}`;
 		font-size: 0.9em;
 		color: rgb(var(--gray));
 		font-weight: 400;
-		white-space: nowrap;
+		white-space: normal;
+		max-width: 200px;
 	}
 
 	.nav-right {
@@ -111,7 +112,7 @@ const base = `/${lang}`;
 
 	.internal-links {
 		display: flex;
-		gap: 1.5em;
+		gap: 1em;
 		flex-wrap: wrap;
 		align-items: center;
 	}
@@ -135,6 +136,20 @@ const base = `/${lang}`;
 	.internal-links a.active {
 		color: var(--accent);
 		border-bottom-color: var(--accent);
+	}
+
+	@media (max-width: 1100px) {
+		.internal-links a {
+			font-size: 0.85em;
+		}
+
+		.nav-brand h2 {
+			font-size: 1.4em;
+		}
+
+		.nav-subtitle {
+			font-size: 0.8em;
+		}
 	}
 
 	@media (max-width: 900px) {
