@@ -60,7 +60,7 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 				"Climate Change",
 				"Environmental Science"
 			],
-			"description": "Geospatial data scientist specializing in satellite remote sensing, inland water monitoring, and cryosphere research for environmental sustainability."
+			"description": "Tenured Senior Research Fellow and PhD supervisor; geospatial data scientist specializing in satellite remote sensing, inland water monitoring, and cryosphere research for environmental sustainability."
 		}
 		</script>
 	</head>
@@ -90,6 +90,7 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 						<h1>Huan Li</h1>
 						<p class="subtitle">{t('index.hero.position')}</p>
 						<p class="institution">{t('index.hero.institution')}</p>
+						<p class="tenure-note">{t('index.hero.tenure')}</p>
 
 						<div class="research-tags">
 							<span class="tag">{t('index.hero.tag.spatiotemporal')}</span>
@@ -103,9 +104,28 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 						<div class="cta-buttons">
 							<a href={`/${lang}/research`} class="btn btn-primary">{t('index.hero.cta_primary')}</a>
 							<a href={`/${lang}/publications`} class="btn btn-secondary">{t('index.hero.cta_secondary')}</a>
+							<a href={`/${lang}/join`} class="btn btn-secondary">{t('index.hero.cta_join')}</a>
 						</div>
 					</div>
 				</div>
+			</section>
+
+			<!-- Recruiting banner -->
+			<section class="recruit-banner">
+				<div class="recruit-text">
+					<h2>{t('index.recruit.title')}</h2>
+					<p>{t('index.recruit.text')}</p>
+				</div>
+				<a href={`/${lang}/join`} class="recruit-link">{t('index.recruit.cta')}</a>
+			</section>
+
+			<!-- EGU27 session banner -->
+			<section class="recruit-banner egu-banner">
+				<div class="recruit-text">
+					<h2>{t('index.egu.title')}</h2>
+					<p>{t('index.egu.text')}</p>
+				</div>
+				<a href={`/${lang}/egu27`} class="recruit-link">{t('index.egu.cta')}</a>
 			</section>
 
 			<!-- About Section -->
@@ -253,8 +273,53 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 	.institution {
 		font-size: 1.2em;
 		color: rgb(var(--gray));
-		margin: 0.5em 0 1.5em 0;
+		margin: 0.5em 0 0.4em 0;
 		line-height: 1.4;
+	}
+
+	.tenure-note {
+		font-size: 0.95em;
+		font-weight: 600;
+		color: var(--accent);
+		margin: 0 0 1.5em 0;
+	}
+
+	.recruit-banner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 2em;
+		flex-wrap: wrap;
+		margin: 0 0 3em 0;
+		padding: 1.5em 2em;
+		border-left: 4px solid var(--accent);
+		background: rgba(var(--gray-light), 0.5);
+		border-radius: 0 8px 8px 0;
+	}
+
+	.recruit-banner:not(.egu-banner) {
+		margin-bottom: 1.2em;
+	}
+
+	.recruit-text {
+		flex: 1 1 380px;
+	}
+
+	.recruit-banner h2 {
+		font-size: 1.3em;
+		margin: 0 0 0.4em 0;
+		color: var(--accent);
+	}
+
+	.recruit-banner p {
+		margin: 0;
+		line-height: 1.6;
+	}
+
+	.recruit-link {
+		font-weight: 600;
+		white-space: nowrap;
+		color: var(--accent);
 	}
 
 	.research-tags {
@@ -276,6 +341,7 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 
 	.cta-buttons {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 1em;
 		justify-content: center;
 		margin-top: 2em;

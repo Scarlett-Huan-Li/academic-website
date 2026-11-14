@@ -28,6 +28,7 @@ const base = `/${lang}`;
 				<HeaderLink href={`${base}/cv`}>{t('nav.cv')}</HeaderLink>
 				<HeaderLink href={`${base}/resources`}>{t('nav.resources')}</HeaderLink>
 				<HeaderLink href={`${base}/news`}>{t('nav.news')}</HeaderLink>
+				<HeaderLink href={`${base}/join`}>{t('nav.join')}</HeaderLink>
 				<HeaderLink href={`${base}/contact`}>{t('nav.contact')}</HeaderLink>
 			</div>
 			<LanguagePicker />
@@ -107,13 +108,14 @@ const base = `/${lang}`;
 	.nav-right {
 		display: flex;
 		align-items: center;
-		gap: 0;
+		gap: 1em;
 	}
 
 	.internal-links {
 		display: flex;
-		gap: 1em;
+		gap: 0.2em 0.75em;
 		flex-wrap: wrap;
+		justify-content: flex-end;
 		align-items: center;
 	}
 
@@ -122,7 +124,8 @@ const base = `/${lang}`;
 		color: rgb(var(--gray-dark));
 		text-decoration: none;
 		font-weight: 500;
-		font-size: 0.95em;
+		font-size: 0.84em;
+		white-space: nowrap;
 		border-bottom: 2px solid transparent;
 		transition: all 0.2s;
 		position: relative;
@@ -138,9 +141,13 @@ const base = `/${lang}`;
 		border-bottom-color: var(--accent);
 	}
 
-	@media (max-width: 1100px) {
+	@media (max-width: 1180px) {
+		.internal-links {
+			gap: 0.7em;
+		}
+
 		.internal-links a {
-			font-size: 0.85em;
+			font-size: 0.8em;
 		}
 
 		.nav-brand h2 {
@@ -152,7 +159,7 @@ const base = `/${lang}`;
 		}
 	}
 
-	@media (max-width: 900px) {
+	@media (max-width: 1020px) {
 		header {
 			padding: 0 1em;
 		}

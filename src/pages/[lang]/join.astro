@@ -1,0 +1,500 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SOCIAL_LINKS } from '../../consts';
+import { getTranslations } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } },
+    { params: { lang: 'hu' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const t = getTranslations(lang);
+const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
+
+type Item = { title: string; text: string };
+type Content = {
+  title: string;
+  subtitle: string;
+  description: string;
+  introHeading: string;
+  intro: string[];
+  photoCaption: string;
+  whoHeading: string;
+  who: Item[];
+  topicsHeading: string;
+  topicsIntro: string;
+  directions: string[];
+  offerHeading: string;
+  offer: string[];
+  profileHeading: string;
+  profile: string[];
+  fundingHeading: string;
+  fundingIntro: string;
+  funding: Item[];
+  fundingNote: string;
+  applyHeading: string;
+  applyIntro: string;
+  apply: string[];
+  applyNote: string;
+  emailLabel: string;
+  collabHeading: string;
+  collab: string;
+};
+
+const content: Record<string, Content> = {
+  en: {
+    title: 'Join Us',
+    subtitle: 'PhD students, joint-training students, visiting scholars and postdocs are welcome',
+    description: 'Research directions, funding routes (Stipendium Hungaricum, CSC) and how to apply to GeoLab, led by Dr. Huan Li at the HUN-REN Balaton Limnological Research Institute, Hungary.',
+    introHeading: 'Study lakes and water from space, at the shore of Lake Balaton',
+    intro: [
+      'GeoLab is led by Dr. Huan Li, a tenured Senior Research Fellow at the HUN-REN Balaton Limnological Research Institute (BLKI) in Tihany, Hungary. The institute has studied Lake Balaton, the largest lake in Central Europe, for almost a century and sits directly on its shore.',
+      'We use satellite remote sensing, Google Earth Engine and AI to understand how lakes, rivers and water resources respond to climate change and human activity. Since 2026 we also lead the Hungarian side of a Hungarian–Chinese bilateral project with the Nanjing Institute of Geography and Limnology, Chinese Academy of Sciences, which links Lake Balaton and Lake Taihu.',
+    ],
+    photoCaption: 'The Balaton Limnological Research Institute on the shore of Lake Balaton, Tihany. Photo: HUN-REN BLKI.',
+    whoHeading: 'Who we are looking for',
+    who: [
+      { title: 'PhD students', text: 'Full doctoral studies in Hungary. In the Hungarian system you enrol in a university doctoral school and do your research at the institute under my supervision.' },
+      { title: 'Joint-training PhD students', text: 'PhD students enrolled elsewhere who spend 6–24 months with us, typically funded by the China Scholarship Council (CSC) joint-training programme or by their home institution.' },
+      { title: 'Visiting scholars and postdocs', text: 'Researchers who want to work on a shared question for a few months to a year, through CSC visiting programmes, bilateral projects, MSCA fellowships or their own funding.' },
+      { title: 'Master and undergraduate interns', text: 'Remote or on-site thesis projects on a well-defined data question. Several of my former students published their first paper this way.' },
+    ],
+    topicsHeading: 'Research directions',
+    topicsIntro: 'PhD and visiting projects are defined together with each applicant, including but not limited to the following directions:',
+    directions: [
+      'Long-term satellite monitoring of lake water quality (chlorophyll-a, algal blooms) with machine learning and AI',
+      'Surface water temperature and heatwaves of lakes and rivers under climate change',
+      'Water resources and the water budget from multi-source satellite data',
+      'Methods: Google Earth Engine, cloud removal and gap filling for optical time series, geospatial foundation models',
+    ],
+    offerHeading: 'What you can expect',
+    offer: [
+      'Close, hands-on supervision in a small group, with weekly discussions in English or Chinese.',
+      'Rich data: Hungary\'s dense, long-running in-situ monitoring of lakes and rivers, together with the satellite remote sensing and model datasets built in my earlier work, such as four decades of chlorophyll-a and long-term water temperature records.',
+      'A clear path to publications in journals such as Water Research, Remote Sensing of Environment, Journal of Hydrology and IEEE TGRS, with code and data released openly.',
+      'An international network: NIGLAS (China), Bangor University (UK), Lund University (Sweden), Nanyang Technological University (Singapore) and partners across Europe, plus regular participation in EGU and IGARSS.',
+      'Life in Tihany on Lake Balaton, about 1.5 hours from Budapest and three hours from Vienna.',
+    ],
+    profileHeading: 'What we expect from you',
+    profile: [
+      'A degree in remote sensing, GIS, geography, hydrology, environmental science, ecology, computer science or a related field.',
+      'Some programming experience (Python or JavaScript) helps, but it can be built up here.',
+      'English good enough to read papers and discuss your work; it improves quickly with practice. Hungarian is not needed.',
+      'Curiosity and the willingness to learn matter more than a perfect record.',
+    ],
+    fundingHeading: 'Funding routes',
+    fundingIntro: 'Most students join through one of the following routes. An invitation letter from the host supervisor is required in almost all of them, so contact me before you apply.',
+    funding: [
+      { title: 'Stipendium Hungaricum / Sino-Hungarian exchange scholarship (full PhD)', text: 'The Hungarian government scholarship for a full doctoral programme (up to 48 months): tuition-free, with a monthly stipend, housing allowance and medical insurance. Applicants from China are nominated through the CSC, and the doctoral category currently requires applicants to be final-year master students. In the last round the CSC online application was in early December and the Hungarian application closed on 15 January.' },
+      { title: 'CSC joint-training PhD programme (6–24 months)', text: 'For PhD students enrolled at a Chinese university. Applications are usually submitted in spring through your home university; an existing cooperation between the two supervisors is an advantage.' },
+      { title: 'CSC programmes for staff, visiting scholars and postdocs', text: 'CSC high-level programmes are also open to employees of research institutes and universities (not only fresh graduates), subject to age limits and an invitation letter with a tuition waiver. Visiting scholar and postdoc programmes are announced separately.' },
+      { title: 'Project funding and Hungarian visiting-researcher schemes', text: 'Short research visits can be supported by our running projects, including the Hungarian–Chinese bilateral project (2026–2027). For senior visiting researchers there are also dedicated Hungarian funding schemes that we can apply for together.' },
+    ],
+    fundingNote: 'Deadlines and conditions change every year. Please check the official calls at stipendiumhungaricum.hu and csc.edu.cn before you plan.',
+    applyHeading: 'How to apply',
+    applyIntro: 'One email is enough:',
+    apply: [
+      'Attach your CV. A few lines on your programming skills and the tools you have used are very welcome.',
+      'In the email itself, tell me briefly which research direction interests you and which funding route you have in mind. No separate statement is needed.',
+    ],
+    applyNote: 'Transcripts are not needed at this stage. The Stipendium Hungaricum call for 2027/28 had not yet opened when this page was last updated (mid-November 2026); in the previous round the deadline was 15 January. Preparing an invitation letter takes time, so if you plan to apply in this round, please write as early as you can. Enquiries for joint-training and visiting stays are welcome all year.',
+    emailLabel: 'Email Dr. Huan Li',
+    collabHeading: 'For collaborators',
+    collab: 'Colleagues who would like to apply together for intergovernmental bilateral projects, NKFIH calls or Horizon Europe consortia, or to host or send students, are very welcome to get in touch.',
+  },
+  zh: {
+    title: '招生招聘',
+    subtitle: '欢迎博士生、联合培养博士生、访问学者和博士后加入',
+    description: 'GeoLab（李欢博士，HUN-REN 巴拉顿湖沼研究所）招生信息：研究方向、中匈互换奖学金与 CSC 资助渠道、申请方式。',
+    introHeading: '在巴拉顿湖畔，用卫星研究湖泊与水',
+    intro: [
+      'GeoLab 由李欢博士负责。李欢现为 HUN-REN 巴拉顿湖沼研究所（BLKI，匈牙利蒂哈尼）长聘高级研究员，博士毕业于武汉大学，曾在清华大学和北京大学从事博士后研究。研究所坐落在中欧最大湖泊巴拉顿湖的湖岸，对这座湖的研究已持续近百年。',
+      '我们用卫星遥感、谷歌地球引擎（GEE）和人工智能，研究湖泊、河流和水资源如何响应气候变化与人类活动。2026 年起，团队承担中匈政府间双边合作项目匈方负责工作，与中国科学院南京地理与湖泊研究所合作，开展巴拉顿湖与太湖的对比研究。',
+    ],
+    photoCaption: '坐落在巴拉顿湖畔蒂哈尼的巴拉顿湖沼研究所。图片：HUN-REN BLKI。',
+    whoHeading: '招收对象',
+    who: [
+      { title: '博士生', text: '在匈牙利攻读博士学位。按匈牙利的制度，博士生学籍注册在大学的博士学院，研究工作在研究所完成，由我指导。' },
+      { title: '联合培养博士生', text: '国内在读博士生来组 6–24 个月，通常由国家留学基金委（CSC）联合培养项目或所在单位资助。' },
+      { title: '访问学者与博士后', text: '围绕共同的科学问题来访数月至一年，可通过 CSC 访问学者/博士后项目、双边合作项目、玛丽居里（MSCA）等渠道。' },
+      { title: '硕士生与本科生', text: '欢迎以远程或来访方式，围绕一个明确的数据问题完成毕业论文或科研训练。我指导过的本科生曾以第一作者在 GRL 发表论文。' },
+    ],
+    topicsHeading: '研究方向',
+    topicsIntro: '博士和来访课题会结合申请人的背景与兴趣共同确定，包括但不限于以下方向：',
+    directions: [
+      '结合机器学习与人工智能的湖泊水质（叶绿素 a、藻华）长时序卫星监测',
+      '气候变化下湖泊与河流的水温和热浪',
+      '基于多源卫星数据的水资源与水量平衡',
+      '方法：谷歌地球引擎、光学时间序列的去云与缺失填补、地理空间基础模型',
+    ],
+    offerHeading: '你能获得什么',
+    offer: [
+      '小团队、面对面的细致指导，每周讨论，中文或英文均可。',
+      '丰富的数据：匈牙利湖泊与河流高密度、长时序的原位监测数据，加上我前期工作积累的卫星遥感与模型数据集（如 40 年叶绿素 a、长时序水温等）。',
+      '清晰的论文产出路径：近年成果发表于 Water Research、Remote Sensing of Environment、Journal of Hydrology、IEEE TGRS 等期刊，代码与数据同步公开。',
+      '国际合作网络：中国科学院南京地理与湖泊研究所、英国班戈大学、瑞典隆德大学、新加坡南洋理工大学及欧洲多国伙伴；定期参加 EGU、IGARSS 等会议。',
+      '在巴拉顿湖畔的蒂哈尼生活和工作，距布达佩斯约 1.5 小时，距维也纳约 3 小时。',
+    ],
+    profileHeading: '我们期待的你',
+    profile: [
+      '遥感、GIS、地理、水文、环境、生态、计算机等相关专业背景。',
+      '有一些编程基础（Python 或 JavaScript）会更顺利，没有也可以来了再学。',
+      '英语能读文献、能交流即可，用起来进步很快。不需要会匈牙利语。',
+      '比起完美的履历，我更看重好奇心和愿意学习的态度。',
+    ],
+    fundingHeading: '资助渠道',
+    fundingIntro: '大多数同学通过以下渠道之一来组。几乎所有渠道都需要外方导师的邀请信，请在申请前先与我联系。',
+    funding: [
+      { title: '中匈互换奖学金 / Stipendium Hungaricum（攻读博士学位）', text: '匈牙利政府奖学金，资助完整的博士学习（最长 48 个月）：免学费，提供月生活费、住宿补贴和医疗保险。中国申请人须经国家留学基金委（CSC）推荐，博士类别目前要求申请人为应届硕士毕业生。上一轮的时间安排是：12 月上旬 CSC 网上报名，匈方平台 1 月 15 日截止。' },
+      { title: 'CSC 国家公派联合培养博士（6–24 个月）', text: '面向国内高校在读博士生，一般在春季通过所在学校申报；双方导师已有实质合作是加分项。' },
+      { title: 'CSC 面向在职人员、访问学者和博士后的项目', text: '国家公派高水平项目也面向科研机构和高校的在职人员（不限应届），有年龄限制，并需要外方邀请信和免学费证明。访问学者、博士后项目另行发布通知。' },
+      { title: '项目经费与匈牙利高级访问学者资助', text: '短期来访可由在研项目支持，包括中匈政府间双边合作项目（2026–2027）。高级访问学者另有专门的匈牙利经费可以申请，我们可以一起准备。' },
+    ],
+    fundingNote: '各项目的截止日期和条件每年都有调整，请以 csc.edu.cn 和 stipendiumhungaricum.hu 的当年通知为准。',
+    applyHeading: '如何申请',
+    applyIntro: '一封邮件就够了：',
+    apply: [
+      '附上个人简历。如果能在简历里介绍一下自己的编程技能和用过的工具，会很有帮助。',
+      '在邮件正文里简单说一下对哪个研究方向感兴趣、打算走哪条资助渠道即可，不需要单独准备说明材料。',
+    ],
+    applyNote: '现阶段不需要成绩单。截至本页更新时（2026 年 11 月中旬），2027/28 学年的 Stipendium Hungaricum / 中匈互换奖学金尚未开放申请，上一轮的匈方截止日期是 1 月 15 日。准备邀请信需要时间，打算申请这一轮的同学请尽早来信。联合培养和访问随时欢迎联系。',
+    emailLabel: '给李欢老师发邮件',
+    collabHeading: '致合作伙伴',
+    collab: '欢迎国内外老师联系，共同申请政府间科技合作项目、匈牙利国家研究发展与创新署（NKFIH）双边项目或 Horizon Europe，或互派学生。',
+  },
+  hu: {
+    title: 'Csatlakozz',
+    subtitle: 'PhD-hallgatókat, vendégkutatókat és posztdoktorokat várunk',
+    description: 'Kutatási irányok, ösztöndíj-lehetőségek és jelentkezés a GeoLab csoportba (Dr. Li Huan, HUN-REN Balatoni Limnológiai Kutatóintézet).',
+    introHeading: 'Tavak és vizek kutatása az űrből, a Balaton partján',
+    intro: [
+      'A GeoLab vezetője Dr. Li Huan, a HUN-REN Balatoni Limnológiai Kutatóintézet (BLKI, Tihany) tudományos főmunkatársa. Az intézet közel egy évszázada kutatja a Balatont, közvetlenül a tó partján.',
+      'Műholdas távérzékeléssel, a Google Earth Engine-nel és mesterséges intelligenciával vizsgáljuk, hogyan reagálnak a tavak, a folyók és a vízkészletek az éghajlatváltozásra és az emberi tevékenységre. 2026 óta a Kínai Tudományos Akadémia Nankingi Földrajzi és Limnológiai Kutatóintézetével közös magyar–kínai kétoldalú projekt magyar oldalát is vezetjük, amely a Balatont és a Taj-tavat köti össze.',
+    ],
+    photoCaption: 'A Balatoni Limnológiai Kutatóintézet Tihanyban, a Balaton partján. Fotó: HUN-REN BLKI.',
+    whoHeading: 'Kiket várunk',
+    who: [
+      { title: 'PhD-hallgatók', text: 'A doktori hallgatók egy egyetem doktori iskolájába iratkoznak be, kutatásukat pedig az intézetben, az én témavezetésemmel végzik.' },
+      { title: 'Részképzéses PhD-hallgatók', text: 'Más intézményben tanuló doktoranduszok, akik 6–24 hónapot töltenek nálunk, jellemzően a Kínai Ösztöndíj Tanács (CSC) vagy saját intézményük támogatásával.' },
+      { title: 'Vendégkutatók és posztdoktorok', text: 'Kutatók, akik néhány hónaptól egy évig közös kérdésen dolgoznának velünk, kétoldalú projektek, MSCA-ösztöndíj vagy saját forrás révén.' },
+      { title: 'MSc- és BSc-hallgatók', text: 'Szakdolgozati és TDK-témák jól körülhatárolt adatelemzési kérdésekben, távolról vagy az intézetben.' },
+    ],
+    topicsHeading: 'Kutatási irányok',
+    topicsIntro: 'A doktori és vendégkutatói témákat a jelentkezővel közösen alakítjuk ki, többek között (de nem kizárólag) az alábbi irányokban:',
+    directions: [
+      'Tavak vízminőségének (klorofill-a, algavirágzások) hosszú távú műholdas monitorozása gépi tanulással és mesterséges intelligenciával',
+      'Tavak és folyók vízhőmérséklete és hőhullámai az éghajlatváltozás hatására',
+      'Vízkészletek és vízmérleg vizsgálata többforrású műholdas adatokkal',
+      'Módszerek: Google Earth Engine, felhőeltávolítás és adathiány-pótlás optikai idősorokban, térinformatikai alapmodellek',
+    ],
+    offerHeading: 'Amit kínálunk',
+    offer: [
+      'Személyes, gyakorlatközpontú témavezetés kis csoportban, heti megbeszélésekkel, angol nyelven.',
+      'Gazdag adatháttér: Magyarország sűrű, hosszú távú helyszíni tó- és folyómonitoring-adatai, valamint a korábbi munkáim során létrehozott műholdas távérzékelési és modelladatok (például négy évtizednyi klorofill-a és hosszú távú vízhőmérsékleti adatsorok).',
+      'Publikációs lehetőség vezető folyóiratokban (Water Research, Remote Sensing of Environment, Journal of Hydrology, IEEE TGRS), nyíltan közzétett kóddal és adatokkal.',
+      'Nemzetközi hálózat: NIGLAS (Kína), Bangor University (Egyesült Királyság), Lundi Egyetem (Svédország), Nanyang Technological University (Szingapúr); rendszeres részvétel az EGU és az IGARSS konferenciákon.',
+    ],
+    profileHeading: 'Amit várunk',
+    profile: [
+      'Távérzékelés, térinformatika, földrajz, hidrológia, környezettudomány, ökológia, informatika vagy rokon terület.',
+      'Némi programozási tapasztalat (Python vagy JavaScript) előny, de itt is megszerezhető.',
+      'A szakirodalom olvasásához és a munka megbeszéléséhez elegendő angol nyelvtudás.',
+      'A kíváncsiság és a tanulási kedv fontosabb, mint a hibátlan önéletrajz.',
+    ],
+    fundingHeading: 'Finanszírozási lehetőségek',
+    fundingIntro: 'A legtöbb hallgató az alábbi utak egyikén csatlakozik. Szinte mindegyikhez szükséges a fogadó témavezető befogadó levele, ezért kérem, jelentkezés előtt vegye fel velem a kapcsolatot.',
+    funding: [
+      { title: 'Projektforrások és vendégkutatói pályázatok', text: 'Rövidebb kutatói látogatásokat futó projektjeink is támogathatnak, köztük a magyar–kínai kétoldalú projekt (2026–2027). Tapasztalt vendégkutatók számára külön magyar pályázati források is elérhetők, amelyekre közösen pályázhatunk.' },
+      { title: 'Stipendium Hungaricum (teljes PhD-képzés)', text: 'A magyar állam ösztöndíja külföldi hallgatóknak, legfeljebb 48 hónapos doktori képzésre: tandíjmentesség, havi ösztöndíj, lakhatási támogatás és egészségbiztosítás. A legutóbbi körben a jelentkezési határidő január 15. volt.' },
+      { title: 'CSC részképzés (6–24 hónap) és vendégkutatói programok', text: 'A Kínai Ösztöndíj Tanács programjai kínai egyetemeken tanuló doktoranduszoknak, intézeti munkatársaknak, vendégkutatóknak és posztdoktoroknak.' },
+    ],
+    fundingNote: 'A határidők és feltételek évente változnak; kérem, mindig ellenőrizze a hivatalos felhívásokat (stipendiumhungaricum.hu, csc.edu.cn).',
+    applyHeading: 'Jelentkezés',
+    applyIntro: 'Egyetlen e-mail elegendő:',
+    apply: [
+      'Csatolja az önéletrajzát; néhány sor a programozási ismereteiről és a használt eszközökről nagyon hasznos.',
+      'Magában az e-mailben írja meg röviden, melyik kutatási irány érdekli, és milyen finanszírozásra gondol. Külön motivációs levél nem szükséges.',
+    ],
+    applyNote: 'Leckekönyv-kivonatra ebben a szakaszban nincs szükség. A 2027/28-as tanévre szóló Stipendium Hungaricum felhívás az oldal frissítésekor (2026. november közepe) még nem nyílt meg; az előző körben a határidő január 15. volt. A befogadó levél elkészítése időt igényel, ezért kérem, mielőbb jelentkezzen. Részképzésre és vendégkutatásra egész évben lehet jelentkezni.',
+    emailLabel: 'E-mail Dr. Li Huannak',
+    collabHeading: 'Együttműködő partnereknek',
+    collab: 'Szívesen várom azon kollégák megkeresését, akik közösen pályáznának kormányközi kétoldalú, NKFIH- vagy Horizon Europe-felhívásokra, vagy hallgatókat küldenének, illetve fogadnának.',
+  },
+};
+
+const c = content[lang] ?? content.en;
+const mailSubject = encodeURIComponent('[GeoLab] PhD / Joint PhD / Visiting – Name, University');
+---
+<!doctype html>
+<html lang={htmlLang}>
+	<head>
+		<BaseHead title={`${c.title} | ${SITE_TITLE}`} description={c.description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="page-header">
+				<h1>{c.title}</h1>
+				<p class="page-subtitle">{c.subtitle}</p>
+			</div>
+
+			<section class="intro">
+				<div class="intro-text">
+					<h2>{c.introHeading}</h2>
+					{c.intro.map((p) => <p>{p}</p>)}
+					<a href={`mailto:${SOCIAL_LINKS.email}?subject=${mailSubject}`} class="btn-apply">{c.emailLabel}</a>
+				</div>
+				<figure class="intro-photo">
+					<img src="/images/institute/blki-tihany.jpg" alt={c.photoCaption} loading="lazy" />
+					<figcaption>{c.photoCaption}</figcaption>
+				</figure>
+			</section>
+
+			<section>
+				<h2>{c.whoHeading}</h2>
+				<div class="card-grid">
+					{c.who.map((item) => (
+						<div class="card">
+							<h3>{item.title}</h3>
+							<p>{item.text}</p>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<section>
+				<h2>{c.topicsHeading}</h2>
+				<p>{c.topicsIntro}</p>
+				<ul class="direction-list">{c.directions.map((x) => <li>{x}</li>)}</ul>
+			</section>
+
+			<section class="two-col">
+				<div>
+					<h2>{c.offerHeading}</h2>
+					<ul>{c.offer.map((x) => <li>{x}</li>)}</ul>
+				</div>
+				<div>
+					<h2>{c.profileHeading}</h2>
+					<ul>{c.profile.map((x) => <li>{x}</li>)}</ul>
+				</div>
+			</section>
+
+			<section>
+				<h2>{c.fundingHeading}</h2>
+				<p>{c.fundingIntro}</p>
+				<div class="card-grid">
+					{c.funding.map((item) => (
+						<div class="card">
+							<h3>{item.title}</h3>
+							<p>{item.text}</p>
+						</div>
+					))}
+				</div>
+				<p class="note">
+					{c.fundingNote}
+					{' '}
+					<a href="https://stipendiumhungaricum.hu/" target="_blank" rel="noopener noreferrer">stipendiumhungaricum.hu</a>
+					{' · '}
+					<a href="https://www.csc.edu.cn/" target="_blank" rel="noopener noreferrer">csc.edu.cn</a>
+				</p>
+			</section>
+
+			<section class="apply">
+				<h2>{c.applyHeading}</h2>
+				<p>{c.applyIntro}</p>
+				<ul>{c.apply.map((x) => <li>{x}</li>)}</ul>
+				<p>{c.applyNote}</p>
+				<p>
+					<a href={`mailto:${SOCIAL_LINKS.email}?subject=${mailSubject}`} class="btn-apply">{c.emailLabel}</a>
+					<span class="email-plain">{SOCIAL_LINKS.email}</span>
+				</p>
+				<p class="links">
+					<a href={`/${lang}/research`}>{t('nav.research')}</a>
+					{' · '}
+					<a href={`/${lang}/publications`}>{t('nav.publications')}</a>
+					{' · '}
+					<a href={`/${lang}/resources`}>{t('nav.resources')}</a>
+					{' · '}
+					<a href={`/${lang}/cv`}>{t('nav.cv')}</a>
+				</p>
+			</section>
+
+			<section>
+				<h2>{c.collabHeading}</h2>
+				<p>{c.collab}</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.page-header {
+		text-align: center;
+		margin-bottom: 3em;
+		padding: 2em 0;
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+
+	.page-header h1 {
+		margin-bottom: 0.5em;
+		color: rgb(var(--black));
+	}
+
+	.page-subtitle {
+		font-size: 1.2em;
+		color: rgb(var(--gray));
+		margin: 0;
+		font-style: italic;
+	}
+
+	section {
+		margin: 3em 0;
+	}
+
+	h2 {
+		font-size: 1.5em;
+		color: var(--accent);
+		margin-bottom: 0.8em;
+	}
+
+	.intro {
+		display: grid;
+		grid-template-columns: 3fr 2fr;
+		gap: 2.5em;
+		align-items: start;
+	}
+
+	.intro-photo {
+		margin: 0;
+	}
+
+	.intro-photo img {
+		width: 100%;
+		height: auto;
+		border-radius: 8px;
+		display: block;
+	}
+
+	.intro-photo figcaption,
+	.note {
+		font-size: 0.9em;
+		color: rgb(var(--gray));
+		margin-top: 0.8em;
+	}
+
+	.card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 1.5em;
+		margin-top: 1.5em;
+	}
+
+	.card {
+		padding: 1.5em;
+		background: white;
+		border-radius: 8px;
+		border: 1px solid rgb(var(--gray-light));
+		border-top: 3px solid var(--accent);
+	}
+
+	.card h3 {
+		font-size: 1.05em;
+		margin: 0 0 0.6em 0;
+		color: rgb(var(--black));
+	}
+
+	.card p {
+		margin: 0;
+		font-size: 0.95em;
+		line-height: 1.6;
+	}
+
+	.topic-list {
+		padding-left: 1.4em;
+	}
+
+	.topic-list li {
+		margin-bottom: 1.4em;
+		padding-left: 0.4em;
+	}
+
+	.topic-list h3 {
+		font-size: 1.1em;
+		margin: 0 0 0.4em 0;
+		color: rgb(var(--black));
+	}
+
+	.topic-list p {
+		margin: 0;
+		line-height: 1.6;
+	}
+
+	.two-col {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3em;
+	}
+
+	.direction-list li,
+	.two-col li,
+	.apply li {
+		margin-bottom: 0.6em;
+		line-height: 1.6;
+	}
+
+	.apply {
+		padding: 2em;
+		background: rgba(var(--gray-light), 0.5);
+		border-left: 4px solid var(--accent);
+		border-radius: 0 8px 8px 0;
+	}
+
+	.btn-apply {
+		display: inline-block;
+		padding: 0.7em 1.4em;
+		background: var(--accent);
+		color: white;
+		border-radius: 6px;
+		text-decoration: none;
+		font-weight: 600;
+		margin-top: 0.5em;
+	}
+
+	.btn-apply:hover {
+		background: var(--accent-dark);
+		color: white;
+	}
+
+	.email-plain {
+		margin-left: 1em;
+		color: rgb(var(--gray-dark));
+	}
+
+	.links {
+		font-size: 0.95em;
+	}
+
+	@media (max-width: 768px) {
+		.intro,
+		.two-col {
+			grid-template-columns: 1fr;
+			gap: 1.5em;
+		}
+
+		.apply {
+			padding: 1.5em;
+		}
+
+		.email-plain {
+			display: block;
+			margin: 0.8em 0 0 0;
+		}
+	}
+</style>

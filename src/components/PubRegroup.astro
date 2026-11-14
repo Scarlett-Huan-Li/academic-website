@@ -1,0 +1,45 @@
+---
+// Publication cards are written once in publications.astro, each wrapped in
+// <pub-item data-zh="a|b|c">, and each journal section starts with an empty
+// <pub-slot data-g="a|b|c"> marking where its cards go.
+//
+// English and Hungarian (regroup = false): cards stay in the section they are
+// written in.
+// Chinese (regroup = true): cards are redistributed by data-zh:
+//   a = first / co-first or corresponding author
+//   b = second or last author
+//   c = other co-authored papers
+//
+// In both cases the cards of a section are sorted by year, newest first, so a
+// new paper can be added anywhere in its section.
+interface Props {
+	regroup?: boolean;
+}
+
+const { regroup = false } = Astro.props;
+let html: string = await Astro.slots.render('default');
+
+type Card = { year: number; order: number; html: string };
+const groups: Record<string, Card[]> = { a: [], b: [], c: [] };
+const tokenRe = /<pub-slot data-g="([abc])"[^>]*><\/pub-slot>|<pub-item data-zh="([abc])"[^>]*>([\s\S]*?)<\/pub-item>/g;
+
+let section = 'a';
+let order = 0;
+html = html.replace(tokenRe, (_m, slot: string | undefined, zh: string | undefined, inner: string | undefined) => {
+	if (slot) {
+		section = slot;
+		return `<!--pub-slot:${slot}-->`;
+	}
+	const y = inner!.match(/class="pub-year"[^>]*>\s*(\d{4})/);
+	groups[regroup ? zh! : section].push({ year: y ? Number(y[1]) : 0, order: order++, html: inner! });
+	return '';
+});
+
+html = html.replace(/<!--pub-slot:([abc])-->/g, (_m, g: string) =>
+	groups[g]
+		.sort((x, y) => y.year - x.year || x.order - y.order)
+		.map((x) => x.html)
+		.join('\n')
+);
+---
+<Fragment set:html={html} />

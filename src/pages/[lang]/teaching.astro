@@ -32,6 +32,12 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 				<h2>{t('teaching.courses.heading')}</h2>
 				<div class="course-list">
 					<div class="course-card">
+						<h3>Monitoring Ecosystems from Space: An AI-Assisted Introduction to Google Earth Engine</h3>
+						<p class="course-code">{t('teaching.courses.type_workshop')}</p>
+						<p class="course-term">11th Student Conference on Conservation Science (SCCS Europe), Balatonvilágos, Hungary, 2026</p>
+						<p>{t('teaching.courses.w1.desc')}</p>
+					</div>
+					<div class="course-card">
 						<h3>Image Classification using Machine Learning with Google Earth Engine</h3>
 						<p class="course-code">{t('teaching.courses.type')}</p>
 						<p class="course-term">UiT the Arctic University of Norway, 2022</p>
@@ -67,6 +73,12 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 			<section class="mentoring">
 				<h2>{t('teaching.mentoring.heading')}</h2>
 				<div class="supervision-categories">
+					<div class="supervision-card">
+						<h3>{t('teaching.mentoring.current.title')}</h3>
+						<ul>
+							<li>{t('teaching.mentoring.current.text')} <a href={`/${lang}/join`}>{t('teaching.mentoring.current.link')}</a></li>
+						</ul>
+					</div>
 					<div class="supervision-card">
 						<h3>{t('teaching.mentoring.ugrad.title')}</h3>
 						<ul>

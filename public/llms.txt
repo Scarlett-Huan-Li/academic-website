@@ -1,7 +1,7 @@
 # Huan Li — GeoLab
 > Geospatial Intelligence for Environmental Sustainability
 
-Dr. Huan Li is a Senior Research Fellow at HUN-REN Balaton Limnological Research Institute (Hungary), specializing in spatio-temporal data analysis, satellite remote sensing, GIS, and environmental monitoring. Research covers inland water body monitoring (Lake Balaton, Lake Chad), global water cycle dynamics, cryosphere studies (polar sea ice, glaciers), and climate change impacts on aquatic ecosystems. ~50 peer-reviewed publications. Previously affiliated with Peking University and Tsinghua University.
+Dr. Huan Li is a tenured Senior Research Fellow at HUN-REN Balaton Limnological Research Institute (Hungary), specializing in spatio-temporal data analysis, satellite remote sensing, GIS, and environmental monitoring. Research covers inland water body monitoring (Lake Balaton, Lake Chad), global water cycle dynamics, cryosphere studies (polar sea ice, glaciers), and climate change impacts on aquatic ecosystems. More than 50 peer-reviewed publications. Hungarian PI of the Hungarian–Chinese bilateral project "Smart Lake Monitoring and Early Warning of Aquatic Ecosystems for Lake Taihu and Lake Balaton" (2026–2027, with NIGLAS, Chinese Academy of Sciences). GeoLab is recruiting PhD students, CSC joint-training PhD students, visiting scholars and postdocs (see Join Us page). Previously affiliated with Peking University and Tsinghua University.
 
 ## Key Research Areas
 
@@ -19,6 +19,7 @@ Dr. Huan Li is a Senior Research Fellow at HUN-REN Balaton Limnological Research
 * Resources (tools, datasets, code): https://geolab.live/resources/
 * CV: https://geolab.live/cv/
 * News: https://geolab.live/news/
+* Join Us (research directions, funding routes such as Stipendium Hungaricum and CSC, how to apply): https://geolab.live/join/
 * Contact: https://geolab.live/contact/
 
 ## Selected Tools

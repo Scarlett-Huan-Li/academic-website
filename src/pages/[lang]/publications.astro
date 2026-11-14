@@ -2,6 +2,8 @@
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import PubRegroup from '../../components/PubRegroup.astro';
+import scholar from '../../data/scholar.json';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getTranslations } from '../../i18n/ui';
 
@@ -33,27 +35,32 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 
 			<div class="metrics">
 				<div class="metric-card">
-					<span class="metric-number">~50</span>
+					<span class="metric-number">50+</span>
 					<span class="metric-label">{t('publications.metric.pubs')}</span>
 				</div>
 				<div class="metric-card">
-					<span class="metric-number">950</span>
+					<span class="metric-number">{scholar.citations}</span>
 					<span class="metric-label">{t('publications.metric.citations')}</span>
 				</div>
 				<div class="metric-card">
-					<span class="metric-number">16</span>
+					<span class="metric-number">{scholar.hIndex}</span>
 					<span class="metric-label">h-index</span>
 				</div>
 				<div class="metric-card">
-					<span class="metric-number">21</span>
+					<span class="metric-number">{scholar.i10Index}</span>
 					<span class="metric-label">i10-index</span>
 				</div>
 			</div>
 
+			<p class="metrics-note">{t('publications.metric.source')} · {t('publications.metric.updated')} {scholar.updated}</p>
+
+			<PubRegroup regroup={lang === 'zh'}>
 			<section class="publications-section">
 				<h2>{t('publications.section.first_last')}</h2>
 				<div class="publication-list">
+					<pub-slot data-g="a"></pub-slot>
 					<!-- NEW: Water Research 2026 - Chlorophyll-a Paper -->
+					<pub-item data-zh="a">
 					<div class="publication-card featured">
 						<div class="pub-content">
 							<div class="pub-header">
@@ -90,7 +97,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							-->
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="a">
 					<div class="publication-card featured">
 						<div class="pub-content">
 							<div class="pub-header">
@@ -124,7 +133,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<p class="figure-caption">The interactive online application generated with GEE for inspecting long-term Chl-a and comparing decadal Chl-a dynamics</p>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="b">
 					<div class="publication-card featured">
 						<div class="pub-content">
 							<div class="pub-header">
@@ -152,7 +163,80 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<p class="figure-caption">Spatial distribution of the selected basins</p>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="b">
+					<div class="publication-card">
+						<div class="pub-header">
+							<h3>TS-PFDM: a temporally scaled probability-flow diffusion model for thick cloud removal in remote sensing images</h3>
+							<span class="pub-year">2027</span>
+						</div>
+						<p class="authors">Gao, X., Xie, X., Yang, Y., Wang, N., Huang, R., and <strong>Li, H.</strong></p>
+						<p class="journal">ISPRS Journal of Photogrammetry and Remote Sensing 243, 88–112</p>
+						<a href="https://doi.org/10.1016/j.isprsjprs.2026.10.027" target="_blank" rel="noopener noreferrer" class="doi-link">DOI: 10.1016/j.isprsjprs.2026.10.027</a>
+						<div class="pub-tags">
+							<span class="tag">Cloud Removal</span>
+							<span class="tag">Diffusion Model</span>
+							<span class="tag">Deep Learning</span>
+							<span class="tag">Optical Remote Sensing</span>
+						</div>
+					</div>
+					</pub-item>
+
+					<pub-item data-zh="b">
+					<div class="publication-card">
+						<div class="pub-header">
+							<h3>Wind-Driven Regime of GNSS-R Signatures in Northern Lakes for Lake Ice Detection</h3>
+							<span class="pub-year">2026</span>
+						</div>
+						<p class="authors">Guo, Z., Wan, W., Liu, B., Wan, X., Zhang, J., Hu, X., and <strong>Li, H.</strong></p>
+						<p class="journal">IEEE Transactions on Geoscience and Remote Sensing</p>
+						<a href="https://doi.org/10.1109/TGRS.2026.3694575" target="_blank" rel="noopener noreferrer" class="doi-link">DOI: 10.1109/TGRS.2026.3694575</a>
+						<div class="pub-tags">
+							<span class="tag">GNSS-R</span>
+							<span class="tag">Lake Ice</span>
+							<span class="tag">Northern Lakes</span>
+							<span class="tag">Cryosphere</span>
+						</div>
+					</div>
+					</pub-item>
+
+					<pub-item data-zh="b">
+					<div class="publication-card">
+						<div class="pub-header">
+							<h3>Integrity Extraction of Water Bodies in Complex Scenes Based on the Adaptive Watermamba Framework</h3>
+							<span class="pub-year">2026</span>
+						</div>
+						<p class="authors">Yang, D., Gao, X., Tao, Y., Yang, Y., Guo, K., Han, K., Xu, L., and <strong>Li, H.</strong></p>
+						<p class="journal">IEEE Transactions on Geoscience and Remote Sensing</p>
+						<a href="https://doi.org/10.1109/TGRS.2026.3687409" target="_blank" rel="noopener noreferrer" class="doi-link">DOI: 10.1109/TGRS.2026.3687409</a>
+						<div class="pub-tags">
+							<span class="tag">Surface Water Mapping</span>
+							<span class="tag">Mamba</span>
+							<span class="tag">Deep Learning</span>
+						</div>
+					</div>
+					</pub-item>
+
+					<pub-item data-zh="b">
+					<div class="publication-card">
+						<div class="pub-header">
+							<h3>Reconstruction of global long-term daily streamflow dataset using machine learning models for revealing streamflow changes</h3>
+							<span class="pub-year">2026</span>
+						</div>
+						<p class="authors">Gao, Y., Luo, Z., Liu, H., Wang, L., Chen, X., and <strong>Li, H.</strong></p>
+						<p class="journal">Journal of Hydrology: Regional Studies 64:103148</p>
+						<a href="https://doi.org/10.1016/j.ejrh.2026.103148" target="_blank" rel="noopener noreferrer" class="doi-link">DOI: 10.1016/j.ejrh.2026.103148</a>
+						<div class="pub-tags">
+							<span class="tag">Streamflow</span>
+							<span class="tag">Machine Learning</span>
+							<span class="tag">Global Hydrology</span>
+							<span class="tag">Dataset</span>
+						</div>
+					</div>
+					</pub-item>
+
+					<pub-item data-zh="b">
 					<div class="publication-card featured">
 						<div class="pub-content">
 							<div class="pub-header">
@@ -181,7 +265,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<p class="figure-caption">(a) Spatial distribution of the observations. (b) Number of records and snow depth. (c) Snow depth distribution during winter. (d) Distribution of elevation and latitude.</p>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="b">
 					<div class="publication-card featured">
 						<div class="pub-content">
 							<div class="pub-header">
@@ -209,7 +295,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<p class="figure-caption">Framework of the IWE-Res method to identify the optimal balance for redistributing the ΔRes error.</p>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="b">
 					<div class="publication-card featured">
 						<div class="pub-content">
 							<div class="pub-header">
@@ -237,7 +325,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<p class="figure-caption">Reconstructing 121 years of monthly streamflow data (1901–2021)</p>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="a">
 					<div class="publication-card featured">
 						<div class="pub-content">
 							<div class="pub-header">
@@ -267,7 +357,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<p class="figure-caption">Waters show clear warming trend, especially in recent three to four decades</p>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="a">
 					<div class="publication-card featured">
 						<div class="pub-content">
 							<div class="pub-header">
@@ -298,7 +390,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<p class="figure-caption">The cumulated temperature anomaly from the daily mean temperature in each month</p>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="a">
 					<div class="publication-card featured">
 						<div class="pub-content">
 							<div class="pub-header">
@@ -326,7 +420,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<p class="figure-caption">The procedures for generating the volumes series based on the area series and hydrological curves</p>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="a">
 					<div class="publication-card featured">
 						<div class="pub-content">
 							<div class="pub-header">
@@ -354,7 +450,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<p class="figure-caption">Area datasets for long-term global surface water bodies</p>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="a">
 					<div class="publication-card featured">
 						<div class="pub-content">
 							<div class="pub-header">
@@ -384,7 +482,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<p class="figure-caption">Interactive application interface for long-term and up-to-date area inspections of Lake Chad</p>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="b">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>Improving the Evapotranspiration Estimation under Cloudy Condition by Extending the Ts-VI Triangle Model</h3>
@@ -399,7 +499,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">Modeling</span>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="b">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>Distribution and Attribution of Terrestrial Snow Cover Phenology Changes over the Northern Hemisphere during 2001–2020</h3>
@@ -414,7 +516,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">Climate Change</span>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="b">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>Decadal variations of sea ice thickness in the Amundsen-Bellingshausen and Weddell Seas retrieved from ICESat and IceBridge laser altimetry, 2003-2017</h3>
@@ -429,7 +533,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">Antarctic</span>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="a">
 					<div class="publication-card featured">
 						<div class="pub-content">
 							<div class="pub-header">
@@ -459,7 +565,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<p class="figure-caption">Acquiring high-quality user-defined Landsat composited mosaic images under GEE cloud environment</p>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="a">
 					<div class="publication-card featured">
 						<div class="pub-content">
 							<div class="pub-header">
@@ -487,7 +595,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<p class="figure-caption">Spatial distribution of water storage change in lakes and reservoirs, 1984–2015</p>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="a">
 					<div class="publication-card featured">
 						<div class="pub-content">
 							<div class="pub-header">
@@ -515,7 +625,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<p class="figure-caption">Sea-ice concentration and ICESat OLM algorithm sea-ice thickness in spring</p>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="a">
 					<div class="publication-card featured">
 						<div class="pub-content">
 							<div class="pub-header">
@@ -543,7 +655,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<p class="figure-caption">Average AQI Heatmap of PM2.5 from November 2013 to February 2014 in Beijing</p>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="a">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>Pull-Based Modeling and Algorithms for Real-Time Provision of High-Frequency Sensor Data from Sensor Observation Services</h3>
@@ -558,12 +672,15 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">Algorithms</span>
 						</div>
 					</div>
+					</pub-item>
 				</div>
 			</section>
 
 			<section class="publications-section">
-				<h2>Peer-Reviewed Articles (Second/Corresponding Author)</h2>
+				<h2>{t('publications.section.second_corr')}</h2>
 				<div class="publication-list">
+					<pub-slot data-g="b"></pub-slot>
+					<pub-item data-zh="b">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>Regime shift in microalgal dynamics: Impact of water level changes on planktonic and benthic algal biomass</h3>
@@ -578,7 +695,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">Ecosystem</span>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="a">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>A Novel Two-Step Method for Enforcing Water Budget Closure and an Intercomparison of Budget Closure Correction Methods Based on Satellite Hydrological Products</h3>
@@ -593,7 +712,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">Hydrology</span>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="a">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>Potential of ANN for Prolonging Remote Sensing-based Soil Moisture Products for Long-term Time Series Analysis</h3>
@@ -608,7 +729,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">Remote Sensing</span>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="a">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>Deriving Antarctic Sea‐Ice Thickness From Satellite Altimetry and Estimating Consistency for NASA's ICESat/ICESat‐2 Missions</h3>
@@ -623,7 +746,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">Antarctic</span>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="b">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>A comprehensive data set of lake surface water temperature over the Tibetan Plateau derived from MODIS LST products 2001-2015</h3>
@@ -638,12 +763,32 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">MODIS</span>
 						</div>
 					</div>
+					</pub-item>
 				</div>
 			</section>
 
 			<section class="publications-section">
 				<h2>{t('publications.section.coauthor')}</h2>
 				<div class="publication-list">
+					<pub-slot data-g="c"></pub-slot>
+					<pub-item data-zh="c">
+					<div class="publication-card">
+						<div class="pub-header">
+							<h3>Redefining inland water temperature forecasting with advanced neural architectures</h3>
+							<span class="pub-year">2026</span>
+						</div>
+						<p class="authors">Granata, F., Di Nunno, F., Sun, J., <strong>Li, H.</strong>, and Zhu, S.</p>
+						<p class="journal">Water Cycle</p>
+						<a href="https://doi.org/10.1016/j.watcyc.2026.04.001" target="_blank" rel="noopener noreferrer" class="doi-link">DOI: 10.1016/j.watcyc.2026.04.001</a>
+						<div class="pub-tags">
+							<span class="tag">Water Temperature</span>
+							<span class="tag">Forecasting</span>
+							<span class="tag">Neural Networks</span>
+						</div>
+					</div>
+					</pub-item>
+
+					<pub-item data-zh="c">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>A New Approach to Identifying and Analyzing Precipitation Events and Their Typical Lifecycles Over Conterminous United States</h3>
@@ -658,7 +803,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">United States</span>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="c">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>Utilizing Multi-Source Datasets for the Reconstruction and Prediction of Water Temperature in Lake Miedwie (Poland)</h3>
@@ -673,7 +820,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">Multi-Source Data</span>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="c">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>Statistical Analysis of CyGNSS Speckle and Its Applications to Surface Water Mapping</h3>
@@ -688,7 +837,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">Mapping</span>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="c">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>A new method for assessing satellite-based hydrological data products using water budget closure</h3>
@@ -703,7 +854,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">Hydrology</span>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="c">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>A Two-Step Method to Calibrate CYGNSS-Derived Land Surface Reflectivity for Accurate Soil Moisture Estimations</h3>
@@ -718,7 +871,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">Calibration</span>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="c">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>Recognizing Global Reservoirs From Landsat 8 Images: A Deep Learning Approach</h3>
@@ -733,7 +888,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">Landsat 8</span>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="c">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>A long-term dataset of lake surface water temperature over the Tibetan Plateau derived from AVHRR 1981–2015</h3>
@@ -748,7 +905,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">AVHRR</span>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="c">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>A New Digital Lake Bathymetry Model Using the Step-Wise Water Recession Method to Generate 3D Lake Bathymetric Maps Based on DEMs</h3>
@@ -763,7 +922,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">Lake</span>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="c">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>Construct Channel Network Topology from Remote Sensing Images by Morphology and Graph Analysis</h3>
@@ -778,7 +939,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">Remote Sensing</span>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="c">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>Lake surface water temperature change over the Tibetan Plateau from 2001–2015: A sensitive indicator of the warming climate</h3>
@@ -793,7 +956,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">Tibetan Plateau</span>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="c">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>An Efficient and Effective Approach for Georeferencing AVHRR and GaoFen-1 Imageries Using Inland Water Bodies</h3>
@@ -808,7 +973,9 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">Image Processing</span>
 						</div>
 					</div>
+					</pub-item>
 
+					<pub-item data-zh="c">
 					<div class="publication-card">
 						<div class="pub-header">
 							<h3>Positioning Locality Using Cognitive Directions Based on Indoor Landmark Reference System</h3>
@@ -823,8 +990,11 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 							<span class="tag">Cognitive</span>
 						</div>
 					</div>
+					</pub-item>
 				</div>
 			</section>
+
+			</PubRegroup>
 
 			<section class="publications-section">
 				<h2>Book Chapters</h2>
@@ -987,6 +1157,13 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 		gap: 1.5em;
 		margin: 3em 0;
+	}
+
+	.metrics-note {
+		text-align: center;
+		font-size: 0.85em;
+		color: rgb(var(--gray));
+		margin: -1em 0 2em 0;
 	}
 
 	.metric-card {
@@ -1210,7 +1387,14 @@ const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 			gap: 1em;
 		}
 
-		.metric-card {
+		.metrics-note {
+		text-align: center;
+		font-size: 0.85em;
+		color: rgb(var(--gray));
+		margin: -1em 0 2em 0;
+	}
+
+	.metric-card {
 			padding: 1.5em;
 		}
 

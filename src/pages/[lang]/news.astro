@@ -18,7 +18,74 @@ const { lang } = Astro.params;
 const t = getTranslations(lang);
 const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
 
-const news = [
+const news: { date: Date; title: string; category: string; content: string; link?: string; image?: string; imageAlt?: string }[] = [
+	{
+		date: new Date('2026-11-14'),
+		title: 'GeoLab is recruiting PhD students, joint-training students and visiting scholars for 2027',
+		category: 'Recruitment',
+		content: 'GeoLab at the HUN-REN Balaton Limnological Research Institute welcomes new PhD students, joint-training PhD students, visiting scholars and postdocs who want to study lakes, water resources and climate change with satellite remote sensing, Google Earth Engine and AI. Applicants can come through the Sino-Hungarian exchange scholarship / Stipendium Hungaricum, CSC joint-training and visiting programmes, or project funding. Scholarship rounds for the 2027/28 academic year close in winter, so please get in touch early.',
+		link: 'join',
+	},
+	{
+		date: new Date('2026-11-06'),
+		title: 'New Publication in ISPRS Journal of Photogrammetry and Remote Sensing: TS-PFDM for Thick Cloud Removal',
+		category: 'Publication',
+		content: 'Our paper "TS-PFDM: a temporally scaled probability-flow diffusion model for thick cloud removal in remote sensing images" (Gao, X., Xie, X., Yang, Y., Wang, N., Huang, R., Li, H.) has been published in ISPRS Journal of Photogrammetry and Remote Sensing (vol. 243, 88–112). The diffusion-based model reconstructs the land and water surface hidden under thick clouds, which removes one of the main obstacles to dense optical time series over lakes.',
+	},
+	{
+		date: new Date('2026-10-27'),
+		title: 'Call for Abstracts: EGU27 Session HS10.13 "Smart Lake"',
+		category: 'Service',
+		content: 'Our session "Smart Lake: remote sensing, in-situ networks and AI for monitoring and early warning of aquatic ecosystems" (HS10.13) has been accepted for the EGU General Assembly 2027 in Vienna. It is convened by Huan Li together with Hongtao Duan and Juhua Luo from the Nanjing Institute of Geography and Limnology, Chinese Academy of Sciences. Contributions on water-quality retrieval, in-situ and satellite integration, multi-decadal reconstruction, AI-based bloom forecasting and open tools are welcome, especially comparative studies across lakes and from early-career scientists. Abstract deadline: 12 January 2027, 13:00 CET.',
+		link: 'egu27',
+	},
+	{
+		date: new Date('2026-10-25'),
+		title: 'Invited Keynote in Nanjing and the Chinese–Hungarian International Cooperation Forum at NIGLAS',
+		category: 'Talk',
+		content: 'At the 8th China Wetland Remote Sensing Conference in Nanjing I gave the invited keynote "Doing Research in Hungary: Academic System, Funding and Cooperation Opportunities". In the afternoon, five researchers from the HUN-REN Balaton Limnological Research Institute presented at the Chinese–Hungarian International Cooperation Forum hosted by the Nanjing Institute of Geography and Limnology, Chinese Academy of Sciences (NIGLAS); my talk was "Remote Sensing of Lake Balaton: Warming, Water Quality and Prospects for Balaton–Taihu Comparison". On 26 October the delegation visited the Taihu field station. Lake Balaton and Lake Taihu are both large, shallow lakes facing similar pressures, and our Chinese partners will visit Tihany in 2027.',
+		link: 'research',
+	},
+	{
+		date: new Date('2026-09-03'),
+		title: 'Invited Keynote and Google Earth Engine Workshop at SCCS Europe 2026',
+		category: 'Talk',
+		content: 'At the 11th Student Conference on Conservation Science (SCCS Europe 2026) in Balatonvilágos, Hungary, I gave the invited keynote "Water from Above: How Satellites Are Changing the Way We Monitor Aquatic Ecosystems — and What Lake Balaton Can Tell Us" and led the hands-on workshop "Monitoring Ecosystems from Space: An AI-Assisted Introduction to Google Earth Engine".',
+		link: 'cv',
+	},
+	{
+		date: new Date('2026-05-15'),
+		title: 'Two New Papers in IEEE Transactions on Geoscience and Remote Sensing',
+		category: 'Publication',
+		content: 'Two collaborative papers have been published in IEEE TGRS: "Wind-Driven Regime of GNSS-R Signatures in Northern Lakes for Lake Ice Detection" (Guo, Z., Wan, W., Liu, B., Wan, X., Zhang, J., Hu, X., Li, H.) and "Integrity Extraction of Water Bodies in Complex Scenes Based on the Adaptive Watermamba Framework" (Yang, D., Gao, X., Tao, Y., Yang, Y., Guo, K., Han, K., Xu, L., Li, H.). Together they extend our surface-water work to spaceborne GNSS reflectometry and to state-space deep learning models.',
+	},
+	{
+		date: new Date('2026-05-04'),
+		title: 'Oral Presentation at EGU26: the PanLake Framework',
+		category: 'Talk',
+		content: 'I presented "PanLake: A Transferable Framework for Monitoring Trophic Dynamics in Shallow Lakes" (EGU26-13554) in session HS10.11 "Inland waters\' response to climatic change" at the European Geosciences Union General Assembly in Vienna. Built on four decades of 30 m Landsat chlorophyll-a for Lake Balaton, the framework is now being transferred to Lake Taihu together with NIGLAS and Bangor University.',
+		link: 'research',
+	},
+	{
+		date: new Date('2026-01-19'),
+		title: 'New Publication in Journal of Hydrology: Regional Studies: Global Long-Term Daily Streamflow Reconstruction',
+		category: 'Publication',
+		content: 'Our paper "Reconstruction of global long-term daily streamflow dataset using machine learning models for revealing streamflow changes" (Gao, Y., Luo, Z., Liu, H., Wang, L., Chen, X., Li, H.) has been published in Journal of Hydrology: Regional Studies (64:103148).',
+	},
+	{
+		date: new Date('2026-01-01'),
+		title: 'Hungarian–Chinese Bilateral Project Started: Smart Lake Monitoring for Lake Taihu and Lake Balaton',
+		category: 'Grant',
+		content: 'The two-year project "Smart Lake Monitoring and Early Warning of Aquatic Ecosystems for Lake Taihu and Lake Balaton" (2026–2027) has started under the Hungarian–Chinese Bilateral Collaboration Programme, with me as the Hungarian Principal Investigator and the Nanjing Institute of Geography and Limnology, Chinese Academy of Sciences, as the Chinese partner. The project combines long-term satellite records, high-frequency in-situ monitoring and AI to compare the two lakes and to develop early warning of algal blooms.',
+		link: 'research',
+	},
+	{
+		date: new Date('2025-11-05'),
+		title: 'Seminar at Nanyang Technological University, Singapore',
+		category: 'Talk',
+		content: 'Within the HUN-REN – NTU AI Research Cooperation Programme I gave the seminar "Satellite Remote Sensing for Environmental Monitoring Under Climate Change: From Surface Water to Lake Ecosystems" at the NTU Centre for Computational Data Science.',
+		link: 'cv',
+	},
 	{
 		date: new Date('2026-01-15'),
 		title: 'New Publication in Water Research: Four Decades of Satellite Observations Reveal Climate-Driven Shifts in Shallow Lake Chlorophyll-a Dynamics',
@@ -140,7 +207,9 @@ const news = [
 			<div class="news-filters">
 				<button class="filter-btn active" data-category="all">{t('news.filter.all')}</button>
 				<button class="filter-btn" data-category="Publication">{t('news.filter.publications')}</button>
-				<button class="filter-btn" data-category="Grant">{t('news.filter.grants')}</button>
+				<button class="filter-btn" data-category="Talk">{t('news.filter.talks')}</button>
+			<button class="filter-btn" data-category="Grant">{t('news.filter.grants')}</button>
+			<button class="filter-btn" data-category="Recruitment">{t('news.filter.recruitment')}</button>
 				<button class="filter-btn" data-category="Award">{t('news.filter.awards')}</button>
 				<button class="filter-btn" data-category="Service">{t('news.filter.service')}</button>
 				<button class="filter-btn" data-category="Appointment">{t('news.filter.appointments')}</button>
@@ -155,9 +224,14 @@ const news = [
 							<span class="category">{t(('news.category.' + item.category) as any)}</span>
 						</div>
 						<h2>{item.title}</h2>
+						{item.image && <img src={item.image} alt={item.imageAlt} class="news-image" loading="lazy" />}
 						<p>{item.content}</p>
 						<div class="news-actions">
-							<a href={`/${lang}/publications`} class="read-more">{t('news.view_pubs')}</a>
+							{item.link === 'join' && <a href={`/${lang}/join`} class="read-more">{t('news.view_join')}</a>}
+							{item.link === 'egu27' && <a href={`/${lang}/egu27`} class="read-more">{t('index.egu.cta')}</a>}
+							{item.link === 'cv' && <a href={`/${lang}/cv`} class="read-more">{t('news.view_cv')}</a>}
+							{item.link === 'research' && <a href={`/${lang}/research`} class="read-more">{t('news.view_research')}</a>}
+							{!item.link && <a href={`/${lang}/publications`} class="read-more">{t('news.view_pubs')}</a>}
 						</div>
 					</div>
 				))}
@@ -168,7 +242,7 @@ const news = [
 				<div class="summary-grid">
 					<div class="summary-card">
 						<h3>{t('news.highlights.pubs.title')}</h3>
-						<p class="summary-number">~50</p>
+						<p class="summary-number">50+</p>
 						<p class="summary-text">{t('news.highlights.pubs.desc')}</p>
 					</div>
 					<div class="summary-card">
@@ -183,7 +257,7 @@ const news = [
 					</div>
 					<div class="summary-card">
 						<h3>{t('news.highlights.service.title')}</h3>
-						<p class="summary-number">18+</p>
+						<p class="summary-number">29</p>
 						<p class="summary-text">{t('news.highlights.service.desc')}</p>
 					</div>
 				</div>
@@ -257,6 +331,15 @@ const news = [
 		box-shadow: var(--box-shadow);
 		border-left: 4px solid var(--accent);
 		transition: transform 0.2s;
+	}
+
+	.news-image {
+		width: 100%;
+		max-width: 640px;
+		height: auto;
+		border-radius: 8px;
+		margin: 0.5em 0 1em 0;
+		display: block;
 	}
 
 	.news-card:hover {

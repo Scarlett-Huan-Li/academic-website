@@ -1,0 +1,259 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SOCIAL_LINKS } from '../../consts';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'zh' } },
+    { params: { lang: 'hu' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const htmlLang = lang === 'zh' ? 'zh-Hans' : lang;
+
+const SESSION_URL = 'https://meetingorganizer.copernicus.org/EGU27/session/60768';
+const SESSION_TITLE = 'Smart Lake: remote sensing, in-situ networks and AI for monitoring and early warning of aquatic ecosystems';
+
+// Official session text as submitted to EGU (kept in English on all language versions).
+const summary = 'This session brings together diverse monitoring and forecasting methods, from remote sensing and in-situ sensors to AI, for physical, chemical and biological lake parameters such as algal blooms and aquatic vegetation, supporting lake water quality management in practice. Comparative studies across regions and continents are especially welcome.';
+const intro = 'Lakes are sentinels of climate change and human pressure, yet harmful algal blooms, loss of aquatic vegetation and water-quality deterioration are intensifying worldwide. Recent progress in satellite and UAV remote sensing, high-frequency sensor networks and artificial intelligence opens new opportunities for "smart" lake monitoring and operational early warning. This session invites contributions on:';
+const topics = [
+  'Retrieval algorithms for water-quality parameters (chlorophyll-a, cyanobacteria, turbidity, CDOM) and aquatic vegetation from multi-source remote sensing',
+  'Integration of in-situ, optical and physiological measurements for calibration and validation',
+  'Long-term (multi-decadal) reconstruction of lake ecosystem change',
+  'Data-driven and hybrid models (e.g. deep learning, KAN) for short-term forecasting of bloom events',
+  'Cloud platforms (e.g. Google Earth Engine), open tools and management applications',
+];
+const closing = 'We particularly welcome comparative studies across lakes and regions, as well as contributions from early-career scientists.';
+
+const text: Record<string, Record<string, string>> = {
+  en: {
+    kicker: 'EGU General Assembly 2027 · Call for abstracts',
+    lead: 'We warmly invite you to submit an abstract to our session at EGU27, convened jointly by the HUN-REN Balaton Limnological Research Institute and the Nanjing Institute of Geography and Limnology, Chinese Academy of Sciences.',
+    session: 'Session', sessionValue: 'HS10.13 (Hydrological Sciences)',
+    when: 'Conference', whenValue: '4–9 April 2027, Vienna, Austria',
+    deadline: 'Abstract deadline', deadlineValue: '12 January 2027, 13:00 CET',
+    conveners: 'Conveners',
+    submit: 'Submit an abstract',
+    about: 'About the session',
+    official: 'Session description (as published by EGU)',
+    contact: 'Questions about the session? Write to',
+    description: 'Call for abstracts: EGU27 session HS10.13 "Smart Lake", convened by Huan Li (HUN-REN BLKI) with Hongtao Duan and Juhua Luo (NIGLAS). Abstract deadline 12 January 2027.',
+  },
+  zh: {
+    kicker: '2027 年欧洲地球科学联合会年会（EGU27）· 摘要征集',
+    lead: '诚挚邀请各位老师和同学向我们在 EGU27 的分会场投稿。本分会场由 HUN-REN 巴拉顿湖沼研究所与中国科学院南京地理与湖泊研究所共同召集，主题是利用遥感、原位观测网络和人工智能开展湖泊等水生态系统的监测与预警。',
+    session: '分会场', sessionValue: 'HS10.13（水文科学 Hydrological Sciences）',
+    when: '会议时间与地点', whenValue: '2027 年 4 月 4–9 日，奥地利维也纳',
+    deadline: '摘要截止', deadlineValue: '2027 年 1 月 12 日 13:00（中欧时间）',
+    conveners: '召集人',
+    submit: '提交摘要',
+    about: '分会场介绍',
+    official: '分会场说明（EGU 官方英文原文）',
+    contact: '关于分会场的问题，欢迎来信：',
+    description: 'EGU27 分会场 HS10.13 "Smart Lake" 摘要征集，召集人：李欢（HUN-REN BLKI）、段洪涛、罗菊花（中国科学院南京地理与湖泊研究所）。摘要截止 2027 年 1 月 12 日。',
+  },
+  hu: {
+    kicker: 'EGU 2027-es közgyűlés · Absztraktfelhívás',
+    lead: 'Szeretettel várjuk absztraktját az EGU27-en szervezett szekciónkba, amelyet a HUN-REN Balatoni Limnológiai Kutatóintézet és a Kínai Tudományos Akadémia Nankingi Földrajzi és Limnológiai Kutatóintézete közösen szervez.',
+    session: 'Szekció', sessionValue: 'HS10.13 (Hydrological Sciences)',
+    when: 'Konferencia', whenValue: '2027. április 4–9., Bécs, Ausztria',
+    deadline: 'Absztrakt-határidő', deadlineValue: '2027. január 12., 13:00 CET',
+    conveners: 'Szervezők',
+    submit: 'Absztrakt beküldése',
+    about: 'A szekcióról',
+    official: 'A szekció leírása (az EGU-nál közzétett angol szöveg)',
+    contact: 'Kérdés esetén írjon:',
+    description: 'Absztraktfelhívás: EGU27 HS10.13 „Smart Lake” szekció; szervezők: Li Huan (HUN-REN BLKI), Hongtao Duan és Juhua Luo (NIGLAS). Határidő: 2027. január 12.',
+  },
+};
+const c = text[lang] ?? text.en;
+---
+<!doctype html>
+<html lang={htmlLang}>
+	<head>
+		<BaseHead title={`EGU27 HS10.13 Smart Lake | ${SITE_TITLE}`} description={c.description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="page-header">
+				<p class="kicker">{c.kicker}</p>
+				<h1 lang="en">{SESSION_TITLE}</h1>
+				<p class="lead">{c.lead}</p>
+				<a href={SESSION_URL} target="_blank" rel="noopener noreferrer" class="btn-submit">{c.submit}</a>
+			</div>
+
+			<dl class="facts">
+				<div>
+					<dt>{c.session}</dt>
+					<dd>{c.sessionValue}</dd>
+				</div>
+				<div>
+					<dt>{c.when}</dt>
+					<dd>{c.whenValue}</dd>
+				</div>
+				<div class="deadline">
+					<dt>{c.deadline}</dt>
+					<dd>{c.deadlineValue}</dd>
+				</div>
+				<div>
+					<dt>{c.conveners}</dt>
+					<dd>
+						Huan Li <span class="aff">HUN-REN Balaton Limnological Research Institute, Hungary</span><br />
+						Hongtao Duan, Juhua Luo <span class="aff">Nanjing Institute of Geography and Limnology, Chinese Academy of Sciences</span>
+					</dd>
+				</div>
+			</dl>
+
+			<section lang="en">
+				<h2 lang={htmlLang}>{c.about}</h2>
+				<p class="summary">{summary}</p>
+				<h3 lang={htmlLang}>{c.official}</h3>
+				<p>{intro}</p>
+				<ol>{topics.map((x) => <li>{x}</li>)}</ol>
+				<p>{closing}</p>
+			</section>
+
+			<section class="cta">
+				<a href={SESSION_URL} target="_blank" rel="noopener noreferrer" class="btn-submit">{c.submit}</a>
+				<p>{c.contact} <a href={`mailto:${SOCIAL_LINKS.email}`}>{SOCIAL_LINKS.email}</a></p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.page-header {
+		text-align: center;
+		padding: 2em 0 2.5em;
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+
+	.kicker {
+		font-size: 0.9em;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--accent);
+		margin: 0 0 1em 0;
+	}
+
+	.page-header h1 {
+		font-size: 2em;
+		line-height: 1.25;
+		max-width: 900px;
+		margin: 0 auto 0.8em;
+		color: rgb(var(--black));
+	}
+
+	.lead {
+		max-width: 760px;
+		margin: 0 auto 1.5em;
+		line-height: 1.7;
+	}
+
+	.btn-submit {
+		display: inline-block;
+		padding: 0.8em 1.6em;
+		background: var(--accent);
+		color: white;
+		border-radius: 6px;
+		text-decoration: none;
+		font-weight: 600;
+	}
+
+	.btn-submit:hover {
+		background: var(--accent-dark);
+		color: white;
+	}
+
+	.facts {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 1.5em;
+		margin: 2.5em 0;
+	}
+
+	.facts div {
+		padding: 1.2em 1.4em;
+		border: 1px solid rgb(var(--gray-light));
+		border-top: 3px solid var(--accent);
+		border-radius: 8px;
+		background: white;
+	}
+
+	.facts dt {
+		font-size: 0.8em;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: rgb(var(--gray));
+		margin-bottom: 0.5em;
+	}
+
+	.facts dd {
+		margin: 0;
+		line-height: 1.6;
+		color: rgb(var(--black));
+	}
+
+	.facts .deadline dd {
+		font-weight: 700;
+		color: var(--accent);
+	}
+
+	.aff {
+		display: block;
+		font-size: 0.85em;
+		color: rgb(var(--gray));
+		margin-bottom: 0.4em;
+	}
+
+	section {
+		margin: 2.5em 0;
+	}
+
+	h2 {
+		font-size: 1.5em;
+		color: var(--accent);
+	}
+
+	h3 {
+		font-size: 1em;
+		color: rgb(var(--gray));
+		margin-top: 1.5em;
+	}
+
+	.summary {
+		font-size: 1.1em;
+		line-height: 1.7;
+	}
+
+	section li {
+		margin-bottom: 0.5em;
+		line-height: 1.6;
+	}
+
+	.cta {
+		text-align: center;
+		padding: 2em;
+		background: rgba(var(--gray-light), 0.5);
+		border-radius: 8px;
+	}
+
+	.cta p {
+		margin: 1em 0 0 0;
+	}
+
+	@media (max-width: 768px) {
+		.page-header h1 {
+			font-size: 1.5em;
+		}
+	}
+</style>
